@@ -8,21 +8,28 @@
 
 #import "OneDetailViewController.h"
 #import "ShareView.h"
+#import "UserData.h"
+#import "DatabaseManager.h"
 
 @interface OneDetailViewController ()<UIWebViewDelegate>
 
 @property (nonatomic, strong) UIWebView *webView;
 
+@property (nonatomic, strong) DatabaseManager *manger;
+
+@property (nonatomic, copy) NSString *collectStr;
+
 @end
 
 @implementation OneDetailViewController
 
-- (instancetype)initWithNumber:(NSString *)number title:(NSString *)title
+- (instancetype)initWithNumber:(NSString *)number title:(NSString *)title thumb:(NSString *)thumb
 {
     self = [super init];
     if (self) {
         self.title2 = title;
         self.number2 = number;
+        self.thumbCollect = thumb;
     }
     return self;
 }
@@ -32,6 +39,7 @@
     // Do any additional setup after loading the view.
     
     self.view.backgroundColor = [UIColor whiteColor];
+    self.manger = [DatabaseManager manager];
     
     UILabel *label = [Factory createLabelWithTitle:@"详细做法" frame:CGRectMake(0, 0, 40, 40) textColor:[UIColor whiteColor] fontSize:16.f];
     self.navigationItem.titleView = label;
@@ -99,18 +107,57 @@
 -(void)getNetData{
     
     NSString *url = [NSString stringWithFormat:kCaiPuDetail,self.number2];
+    NSLog(@"url == %@",url);
     NSURLRequest *request = [[NSURLRequest alloc]initWithURL:[NSURL URLWithString:url]];
     [self.webView loadRequest:request];
+    
+    if ([request.URL.absoluteString isEqualToString:@"bookmark://"]) {
+        // 判断数据是否存在
+        NSMutableArray *ary = [[NSMutableArray alloc] initWithArray:[_manger findAllData]];
+        for (UserData *mod in ary) {
+            if ([mod.idcollect isEqualToString:_number2]) {
+                NSString *str1 = @"var bookmark = document.getElementById('bookmark');" "bookmark.innerHTML = '已收藏';";
+                [self.webView stringByEvaluatingJavaScriptFromString:str1];
+            }
+        }
+    }
 }
 
 #pragma mark - UIWebViewDelegate
 -(BOOL)webView:(UIWebView *)webView shouldStartLoadWithRequest:(NSURLRequest *)request navigationType:(UIWebViewNavigationType)navigationType{
     
-    NSRange range = [request.URL.absoluteString rangeOfString:@"baidu"];
-    if (range.location != NSNotFound  ) {
-        return NO;
+    switch (navigationType)
+    {
+            //点击连接
+        case UIWebViewNavigationTypeLinkClicked:
+        {
+            if ([request.URL.absoluteString isEqualToString:@"bookmark://"]) {
+                NSString *str1 = @"var bookmark = document.getElementById('bookmark');" "bookmark.innerHTML = '已收藏';";
+                [webView stringByEvaluatingJavaScriptFromString:str1];
+                [self specialData];
+            }
+        }
+            break;
+        default:
+            break;
     }
     return YES;
+    
+}
+
+- (void)specialData {
+    
+    UserData *data = [[UserData alloc] init];
+    data.title = _title2;
+    data.thumb = _thumbCollect;
+    data.idcollect = _number2;
+    NSLog(@"data.title == %@, data。thumb == %@, data。idcollect == %@",data.title,data.thumb,data.idcollect);
+    
+    [self.manger insertCollecInformation:data];
+    
+//    NSArray *arr = [self.manger findAllData];
+//    NSLog(@"arr == %@",arr);
+
 }
 
 
@@ -120,6 +167,8 @@
 
 -(void)webViewDidFinishLoad:(UIWebView *)webView{
     
+//    NSString *jsCode = [NSString stringWithFormat:@"alert(1);"];
+//    [_webView stringByEvaluatingJavaScriptFromString:jsCode];
 }
 
 

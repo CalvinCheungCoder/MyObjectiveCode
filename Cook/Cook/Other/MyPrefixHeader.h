@@ -19,5 +19,6 @@
 #import "UMSocial.h"
 #import "NetWorking.h"
 #import "NetInterface.h"
+#import "DatabaseManager.h"
 
 #endif /* MyPrefixHeader_h */

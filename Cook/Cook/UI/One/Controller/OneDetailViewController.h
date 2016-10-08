@@ -18,6 +18,6 @@
 @property (nonatomic, copy) NSString *thumbCollect;
 @property (nonatomic, copy) NSString *IDCollect;
 
--(instancetype)initWithNumber:(NSString *)number title:(NSString *)title;
+-(instancetype)initWithNumber:(NSString *)number title:(NSString *)title thumb:(NSString *)thumb;
 
 @end

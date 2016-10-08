@@ -11,6 +11,7 @@
 #import "TwoViewController.h"
 #import "ThreeViewController.h"
 #import "CustomNavigationController.h"
+#import "FourViewController.h"
 
 @interface MainTabBar ()
 
@@ -44,7 +45,11 @@
     CustomNavigationController *navknowledge = [[CustomNavigationController alloc] initWithRootViewController:knowledge];
     navknowledge.tabBarItem = [[UITabBarItem alloc]initWithTitle:@"小知识" image:[[UIImage imageNamed:@"xiaozhishiA"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]selectedImage:[[UIImage imageNamed:@"xiaozhishiB"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]];
     
-    self.viewControllers = @[navMenu,navSpecial,navknowledge];
+    FourViewController *coller = [[FourViewController alloc] init];
+    CustomNavigationController *navCollec = [[CustomNavigationController alloc] initWithRootViewController:coller];
+    navCollec.tabBarItem = [[UITabBarItem alloc]initWithTitle:@"收藏" image:[[UIImage imageNamed:@"我的A"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]selectedImage:[[UIImage imageNamed:@"我的B"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]];
+    
+    self.viewControllers = @[navMenu,navSpecial,navknowledge,navCollec];
 }
 
 

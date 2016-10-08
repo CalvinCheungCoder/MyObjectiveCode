@@ -41,7 +41,7 @@
     
     self.ImageView.frame = CGRectMake(5, 5, self.width - 10, self.height - 10);
     
-    self.shadeView.frame = CGRectMake(5, self.height - 35, self.width - 10, 30);
+    self.shadeView.frame = CGRectMake(5, self.height - 30, self.width - 10, 25);
     
     self.titleLabel.frame = CGRectMake(20, self.height - 30, self.width - 40, 25);
 }

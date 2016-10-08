@@ -111,6 +111,15 @@
 		3E56250B1DA7A47500C83533 /* TwoNextModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E56250A1DA7A47500C83533 /* TwoNextModel.m */; };
 		3E56250E1DA7A48900C83533 /* TwoNextCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E56250D1DA7A48900C83533 /* TwoNextCell.m */; };
 		3E5625111DA7AE6200C83533 /* TwoNextDeatil.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E5625101DA7AE6200C83533 /* TwoNextDeatil.m */; };
+		3E69FC8E1DA88C8B00CFB630 /* UserData.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E69FC8D1DA88C8B00CFB630 /* UserData.m */; };
+		3E69FC911DA88CFA00CFB630 /* DatabaseManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E69FC901DA88CFA00CFB630 /* DatabaseManager.m */; };
+		3E69FC9E1DA88D2300CFB630 /* FMDatabase.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E69FC941DA88D2300CFB630 /* FMDatabase.m */; };
+		3E69FC9F1DA88D2300CFB630 /* FMDatabaseAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E69FC961DA88D2300CFB630 /* FMDatabaseAdditions.m */; };
+		3E69FCA01DA88D2300CFB630 /* FMDatabasePool.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E69FC981DA88D2300CFB630 /* FMDatabasePool.m */; };
+		3E69FCA11DA88D2300CFB630 /* FMDatabaseQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E69FC9A1DA88D2300CFB630 /* FMDatabaseQueue.m */; };
+		3E69FCA21DA88D2300CFB630 /* FMResultSet.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E69FC9D1DA88D2300CFB630 /* FMResultSet.m */; };
+		3E69FCA51DA88E2E00CFB630 /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E69FCA41DA88E2E00CFB630 /* libsqlite3.tbd */; };
+		3E69FCAF1DA8979600CFB630 /* FourViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E69FCAE1DA8979600CFB630 /* FourViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -308,6 +317,24 @@
 		3E56250D1DA7A48900C83533 /* TwoNextCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TwoNextCell.m; sourceTree = "<group>"; };
 		3E56250F1DA7AE6200C83533 /* TwoNextDeatil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TwoNextDeatil.h; sourceTree = "<group>"; };
 		3E5625101DA7AE6200C83533 /* TwoNextDeatil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TwoNextDeatil.m; sourceTree = "<group>"; };
+		3E69FC8C1DA88C8B00CFB630 /* UserData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserData.h; sourceTree = "<group>"; };
+		3E69FC8D1DA88C8B00CFB630 /* UserData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserData.m; sourceTree = "<group>"; };
+		3E69FC8F1DA88CFA00CFB630 /* DatabaseManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DatabaseManager.h; sourceTree = "<group>"; };
+		3E69FC901DA88CFA00CFB630 /* DatabaseManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DatabaseManager.m; sourceTree = "<group>"; };
+		3E69FC931DA88D2300CFB630 /* FMDatabase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabase.h; sourceTree = "<group>"; };
+		3E69FC941DA88D2300CFB630 /* FMDatabase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabase.m; sourceTree = "<group>"; };
+		3E69FC951DA88D2300CFB630 /* FMDatabaseAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabaseAdditions.h; sourceTree = "<group>"; };
+		3E69FC961DA88D2300CFB630 /* FMDatabaseAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabaseAdditions.m; sourceTree = "<group>"; };
+		3E69FC971DA88D2300CFB630 /* FMDatabasePool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabasePool.h; sourceTree = "<group>"; };
+		3E69FC981DA88D2300CFB630 /* FMDatabasePool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabasePool.m; sourceTree = "<group>"; };
+		3E69FC991DA88D2300CFB630 /* FMDatabaseQueue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabaseQueue.h; sourceTree = "<group>"; };
+		3E69FC9A1DA88D2300CFB630 /* FMDatabaseQueue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabaseQueue.m; sourceTree = "<group>"; };
+		3E69FC9B1DA88D2300CFB630 /* FMDB.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDB.h; sourceTree = "<group>"; };
+		3E69FC9C1DA88D2300CFB630 /* FMResultSet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMResultSet.h; sourceTree = "<group>"; };
+		3E69FC9D1DA88D2300CFB630 /* FMResultSet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMResultSet.m; sourceTree = "<group>"; };
+		3E69FCA41DA88E2E00CFB630 /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
+		3E69FCAD1DA8979600CFB630 /* FourViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FourViewController.h; sourceTree = "<group>"; };
+		3E69FCAE1DA8979600CFB630 /* FourViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FourViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -315,6 +342,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3E69FCA51DA88E2E00CFB630 /* libsqlite3.tbd in Frameworks */,
 				3E5624A31DA77E5A00C83533 /* libUMSocial_Sdk_4.2.3.a in Frameworks */,
 				3E5624A41DA77E5A00C83533 /* libUMSocial_Sdk_Comment_4.2.3.a in Frameworks */,
 			);
@@ -328,6 +356,7 @@
 			children = (
 				3E5623C11DA77DA900C83533 /* Cook */,
 				3E5623C01DA77DA900C83533 /* Products */,
+				3E69FCA31DA88E2E00CFB630 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -367,6 +396,7 @@
 		3E5623D31DA77E0300C83533 /* Lib */ = {
 			isa = PBXGroup;
 			children = (
+				3E69FC921DA88D2300CFB630 /* fmdb */,
 				3E5624ED1DA79A6400C83533 /* CustomShare */,
 				3E5624861DA77E5A00C83533 /* UMSocial_Sdk_4.2.3 */,
 				3E56245A1DA77E5000C83533 /* SDWebImage */,
@@ -385,6 +415,10 @@
 				3E5624CE1DA77FFB00C83533 /* MainTabBar.m */,
 				3E5624DC1DA781B300C83533 /* MyPrefixHeader.h */,
 				3E5624E01DA784E900C83533 /* NetInterface.h */,
+				3E69FC8C1DA88C8B00CFB630 /* UserData.h */,
+				3E69FC8D1DA88C8B00CFB630 /* UserData.m */,
+				3E69FC8F1DA88CFA00CFB630 /* DatabaseManager.h */,
+				3E69FC901DA88CFA00CFB630 /* DatabaseManager.m */,
 			);
 			path = Other;
 			sourceTree = "<group>";
@@ -419,6 +453,7 @@
 		3E5623D61DA77E0300C83533 /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				3E69FCA91DA8977E00CFB630 /* Four */,
 				3E5623D71DA77E0300C83533 /* One */,
 				3E5623DB1DA77E0300C83533 /* Three */,
 				3E5623DF1DA77E0300C83533 /* Two */,
@@ -770,6 +805,65 @@
 			path = CustomShare;
 			sourceTree = "<group>";
 		};
+		3E69FC921DA88D2300CFB630 /* fmdb */ = {
+			isa = PBXGroup;
+			children = (
+				3E69FC931DA88D2300CFB630 /* FMDatabase.h */,
+				3E69FC941DA88D2300CFB630 /* FMDatabase.m */,
+				3E69FC951DA88D2300CFB630 /* FMDatabaseAdditions.h */,
+				3E69FC961DA88D2300CFB630 /* FMDatabaseAdditions.m */,
+				3E69FC971DA88D2300CFB630 /* FMDatabasePool.h */,
+				3E69FC981DA88D2300CFB630 /* FMDatabasePool.m */,
+				3E69FC991DA88D2300CFB630 /* FMDatabaseQueue.h */,
+				3E69FC9A1DA88D2300CFB630 /* FMDatabaseQueue.m */,
+				3E69FC9B1DA88D2300CFB630 /* FMDB.h */,
+				3E69FC9C1DA88D2300CFB630 /* FMResultSet.h */,
+				3E69FC9D1DA88D2300CFB630 /* FMResultSet.m */,
+			);
+			path = fmdb;
+			sourceTree = "<group>";
+		};
+		3E69FCA31DA88E2E00CFB630 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				3E69FCA41DA88E2E00CFB630 /* libsqlite3.tbd */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		3E69FCA91DA8977E00CFB630 /* Four */ = {
+			isa = PBXGroup;
+			children = (
+				3E69FCAA1DA8977E00CFB630 /* Controller */,
+				3E69FCAB1DA8977E00CFB630 /* Model */,
+				3E69FCAC1DA8977E00CFB630 /* View */,
+			);
+			path = Four;
+			sourceTree = "<group>";
+		};
+		3E69FCAA1DA8977E00CFB630 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				3E69FCAD1DA8979600CFB630 /* FourViewController.h */,
+				3E69FCAE1DA8979600CFB630 /* FourViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		3E69FCAB1DA8977E00CFB630 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		3E69FCAC1DA8977E00CFB630 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -879,9 +973,11 @@
 				3E56244B1DA77E4600C83533 /* AFSecurityPolicy.m in Sources */,
 				3E5624481DA77E4600C83533 /* AFHTTPRequestOperationManager.m in Sources */,
 				3E5624EC1DA7953600C83533 /* ThreeDetailViewController.m in Sources */,
+				3E69FCA01DA88D2300CFB630 /* FMDatabasePool.m in Sources */,
 				3E56247A1DA77E5000C83533 /* SDWebImageCompat.m in Sources */,
 				3E5624471DA77E4600C83533 /* AFHTTPRequestOperation.m in Sources */,
 				3E5623FF1DA77E2F00C83533 /* JHRefreshCommonAniView.m in Sources */,
+				3E69FC911DA88CFA00CFB630 /* DatabaseManager.m in Sources */,
 				3E5624801DA77E5000C83533 /* UIButton+WebCache.m in Sources */,
 				3E5624551DA77E4600C83533 /* UIButton+AFNetworking.m in Sources */,
 				3E5624531DA77E4600C83533 /* UIActivityIndicatorView+AFNetworking.m in Sources */,
@@ -896,12 +992,14 @@
 				3E5624F31DA79A6400C83533 /* ShareView.m in Sources */,
 				3E5624F21DA79A6400C83533 /* ShareScrollView.m in Sources */,
 				3E56241C1DA77E3F00C83533 /* CustomNavigationController.m in Sources */,
+				3E69FC9F1DA88D2300CFB630 /* FMDatabaseAdditions.m in Sources */,
 				3E56247B1DA77E5000C83533 /* SDWebImageDecoder.m in Sources */,
 				3E5623FD1DA77E2F00C83533 /* JHRefreshAmazingAniView.m in Sources */,
 				3E5624031DA77E2F00C83533 /* JHRefreshFooterView.m in Sources */,
 				3E5624511DA77E4600C83533 /* README.md in Sources */,
 				3E5625081DA7A46A00C83533 /* TwoNextViewController.m in Sources */,
 				3E5624831DA77E5000C83533 /* UIImageView+HighlightedWebCache.m in Sources */,
+				3E69FC8E1DA88C8B00CFB630 /* UserData.m in Sources */,
 				3E5624051DA77E2F00C83533 /* UIScrollView+JHExtension.m in Sources */,
 				3E5624521DA77E4600C83533 /* AFNetworkActivityIndicatorManager.m in Sources */,
 				3E56247D1DA77E5000C83533 /* SDWebImageDownloaderOperation.m in Sources */,
@@ -919,10 +1017,13 @@
 				3E56244E1DA77E4600C83533 /* AFURLResponseSerialization.m in Sources */,
 				3E5624131DA77E3800C83533 /* BaseViewController.m in Sources */,
 				3E5624011DA77E2F00C83533 /* JHRefreshBaseView.m in Sources */,
+				3E69FCA11DA88D2300CFB630 /* FMDatabaseQueue.m in Sources */,
 				3E5624161DA77E3800C83533 /* UIView+Addition.m in Sources */,
 				3E5625111DA7AE6200C83533 /* TwoNextDeatil.m in Sources */,
 				3E56247C1DA77E5000C83533 /* SDWebImageDownloader.m in Sources */,
 				3E5623C71DA77DA900C83533 /* AppDelegate.m in Sources */,
+				3E69FCAF1DA8979600CFB630 /* FourViewController.m in Sources */,
+				3E69FC9E1DA88D2300CFB630 /* FMDatabase.m in Sources */,
 				3E5624DB1DA7815200C83533 /* CaiPuListModel.m in Sources */,
 				3E5624811DA77E5000C83533 /* UIImage+GIF.m in Sources */,
 				3E5624D81DA7814800C83533 /* CaiPuListCell.m in Sources */,
@@ -937,6 +1038,7 @@
 				3E56247F1DA77E5000C83533 /* SDWebImagePrefetcher.m in Sources */,
 				3E5624821DA77E5000C83533 /* UIImage+MultiFormat.m in Sources */,
 				3E56250B1DA7A47500C83533 /* TwoNextModel.m in Sources */,
+				3E69FCA21DA88D2300CFB630 /* FMResultSet.m in Sources */,
 				3E5624CF1DA77FFB00C83533 /* MainTabBar.m in Sources */,
 				3E5624841DA77E5000C83533 /* UIImageView+WebCache.m in Sources */,
 				3E56250E1DA7A48900C83533 /* TwoNextCell.m in Sources */,
@@ -1115,6 +1217,7 @@
 				3E5623D21DA77DA900C83533 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

@@ -142,8 +142,6 @@
     if (!cell) {
         cell = [[CaiPuListCell alloc]initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:cellId];
     }
-    cell.selectionStyle = UITableViewCellSelectionStyleNone;
-    
     
     CaiPuListModel *model = self.dataArr[indexPath.row];
     cell.titleLabel.text = model.title;
@@ -155,7 +153,7 @@
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     
     CaiPuListModel *model = [_dataArr objectAtIndex:indexPath.row];
-    OneDetailViewController *detail = [[OneDetailViewController alloc]initWithNumber:model.ID title:model.title];
+    OneDetailViewController *detail = [[OneDetailViewController alloc]initWithNumber:model.ID title:model.title thumb:model.thumb];
     detail.hidesBottomBarWhenPushed = YES;
     [self.navigationController pushViewController:detail animated:YES];
 }
