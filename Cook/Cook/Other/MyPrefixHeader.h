@@ -16,7 +16,6 @@
 #import "UIImageView+WebCache.h"
 #import "AFNetworking.h"
 #import "JHRefresh.h"
-#import "UMSocial.h"
 #import "NetWorking.h"
 #import "NetInterface.h"
 #import "DatabaseManager.h"
