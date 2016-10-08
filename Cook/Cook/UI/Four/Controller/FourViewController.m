@@ -44,16 +44,16 @@
     
     _manger = [DatabaseManager manager];
     _dataArr = [[NSMutableArray alloc] initWithArray:[_manger findAllData]];
-    if (_dataArr.count == 0) {
-        
-        self.image = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"tishi.jpg"]];
-        self.image.frame = CGRectMake(10, 70, ScreenWidth - 20, (ScreenWidth - 20)*0.65);
-        [self.view addSubview:self.image];
-        
-    }else{
+    if (_dataArr.count >= 1){
         
         [self.tableView reloadData];
-    }
+        
+   }else{
+       
+       self.image = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"favEmpty@2x"]];
+       self.image.frame = CGRectMake(10, 70, ScreenWidth - 20, (ScreenWidth - 20)*0.65);
+       [self.view addSubview:self.image];
+   }
 }
 
 - (void)createView {
@@ -93,7 +93,6 @@
     return cell;
 }
 
-
 // 选中cell
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     
@@ -121,6 +120,7 @@
 
 - (void)viewDidAppear:(BOOL)animated {
     
+    [self.image removeFromSuperview];
     [self initData];
 }
 

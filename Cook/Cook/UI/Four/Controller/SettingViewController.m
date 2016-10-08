@@ -11,8 +11,9 @@
 #import "PrivacyViewController.h"
 #import <MessageUI/MessageUI.h>
 #import "AboutMeViewController.h"
+#import <StoreKit/StoreKit.h>
 
-@interface SettingViewController ()<UITableViewDelegate,UITableViewDataSource,MFMailComposeViewControllerDelegate>
+@interface SettingViewController ()<UITableViewDelegate,UITableViewDataSource,MFMailComposeViewControllerDelegate,SKStoreProductViewControllerDelegate>
 
 @property (nonatomic, strong) UITableView *tableView;
 
@@ -69,7 +70,7 @@
         cell = [[SettingCell alloc]initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:cellId];
     }
     cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
-    cell.selectionStyle = UITableViewCellSelectionStyleNone;
+//    cell.selectionStyle = UITableViewCellSelectionStyleNone;
     
     if (indexPath.section == 0) {
         
@@ -168,6 +169,25 @@
             
         }else{
             
+            // 初始化控制器
+            SKStoreProductViewController *storeProductViewContorller = [[SKStoreProductViewController alloc] init];
+            // 设置代理请求为当前控制器本身
+            storeProductViewContorller.delegate = self;
+            // 加载一个新的视图展示
+            [storeProductViewContorller loadProductWithParameters:
+             // appId唯一的
+             @{SKStoreProductParameterITunesItemIdentifier : @"1044575251"} completionBlock:^(BOOL result, NSError *error) {
+                 // block回调
+                 if(error){
+                     NSLog(@"error %@ with userInfo %@",error,[error userInfo]);
+                 }else{
+                     //模态弹出appstore
+                     [self presentViewController:storeProductViewContorller animated:YES completion:^{
+                         
+                     }
+                      ];
+                 }
+             }];
         }
     }
 }
@@ -183,6 +203,12 @@
     [controller dismissViewControllerAnimated:YES completion:nil];
 }
 
+//取消按钮监听
+- (void)productViewControllerDidFinish:(SKStoreProductViewController *)viewController{
+    [self dismissViewControllerAnimated:YES completion:^{
+        
+    }];
+}
 
 
 @end

@@ -122,7 +122,6 @@
 		3E69FCAF1DA8979600CFB630 /* FourViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E69FCAE1DA8979600CFB630 /* FourViewController.m */; };
 		3E69FCB11DA8D72700CFB630 /* icon_setting_n@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E69FCB01DA8D72700CFB630 /* icon_setting_n@2x.png */; };
 		3E69FCB41DA8D87200CFB630 /* SettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E69FCB31DA8D87200CFB630 /* SettingViewController.m */; };
-		3E69FCB61DA8DC3000CFB630 /* tishi.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 3E69FCB51DA8DC3000CFB630 /* tishi.jpg */; };
 		3E69FCB81DA8DF6D00CFB630 /* icon_setting_h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E69FCB71DA8DF6D00CFB630 /* icon_setting_h@2x.png */; };
 		3E69FCBB1DA8E19900CFB630 /* SettingCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E69FCBA1DA8E19900CFB630 /* SettingCell.m */; };
 		3E69FCBD1DA8E34F00CFB630 /* comment_like@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E69FCBC1DA8E34F00CFB630 /* comment_like@2x.png */; };
@@ -133,6 +132,8 @@
 		3E69FCC71DA8E57E00CFB630 /* service.html in Resources */ = {isa = PBXBuildFile; fileRef = 3E69FCC61DA8E57E00CFB630 /* service.html */; };
 		3E69FCCA1DA8E83300CFB630 /* PrivacyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E69FCC91DA8E83300CFB630 /* PrivacyViewController.m */; };
 		3E69FCCD1DA8EC0700CFB630 /* AboutMeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E69FCCC1DA8EC0700CFB630 /* AboutMeViewController.m */; };
+		3E69FCCF1DA8F12700CFB630 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E69FCCE1DA8F12700CFB630 /* StoreKit.framework */; };
+		3E69FCD11DA90DBA00CFB630 /* favEmpty@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E69FCD01DA90DBA00CFB630 /* favEmpty@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -351,7 +352,6 @@
 		3E69FCB01DA8D72700CFB630 /* icon_setting_n@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_setting_n@2x.png"; sourceTree = "<group>"; };
 		3E69FCB21DA8D87200CFB630 /* SettingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingViewController.h; sourceTree = "<group>"; };
 		3E69FCB31DA8D87200CFB630 /* SettingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingViewController.m; sourceTree = "<group>"; };
-		3E69FCB51DA8DC3000CFB630 /* tishi.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = tishi.jpg; sourceTree = "<group>"; };
 		3E69FCB71DA8DF6D00CFB630 /* icon_setting_h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_setting_h@2x.png"; sourceTree = "<group>"; };
 		3E69FCB91DA8E19900CFB630 /* SettingCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingCell.h; sourceTree = "<group>"; };
 		3E69FCBA1DA8E19900CFB630 /* SettingCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingCell.m; sourceTree = "<group>"; };
@@ -365,6 +365,8 @@
 		3E69FCC91DA8E83300CFB630 /* PrivacyViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PrivacyViewController.m; sourceTree = "<group>"; };
 		3E69FCCB1DA8EC0700CFB630 /* AboutMeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AboutMeViewController.h; sourceTree = "<group>"; };
 		3E69FCCC1DA8EC0700CFB630 /* AboutMeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AboutMeViewController.m; sourceTree = "<group>"; };
+		3E69FCCE1DA8F12700CFB630 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
+		3E69FCD01DA90DBA00CFB630 /* favEmpty@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "favEmpty@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -372,6 +374,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3E69FCCF1DA8F12700CFB630 /* StoreKit.framework in Frameworks */,
 				3E69FCA51DA88E2E00CFB630 /* libsqlite3.tbd in Frameworks */,
 				3E5624A31DA77E5A00C83533 /* libUMSocial_Sdk_4.2.3.a in Frameworks */,
 				3E5624A41DA77E5A00C83533 /* libUMSocial_Sdk_Comment_4.2.3.a in Frameworks */,
@@ -456,6 +459,7 @@
 		3E5623D51DA77E0300C83533 /* Res */ = {
 			isa = PBXGroup;
 			children = (
+				3E69FCD01DA90DBA00CFB630 /* favEmpty@2x.png */,
 				3E69FCC61DA8E57E00CFB630 /* service.html */,
 				3E69FCC41DA8E42300CFB630 /* me_setting_points@2x.png */,
 				3E69FCC21DA8E3FB00CFB630 /* me_setting_comment@2x.png */,
@@ -463,7 +467,6 @@
 				3E69FCBE1DA8E39F00CFB630 /* find_culture@2x.png */,
 				3E69FCBC1DA8E34F00CFB630 /* comment_like@2x.png */,
 				3E69FCB71DA8DF6D00CFB630 /* icon_setting_h@2x.png */,
-				3E69FCB51DA8DC3000CFB630 /* tishi.jpg */,
 				3E69FCB01DA8D72700CFB630 /* icon_setting_n@2x.png */,
 				3E5624F41DA79ACA00C83533 /* share_copyLink@2x.png */,
 				3E5624F51DA79ACA00C83533 /* shareView_friend@2x.png */,
@@ -865,6 +868,7 @@
 		3E69FCA31DA88E2E00CFB630 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				3E69FCCE1DA8F12700CFB630 /* StoreKit.framework */,
 				3E69FCA41DA88E2E00CFB630 /* libsqlite3.tbd */,
 			);
 			name = Frameworks;
@@ -991,12 +995,12 @@
 				3E5624C61DA77ECE00C83533 /* 我的B@2x.png in Resources */,
 				3E5624FD1DA79ACA00C83533 /* shareView_qzone@2x.png in Resources */,
 				3E5624C91DA77ED700C83533 /* share@2x.png in Resources */,
-				3E69FCB61DA8DC3000CFB630 /* tishi.jpg in Resources */,
 				3E5623C91DA77DA900C83533 /* Assets.xcassets in Resources */,
 				3E5624AD1DA77E5A00C83533 /* UMSocialSDKResourcesNew.bundle in Resources */,
 				3E69FCBD1DA8E34F00CFB630 /* comment_like@2x.png in Resources */,
 				3E5624A71DA77E5A00C83533 /* UMSCommentInputControlleriPad.xib in Resources */,
 				3E69FCC71DA8E57E00CFB630 /* service.html in Resources */,
+				3E69FCD11DA90DBA00CFB630 /* favEmpty@2x.png in Resources */,
 				3E5624B81DA77EAC00C83533 /* placeholder_Phone@2x.png in Resources */,
 				3E5624BC1DA77EBC00C83533 /* icon_mail_prompt_down@2x.png in Resources */,
 				3E69FCC31DA8E3FB00CFB630 /* me_setting_comment@2x.png in Resources */,
@@ -1227,7 +1231,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/Cook/Other/MyPrefixHeader.h";
 				INFOPLIST_FILE = Cook/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1247,7 +1251,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/Cook/Other/MyPrefixHeader.h";
 				INFOPLIST_FILE = Cook/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",

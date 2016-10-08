@@ -11,7 +11,7 @@
 #import "UserData.h"
 #import "DatabaseManager.h"
 
-@interface OneDetailViewController ()<UIWebViewDelegate>
+@interface OneDetailViewController ()<UIWebViewDelegate,CustomShareViewDelegate>
 
 @property (nonatomic, strong) UIWebView *webView;
 
@@ -103,6 +103,11 @@
     [shareView.cancleButton setTitleColor:[UIColor colorWithRed:184/255.0 green:184/255.0 blue:184/255.0 alpha:1.0] forState:UIControlStateNormal];
     [shareView setShareAry:shareAry delegate:self];
     [self.navigationController.view addSubview:shareView];
+}
+
+-(void)easyCustomShareViewButtonAction:(ShareView *)shareView title:(NSString *)title{
+    
+    NSLog(@"title == %@",title);
 }
 
 -(void)getNetData{
