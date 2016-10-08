@@ -127,7 +127,7 @@
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     
     TwoNextModel *model = _dataArr[indexPath.row];
-    TwoNextDeatil *detail = [[TwoNextDeatil alloc]initWithNumber:model.ID title:model.title];
+    TwoNextDeatil *detail = [[TwoNextDeatil alloc]initWithNumber:model.ID title:model.title thumb:model.thumb];
     [self.navigationController pushViewController:detail animated:YES];
 }
 

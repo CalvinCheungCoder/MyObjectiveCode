@@ -120,6 +120,19 @@
 		3E69FCA21DA88D2300CFB630 /* FMResultSet.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E69FC9D1DA88D2300CFB630 /* FMResultSet.m */; };
 		3E69FCA51DA88E2E00CFB630 /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E69FCA41DA88E2E00CFB630 /* libsqlite3.tbd */; };
 		3E69FCAF1DA8979600CFB630 /* FourViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E69FCAE1DA8979600CFB630 /* FourViewController.m */; };
+		3E69FCB11DA8D72700CFB630 /* icon_setting_n@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E69FCB01DA8D72700CFB630 /* icon_setting_n@2x.png */; };
+		3E69FCB41DA8D87200CFB630 /* SettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E69FCB31DA8D87200CFB630 /* SettingViewController.m */; };
+		3E69FCB61DA8DC3000CFB630 /* tishi.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 3E69FCB51DA8DC3000CFB630 /* tishi.jpg */; };
+		3E69FCB81DA8DF6D00CFB630 /* icon_setting_h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E69FCB71DA8DF6D00CFB630 /* icon_setting_h@2x.png */; };
+		3E69FCBB1DA8E19900CFB630 /* SettingCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E69FCBA1DA8E19900CFB630 /* SettingCell.m */; };
+		3E69FCBD1DA8E34F00CFB630 /* comment_like@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E69FCBC1DA8E34F00CFB630 /* comment_like@2x.png */; };
+		3E69FCBF1DA8E39F00CFB630 /* find_culture@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E69FCBE1DA8E39F00CFB630 /* find_culture@2x.png */; };
+		3E69FCC11DA8E3B900CFB630 /* find_emotion@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E69FCC01DA8E3B900CFB630 /* find_emotion@2x.png */; };
+		3E69FCC31DA8E3FB00CFB630 /* me_setting_comment@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E69FCC21DA8E3FB00CFB630 /* me_setting_comment@2x.png */; };
+		3E69FCC51DA8E42300CFB630 /* me_setting_points@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E69FCC41DA8E42300CFB630 /* me_setting_points@2x.png */; };
+		3E69FCC71DA8E57E00CFB630 /* service.html in Resources */ = {isa = PBXBuildFile; fileRef = 3E69FCC61DA8E57E00CFB630 /* service.html */; };
+		3E69FCCA1DA8E83300CFB630 /* PrivacyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E69FCC91DA8E83300CFB630 /* PrivacyViewController.m */; };
+		3E69FCCD1DA8EC0700CFB630 /* AboutMeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E69FCCC1DA8EC0700CFB630 /* AboutMeViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -335,6 +348,23 @@
 		3E69FCA41DA88E2E00CFB630 /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
 		3E69FCAD1DA8979600CFB630 /* FourViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FourViewController.h; sourceTree = "<group>"; };
 		3E69FCAE1DA8979600CFB630 /* FourViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FourViewController.m; sourceTree = "<group>"; };
+		3E69FCB01DA8D72700CFB630 /* icon_setting_n@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_setting_n@2x.png"; sourceTree = "<group>"; };
+		3E69FCB21DA8D87200CFB630 /* SettingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingViewController.h; sourceTree = "<group>"; };
+		3E69FCB31DA8D87200CFB630 /* SettingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingViewController.m; sourceTree = "<group>"; };
+		3E69FCB51DA8DC3000CFB630 /* tishi.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = tishi.jpg; sourceTree = "<group>"; };
+		3E69FCB71DA8DF6D00CFB630 /* icon_setting_h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_setting_h@2x.png"; sourceTree = "<group>"; };
+		3E69FCB91DA8E19900CFB630 /* SettingCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingCell.h; sourceTree = "<group>"; };
+		3E69FCBA1DA8E19900CFB630 /* SettingCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingCell.m; sourceTree = "<group>"; };
+		3E69FCBC1DA8E34F00CFB630 /* comment_like@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "comment_like@2x.png"; sourceTree = "<group>"; };
+		3E69FCBE1DA8E39F00CFB630 /* find_culture@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "find_culture@2x.png"; sourceTree = "<group>"; };
+		3E69FCC01DA8E3B900CFB630 /* find_emotion@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "find_emotion@2x.png"; sourceTree = "<group>"; };
+		3E69FCC21DA8E3FB00CFB630 /* me_setting_comment@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "me_setting_comment@2x.png"; sourceTree = "<group>"; };
+		3E69FCC41DA8E42300CFB630 /* me_setting_points@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "me_setting_points@2x.png"; sourceTree = "<group>"; };
+		3E69FCC61DA8E57E00CFB630 /* service.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = service.html; sourceTree = "<group>"; };
+		3E69FCC81DA8E83300CFB630 /* PrivacyViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrivacyViewController.h; sourceTree = "<group>"; };
+		3E69FCC91DA8E83300CFB630 /* PrivacyViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PrivacyViewController.m; sourceTree = "<group>"; };
+		3E69FCCB1DA8EC0700CFB630 /* AboutMeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AboutMeViewController.h; sourceTree = "<group>"; };
+		3E69FCCC1DA8EC0700CFB630 /* AboutMeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AboutMeViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -426,6 +456,15 @@
 		3E5623D51DA77E0300C83533 /* Res */ = {
 			isa = PBXGroup;
 			children = (
+				3E69FCC61DA8E57E00CFB630 /* service.html */,
+				3E69FCC41DA8E42300CFB630 /* me_setting_points@2x.png */,
+				3E69FCC21DA8E3FB00CFB630 /* me_setting_comment@2x.png */,
+				3E69FCC01DA8E3B900CFB630 /* find_emotion@2x.png */,
+				3E69FCBE1DA8E39F00CFB630 /* find_culture@2x.png */,
+				3E69FCBC1DA8E34F00CFB630 /* comment_like@2x.png */,
+				3E69FCB71DA8DF6D00CFB630 /* icon_setting_h@2x.png */,
+				3E69FCB51DA8DC3000CFB630 /* tishi.jpg */,
+				3E69FCB01DA8D72700CFB630 /* icon_setting_n@2x.png */,
 				3E5624F41DA79ACA00C83533 /* share_copyLink@2x.png */,
 				3E5624F51DA79ACA00C83533 /* shareView_friend@2x.png */,
 				3E5624F61DA79ACA00C83533 /* shareView_qq@2x.png */,
@@ -846,6 +885,12 @@
 			children = (
 				3E69FCAD1DA8979600CFB630 /* FourViewController.h */,
 				3E69FCAE1DA8979600CFB630 /* FourViewController.m */,
+				3E69FCB21DA8D87200CFB630 /* SettingViewController.h */,
+				3E69FCB31DA8D87200CFB630 /* SettingViewController.m */,
+				3E69FCC81DA8E83300CFB630 /* PrivacyViewController.h */,
+				3E69FCC91DA8E83300CFB630 /* PrivacyViewController.m */,
+				3E69FCCB1DA8EC0700CFB630 /* AboutMeViewController.h */,
+				3E69FCCC1DA8EC0700CFB630 /* AboutMeViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -860,6 +905,8 @@
 		3E69FCAC1DA8977E00CFB630 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				3E69FCB91DA8E19900CFB630 /* SettingCell.h */,
+				3E69FCBA1DA8E19900CFB630 /* SettingCell.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -926,9 +973,12 @@
 			files = (
 				3E5624A91DA77E5A00C83533 /* UMShareEditViewControlleriPad.xib in Resources */,
 				3E5624B31DA77EA200C83533 /* xiaozhishiB@2x.png in Resources */,
+				3E69FCC51DA8E42300CFB630 /* me_setting_points@2x.png in Resources */,
 				3E5624C71DA77ECE00C83533 /* back.png in Resources */,
+				3E69FCC11DA8E3B900CFB630 /* find_emotion@2x.png in Resources */,
 				3E5624B91DA77EAC00C83533 /* placeholder_Phone@3x.png in Resources */,
 				3E5624BD1DA77EBC00C83533 /* icon_mail_prompt_down@3x.png in Resources */,
+				3E69FCB81DA8DF6D00CFB630 /* icon_setting_h@2x.png in Resources */,
 				3E5624AB1DA77E5A00C83533 /* UMSnsAccountViewController.xib in Resources */,
 				3E5624B21DA77EA200C83533 /* xiaozhishiA@2x.png in Resources */,
 				3E5624A61DA77E5A00C83533 /* UMSCommentInputController.xib in Resources */,
@@ -936,19 +986,25 @@
 				3E5624A51DA77E5A00C83533 /* UMSCommentDetailController.xib in Resources */,
 				3E5624FA1DA79ACA00C83533 /* share_copyLink@2x.png in Resources */,
 				3E5624001DA77E2F00C83533 /* JHRefresh.bundle in Resources */,
+				3E69FCB11DA8D72700CFB630 /* icon_setting_n@2x.png in Resources */,
 				3E5624FF1DA79ACA00C83533 /* shareView_wx@2x.png in Resources */,
 				3E5624C61DA77ECE00C83533 /* 我的B@2x.png in Resources */,
 				3E5624FD1DA79ACA00C83533 /* shareView_qzone@2x.png in Resources */,
 				3E5624C91DA77ED700C83533 /* share@2x.png in Resources */,
+				3E69FCB61DA8DC3000CFB630 /* tishi.jpg in Resources */,
 				3E5623C91DA77DA900C83533 /* Assets.xcassets in Resources */,
 				3E5624AD1DA77E5A00C83533 /* UMSocialSDKResourcesNew.bundle in Resources */,
+				3E69FCBD1DA8E34F00CFB630 /* comment_like@2x.png in Resources */,
 				3E5624A71DA77E5A00C83533 /* UMSCommentInputControlleriPad.xib in Resources */,
+				3E69FCC71DA8E57E00CFB630 /* service.html in Resources */,
 				3E5624B81DA77EAC00C83533 /* placeholder_Phone@2x.png in Resources */,
 				3E5624BC1DA77EBC00C83533 /* icon_mail_prompt_down@2x.png in Resources */,
+				3E69FCC31DA8E3FB00CFB630 /* me_setting_comment@2x.png in Resources */,
 				3E5624FC1DA79ACA00C83533 /* shareView_qq@2x.png in Resources */,
 				3E5624A81DA77E5A00C83533 /* UMShareEditViewController.xib in Resources */,
 				3E5624AC1DA77E5A00C83533 /* UMSShareListController.xib in Resources */,
 				3E5624C41DA77ECE00C83533 /* 食谱B@2x.png in Resources */,
+				3E69FCBF1DA8E39F00CFB630 /* find_culture@2x.png in Resources */,
 				3E5624A21DA77E5A00C83533 /* UMSocialLocalizable.strings in Resources */,
 				3E5624501DA77E4600C83533 /* LICENSE in Resources */,
 				3E5624FE1DA79ACA00C83533 /* shareView_wb@2x.png in Resources */,
@@ -979,8 +1035,10 @@
 				3E5623FF1DA77E2F00C83533 /* JHRefreshCommonAniView.m in Sources */,
 				3E69FC911DA88CFA00CFB630 /* DatabaseManager.m in Sources */,
 				3E5624801DA77E5000C83533 /* UIButton+WebCache.m in Sources */,
+				3E69FCCA1DA8E83300CFB630 /* PrivacyViewController.m in Sources */,
 				3E5624551DA77E4600C83533 /* UIButton+AFNetworking.m in Sources */,
 				3E5624531DA77E4600C83533 /* UIActivityIndicatorView+AFNetworking.m in Sources */,
+				3E69FCCD1DA8EC0700CFB630 /* AboutMeViewController.m in Sources */,
 				3E56247E1DA77E5000C83533 /* SDWebImageManager.m in Sources */,
 				3E5624571DA77E4600C83533 /* UIProgressView+AFNetworking.m in Sources */,
 				3E5624851DA77E5000C83533 /* UIView+WebCacheOperation.m in Sources */,
@@ -999,6 +1057,7 @@
 				3E5624511DA77E4600C83533 /* README.md in Sources */,
 				3E5625081DA7A46A00C83533 /* TwoNextViewController.m in Sources */,
 				3E5624831DA77E5000C83533 /* UIImageView+HighlightedWebCache.m in Sources */,
+				3E69FCB41DA8D87200CFB630 /* SettingViewController.m in Sources */,
 				3E69FC8E1DA88C8B00CFB630 /* UserData.m in Sources */,
 				3E5624051DA77E2F00C83533 /* UIScrollView+JHExtension.m in Sources */,
 				3E5624521DA77E4600C83533 /* AFNetworkActivityIndicatorManager.m in Sources */,
@@ -1029,6 +1088,7 @@
 				3E5624D81DA7814800C83533 /* CaiPuListCell.m in Sources */,
 				3E5624151DA77E3800C83533 /* NetWorking.m in Sources */,
 				3E5624CC1DA77F4700C83533 /* OneViewController.m in Sources */,
+				3E69FCBB1DA8E19900CFB630 /* SettingCell.m in Sources */,
 				3E5625021DA79BA000C83533 /* TwoCell.m in Sources */,
 				3E5624E61DA790C900C83533 /* ThreeCell.m in Sources */,
 				3E5624E91DA790D300C83533 /* ThreeModel.m in Sources */,

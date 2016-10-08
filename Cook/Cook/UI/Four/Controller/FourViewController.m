@@ -20,6 +20,8 @@
 
 @property (nonatomic, strong) NSMutableArray *dataArr;
 
+@property (nonatomic, strong) UIImageView *image;
+
 @end
 
 @implementation FourViewController
@@ -27,7 +29,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    UILabel *label = [Factory createLabelWithTitle:@"收藏" frame:CGRectMake(0, 0, 40, 40) textColor:[UIColor whiteColor] fontSize:16.f];
+    UILabel *label = [Factory createLabelWithTitle:@"收藏" frame:CGRectMake(0, 0, 40, 40) textColor:[UIColor whiteColor] fontSize:18.f];
     self.navigationItem.titleView = label;
     
     [self createView];
@@ -42,8 +44,16 @@
     
     _manger = [DatabaseManager manager];
     _dataArr = [[NSMutableArray alloc] initWithArray:[_manger findAllData]];
-    NSLog(@"_dataArr == %@",_dataArr);
-    [self.tableView reloadData];
+    if (_dataArr.count == 0) {
+        
+        self.image = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"tishi.jpg"]];
+        self.image.frame = CGRectMake(10, 70, ScreenWidth - 20, (ScreenWidth - 20)*0.65);
+        [self.view addSubview:self.image];
+        
+    }else{
+        
+        [self.tableView reloadData];
+    }
 }
 
 - (void)createView {
@@ -77,14 +87,14 @@
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
     
     UserData *data = _dataArr[indexPath.row];
-    [cell.ImageView sd_setImageWithURL:[NSURL URLWithString:data.thumb]];
+    [cell.ImageView sd_setImageWithURL:[NSURL URLWithString:data.thumb] placeholderImage:[UIImage imageNamed:@"placeholder_Phone"] completed:nil];
     cell.titleLabel.text = data.title;
     
     return cell;
 }
 
 
-//选中cell
+// 选中cell
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     
     UserData *model =_dataArr[indexPath.row];

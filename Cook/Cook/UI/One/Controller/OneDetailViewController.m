@@ -107,7 +107,6 @@
 -(void)getNetData{
     
     NSString *url = [NSString stringWithFormat:kCaiPuDetail,self.number2];
-    NSLog(@"url == %@",url);
     NSURLRequest *request = [[NSURLRequest alloc]initWithURL:[NSURL URLWithString:url]];
     [self.webView loadRequest:request];
 }
@@ -141,9 +140,6 @@
     
     NSMutableArray *arr = [[NSMutableArray alloc] initWithArray:[_manger findAllData]];
     for (UserData *temp in arr) {
-        
-        NSLog(@"_IDCollect == %@",_number2);
-        NSLog(@"idcollect == %@",temp.idcollect);
         
         if ([_number2 isEqualToString:temp.idcollect]) {
 

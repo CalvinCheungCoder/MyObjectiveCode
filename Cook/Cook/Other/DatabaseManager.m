@@ -75,11 +75,11 @@ static DatabaseManager *manager = nil;
         int result = [_dataBase open];
         if (result != YES)
         {
-            NSLog(@"打开数据库失败");
+//            NSLog(@"打开数据库失败");
             return;
         }
         [_dataBase executeUpdate:sql,data.title, data.thumb, data.idcollect];
-        NSLog(@"插入数据成功");
+//        NSLog(@"插入数据成功");
         [_dataBase close];
     }
 }

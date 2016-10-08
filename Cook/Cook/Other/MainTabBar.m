@@ -12,6 +12,7 @@
 #import "ThreeViewController.h"
 #import "CustomNavigationController.h"
 #import "FourViewController.h"
+#import "SettingViewController.h"
 
 @interface MainTabBar ()
 
@@ -49,7 +50,11 @@
     CustomNavigationController *navCollec = [[CustomNavigationController alloc] initWithRootViewController:coller];
     navCollec.tabBarItem = [[UITabBarItem alloc]initWithTitle:@"收藏" image:[[UIImage imageNamed:@"我的A"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]selectedImage:[[UIImage imageNamed:@"我的B"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]];
     
-    self.viewControllers = @[navMenu,navSpecial,navknowledge,navCollec];
+    SettingViewController *setting = [[SettingViewController alloc]init];
+    CustomNavigationController *setingNav = [[CustomNavigationController alloc]initWithRootViewController:setting];
+    setingNav.tabBarItem = [[UITabBarItem alloc]initWithTitle:@"设置" image:[[UIImage imageNamed:@"icon_setting_n@2x"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]selectedImage:[[UIImage imageNamed:@"icon_setting_h@2x"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]];
+    
+    self.viewControllers = @[navMenu,navSpecial,navknowledge,navCollec,setingNav];
 }
 
 

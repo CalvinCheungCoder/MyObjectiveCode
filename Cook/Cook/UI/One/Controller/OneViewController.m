@@ -35,7 +35,7 @@
     // Do any additional setup after loading the view.
     
     self.view.backgroundColor = [UIColor whiteColor];
-    _label = [Factory createLabelWithTitle:@"营养粥谱" frame:CGRectMake(0, 0, 40, 40) textColor:[UIColor whiteColor] fontSize:16.f];
+    _label = [Factory createLabelWithTitle:@"营养粥谱" frame:CGRectMake(0, 0, 40, 40) textColor:[UIColor whiteColor] fontSize:18.f];
     self.navigationItem.titleView = _label;
     
     _dataArr = [[NSMutableArray alloc]init];

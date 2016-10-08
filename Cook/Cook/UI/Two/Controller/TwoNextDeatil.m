@@ -21,12 +21,13 @@
 
 @implementation TwoNextDeatil
 
-- (instancetype)initWithNumber:(NSString *)number title:(NSString *)title
+- (instancetype)initWithNumber:(NSString *)number title:(NSString *)title thumb:(NSString *)thumb
 {
     self = [super init];
     if (self) {
         self.title2 = title;
         self.number2 = number;
+        self.thumbCollect = thumb;
     }
     return self;
 }
@@ -136,10 +137,6 @@
     
     NSMutableArray *arr = [[NSMutableArray alloc] initWithArray:[_manger findAllData]];
     for (UserData *temp in arr) {
-        
-        NSLog(@"_IDCollect == %@",_number2);
-        NSLog(@"idcollect == %@",temp.idcollect);
-        
         if ([_number2 isEqualToString:temp.idcollect]) {
             
             NSString *str1 = @"var bookmark = document.getElementById('bookmark');" "bookmark.innerHTML = '已收藏';";

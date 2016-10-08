@@ -32,7 +32,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
-    UILabel *label = [Factory createLabelWithTitle:@"小知识" frame:CGRectMake(0, 0, 40, 40) textColor:[UIColor whiteColor] fontSize:16.f];
+    UILabel *label = [Factory createLabelWithTitle:@"小知识" frame:CGRectMake(0, 0, 40, 40) textColor:[UIColor whiteColor] fontSize:18.f];
     self.navigationItem.titleView = label;
     
     _dataArr = [[NSMutableArray alloc]init];
