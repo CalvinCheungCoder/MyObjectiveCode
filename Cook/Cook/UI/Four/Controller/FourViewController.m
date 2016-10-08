@@ -51,7 +51,7 @@
    }else{
        
        self.image = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"favEmpty@2x"]];
-       self.image.frame = CGRectMake(10, 70, ScreenWidth - 20, (ScreenWidth - 20)*0.65);
+       self.image.frame = CGRectMake(30, 75, ScreenWidth - 60, (ScreenWidth - 60)*0.6);
        [self.view addSubview:self.image];
    }
 }
