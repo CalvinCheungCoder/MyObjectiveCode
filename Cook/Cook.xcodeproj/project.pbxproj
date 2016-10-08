@@ -139,6 +139,11 @@
 		3E69FD101DA9162C00CFB630 /* UMSocialShareSelectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E69FCFE1DA9162C00CFB630 /* UMSocialShareSelectionViewCell.m */; };
 		3E69FD111DA9162C00CFB630 /* UMSocialShareSelectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3E69FCFF1DA9162C00CFB630 /* UMSocialShareSelectionViewCell.xib */; };
 		3E69FD121DA9162C00CFB630 /* UMSocialUIManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E69FD011DA9162C00CFB630 /* UMSocialUIManager.m */; };
+		3E69FD141DA9177000CFB630 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E69FD131DA9177000CFB630 /* SystemConfiguration.framework */; };
+		3E69FD161DA9177A00CFB630 /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E69FD151DA9177A00CFB630 /* CoreTelephony.framework */; };
+		3E69FD181DA9179200CFB630 /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E69FD171DA9179200CFB630 /* libc++.tbd */; };
+		3E69FD1A1DA9179C00CFB630 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E69FD191DA9179C00CFB630 /* libz.tbd */; };
+		3E69FD1C1DA917B300CFB630 /* ImageIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E69FD1B1DA917B300CFB630 /* ImageIO.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -386,6 +391,11 @@
 		3E69FCFF1DA9162C00CFB630 /* UMSocialShareSelectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UMSocialShareSelectionViewCell.xib; sourceTree = "<group>"; };
 		3E69FD001DA9162C00CFB630 /* UMSocialUIManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UMSocialUIManager.h; sourceTree = "<group>"; };
 		3E69FD011DA9162C00CFB630 /* UMSocialUIManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UMSocialUIManager.m; sourceTree = "<group>"; };
+		3E69FD131DA9177000CFB630 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		3E69FD151DA9177A00CFB630 /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
+		3E69FD171DA9179200CFB630 /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
+		3E69FD191DA9179C00CFB630 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
+		3E69FD1B1DA917B300CFB630 /* ImageIO.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ImageIO.framework; path = System/Library/Frameworks/ImageIO.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -393,6 +403,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3E69FD1C1DA917B300CFB630 /* ImageIO.framework in Frameworks */,
+				3E69FD1A1DA9179C00CFB630 /* libz.tbd in Frameworks */,
+				3E69FD181DA9179200CFB630 /* libc++.tbd in Frameworks */,
+				3E69FD161DA9177A00CFB630 /* CoreTelephony.framework in Frameworks */,
+				3E69FD141DA9177000CFB630 /* SystemConfiguration.framework in Frameworks */,
 				3E69FD091DA9162C00CFB630 /* UMSocialCore.framework in Frameworks */,
 				3E69FCCF1DA8F12700CFB630 /* StoreKit.framework in Frameworks */,
 				3E69FD051DA9162C00CFB630 /* libSocialWeChat.a in Frameworks */,
@@ -845,6 +860,11 @@
 		3E69FCA31DA88E2E00CFB630 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				3E69FD1B1DA917B300CFB630 /* ImageIO.framework */,
+				3E69FD191DA9179C00CFB630 /* libz.tbd */,
+				3E69FD171DA9179200CFB630 /* libc++.tbd */,
+				3E69FD151DA9177A00CFB630 /* CoreTelephony.framework */,
+				3E69FD131DA9177000CFB630 /* SystemConfiguration.framework */,
 				3E69FCCE1DA8F12700CFB630 /* StoreKit.framework */,
 				3E69FCA41DA88E2E00CFB630 /* libsqlite3.tbd */,
 			);
@@ -1306,6 +1326,7 @@
 					"$(PROJECT_DIR)/Cook/Lib/UMSocial/SocialLibraries/Sina",
 					"$(PROJECT_DIR)/Cook/Lib/UMSocial/SocialLibraries/WeChat",
 				);
+				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = zhangdinghao.Cook;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -1333,6 +1354,7 @@
 					"$(PROJECT_DIR)/Cook/Lib/UMSocial/SocialLibraries/Sina",
 					"$(PROJECT_DIR)/Cook/Lib/UMSocial/SocialLibraries/WeChat",
 				);
+				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = zhangdinghao.Cook;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
