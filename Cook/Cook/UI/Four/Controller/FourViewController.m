@@ -74,6 +74,8 @@
     if (!cell) {
         cell = [[CaiPuListCell alloc]initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:CellID];
     }
+    cell.selectionStyle = UITableViewCellSelectionStyleNone;
+    
     UserData *data = _dataArr[indexPath.row];
     [cell.ImageView sd_setImageWithURL:[NSURL URLWithString:data.thumb]];
     cell.titleLabel.text = data.title;

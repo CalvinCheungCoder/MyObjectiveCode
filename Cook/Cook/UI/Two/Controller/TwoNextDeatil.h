@@ -13,6 +13,11 @@
 @property (nonatomic,copy) NSString *number2;
 @property (nonatomic,copy) NSString *title2;
 
+@property (nonatomic, copy) NSString *str;
+@property (nonatomic, copy) NSString *titleCollect;
+@property (nonatomic, copy) NSString *thumbCollect;
+@property (nonatomic, copy) NSString *IDCollect;
+
 -(instancetype)initWithNumber:(NSString *)number title:(NSString *)title;
 
 @end

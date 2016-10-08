@@ -142,6 +142,7 @@
     if (!cell) {
         cell = [[CaiPuListCell alloc]initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:cellId];
     }
+    cell.selectionStyle = UITableViewCellSelectionStyleNone;
     
     CaiPuListModel *model = self.dataArr[indexPath.row];
     cell.titleLabel.text = model.title;

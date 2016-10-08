@@ -13,6 +13,10 @@
 
 @property (nonatomic,strong) UIWebView *webView;
 
+@property (nonatomic, strong) DatabaseManager *manger;
+
+@property (nonatomic, copy) NSString *collectStr;
+
 @end
 
 @implementation TwoNextDeatil
@@ -31,6 +35,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     self.view.backgroundColor = [UIColor whiteColor];
+    self.manger = [DatabaseManager manager];
     
     UILabel *label = [Factory createLabelWithTitle:@"详细做法" frame:CGRectMake(0, 0, 40, 40) textColor:[UIColor whiteColor] fontSize:16.f];
     self.navigationItem.titleView = label;
@@ -104,15 +109,48 @@
 
 #pragma mark - UIWebViewDelegate
 -(BOOL)webView:(UIWebView *)webView shouldStartLoadWithRequest:(NSURLRequest *)request navigationType:(UIWebViewNavigationType)navigationType{
-    NSRange range = [request.URL.absoluteString rangeOfString:@"baidu"];
-    if (range.location != NSNotFound  ) {
-        return NO;
+    
+    switch (navigationType)
+    {
+            //点击连接
+        case UIWebViewNavigationTypeLinkClicked:
+        {
+            if ([request.URL.absoluteString isEqualToString:@"bookmark://"]) {
+                [self specialData];
+            }
+        }
+            break;
+        default:
+            break;
     }
     return YES;
+    
 }
 
--(void)specialData{
+- (void)specialData {
     
+    UserData *data = [[UserData alloc] init];
+    data.title = _title2;
+    data.thumb = _thumbCollect;
+    data.idcollect = _number2;
+    
+    NSMutableArray *arr = [[NSMutableArray alloc] initWithArray:[_manger findAllData]];
+    for (UserData *temp in arr) {
+        
+        NSLog(@"_IDCollect == %@",_number2);
+        NSLog(@"idcollect == %@",temp.idcollect);
+        
+        if ([_number2 isEqualToString:temp.idcollect]) {
+            
+            NSString *str1 = @"var bookmark = document.getElementById('bookmark');" "bookmark.innerHTML = '已收藏';";
+            [self.webView stringByEvaluatingJavaScriptFromString:str1];
+            return;
+        }
+    }
+    
+    [self.manger insertCollecInformation:data];
+    NSString *str1 = @"var bookmark = document.getElementById('bookmark');" "bookmark.innerHTML = '已收藏';";
+    [self.webView stringByEvaluatingJavaScriptFromString:str1];
 }
 
 -(void)webView:(UIWebView *)webView didFailLoadWithError:(NSError *)error{
