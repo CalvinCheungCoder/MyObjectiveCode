@@ -45,6 +45,7 @@
     self.navigationItem.titleView = label;
     
     self.webView = [[UIWebView alloc]initWithFrame:self.view.bounds];
+    self.webView.opaque = NO;
     self.webView.backgroundColor = [UIColor whiteColor];
     self.webView.delegate = self;
     [self.view addSubview:self.webView];
@@ -153,17 +154,5 @@
     NSString *str1 = @"var bookmark = document.getElementById('bookmark');" "bookmark.innerHTML = '已收藏';";
     [self.webView stringByEvaluatingJavaScriptFromString:str1];
 }
-
-
--(void)webView:(UIWebView *)webView didFailLoadWithError:(NSError *)error{
-    
-}
-
--(void)webViewDidFinishLoad:(UIWebView *)webView{
-    
-//    NSString *jsCode = [NSString stringWithFormat:@"alert(1);"];
-//    [_webView stringByEvaluatingJavaScriptFromString:jsCode];
-}
-
 
 @end

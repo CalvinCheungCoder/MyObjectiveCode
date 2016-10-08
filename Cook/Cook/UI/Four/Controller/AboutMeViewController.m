@@ -26,6 +26,7 @@
     self.navigationItem.titleView = label;
     
     self.webView = [[UIWebView alloc]initWithFrame:self.view.bounds];
+    self.webView.opaque = NO;
     self.webView.backgroundColor = [UIColor whiteColor];
     [self.view addSubview:self.webView];
     

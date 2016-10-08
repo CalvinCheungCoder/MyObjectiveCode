@@ -23,7 +23,7 @@
     self.navigationItem.titleView = label;
     
     UIWebView *webView = [[UIWebView alloc]initWithFrame:self.view.bounds];
-    webView.scrollView.backgroundColor = [UIColor whiteColor];
+    webView.opaque = NO;
     webView.backgroundColor = [UIColor whiteColor];
     NSString *path = [[NSBundle mainBundle] bundlePath];
     NSURL *baseURL = [NSURL fileURLWithPath:path];
