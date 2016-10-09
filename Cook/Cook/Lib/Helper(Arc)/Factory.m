@@ -20,7 +20,7 @@
     button.layer.cornerRadius = 3.f;
     button.layer.masksToBounds = YES;
     
-    button.backgroundColor = [UIColor colorWithRed:0.3 green:0.8f blue:1.f alpha:1.f];
+//    button.backgroundColor = [UIColor colorWithRed:0.3 green:0.8f blue:1.f alpha:1.f];
     [button setTitle:title forState:UIControlStateNormal];
     [button addTarget:target action:selector forControlEvents:UIControlEventTouchUpInside];
     return button;

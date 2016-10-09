@@ -144,6 +144,13 @@
 		3E69FD181DA9179200CFB630 /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E69FD171DA9179200CFB630 /* libc++.tbd */; };
 		3E69FD1A1DA9179C00CFB630 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E69FD191DA9179C00CFB630 /* libz.tbd */; };
 		3E69FD1C1DA917B300CFB630 /* ImageIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E69FD1B1DA917B300CFB630 /* ImageIO.framework */; };
+		3EADCB3F1DAA356100417F8C /* UIButton+XHEnlarged.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EADCB341DAA356100417F8C /* UIButton+XHEnlarged.m */; };
+		3EADCB401DAA356100417F8C /* UIImage+XHGIF.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EADCB361DAA356100417F8C /* UIImage+XHGIF.m */; };
+		3EADCB411DAA356100417F8C /* UIImageView+XHWebCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EADCB381DAA356100417F8C /* UIImageView+XHWebCache.m */; };
+		3EADCB421DAA356100417F8C /* XHImageCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EADCB3A1DAA356100417F8C /* XHImageCache.m */; };
+		3EADCB431DAA356100417F8C /* XHLaunchAd.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EADCB3C1DAA356100417F8C /* XHLaunchAd.m */; };
+		3EADCB441DAA356100417F8C /* XHWebImageDownload.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EADCB3E1DAA356100417F8C /* XHWebImageDownload.m */; };
+		3EADCB471DAA35CE00417F8C /* WebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EADCB461DAA35CE00417F8C /* WebViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -396,6 +403,20 @@
 		3E69FD171DA9179200CFB630 /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
 		3E69FD191DA9179C00CFB630 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
 		3E69FD1B1DA917B300CFB630 /* ImageIO.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ImageIO.framework; path = System/Library/Frameworks/ImageIO.framework; sourceTree = SDKROOT; };
+		3EADCB331DAA356100417F8C /* UIButton+XHEnlarged.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+XHEnlarged.h"; sourceTree = "<group>"; };
+		3EADCB341DAA356100417F8C /* UIButton+XHEnlarged.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+XHEnlarged.m"; sourceTree = "<group>"; };
+		3EADCB351DAA356100417F8C /* UIImage+XHGIF.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+XHGIF.h"; sourceTree = "<group>"; };
+		3EADCB361DAA356100417F8C /* UIImage+XHGIF.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+XHGIF.m"; sourceTree = "<group>"; };
+		3EADCB371DAA356100417F8C /* UIImageView+XHWebCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImageView+XHWebCache.h"; sourceTree = "<group>"; };
+		3EADCB381DAA356100417F8C /* UIImageView+XHWebCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+XHWebCache.m"; sourceTree = "<group>"; };
+		3EADCB391DAA356100417F8C /* XHImageCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XHImageCache.h; sourceTree = "<group>"; };
+		3EADCB3A1DAA356100417F8C /* XHImageCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XHImageCache.m; sourceTree = "<group>"; };
+		3EADCB3B1DAA356100417F8C /* XHLaunchAd.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XHLaunchAd.h; sourceTree = "<group>"; };
+		3EADCB3C1DAA356100417F8C /* XHLaunchAd.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XHLaunchAd.m; sourceTree = "<group>"; };
+		3EADCB3D1DAA356100417F8C /* XHWebImageDownload.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XHWebImageDownload.h; sourceTree = "<group>"; };
+		3EADCB3E1DAA356100417F8C /* XHWebImageDownload.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XHWebImageDownload.m; sourceTree = "<group>"; };
+		3EADCB451DAA35CE00417F8C /* WebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebViewController.h; sourceTree = "<group>"; };
+		3EADCB461DAA35CE00417F8C /* WebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WebViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -448,6 +469,8 @@
 				3E5623D61DA77E0300C83533 /* UI */,
 				3E5623C51DA77DA900C83533 /* AppDelegate.h */,
 				3E5623C61DA77DA900C83533 /* AppDelegate.m */,
+				3EADCB451DAA35CE00417F8C /* WebViewController.h */,
+				3EADCB461DAA35CE00417F8C /* WebViewController.m */,
 				3E5623C81DA77DA900C83533 /* Assets.xcassets */,
 				3E5623CA1DA77DA900C83533 /* LaunchScreen.storyboard */,
 				3E5623CD1DA77DA900C83533 /* Info.plist */,
@@ -467,6 +490,7 @@
 		3E5623D31DA77E0300C83533 /* Lib */ = {
 			isa = PBXGroup;
 			children = (
+				3EADCB321DAA356100417F8C /* XHLaunchAd */,
 				3E69FCD51DA9162C00CFB630 /* UMSocial */,
 				3E69FC921DA88D2300CFB630 /* fmdb */,
 				3E5624ED1DA79A6400C83533 /* CustomShare */,
@@ -1005,6 +1029,25 @@
 			path = Resource;
 			sourceTree = "<group>";
 		};
+		3EADCB321DAA356100417F8C /* XHLaunchAd */ = {
+			isa = PBXGroup;
+			children = (
+				3EADCB331DAA356100417F8C /* UIButton+XHEnlarged.h */,
+				3EADCB341DAA356100417F8C /* UIButton+XHEnlarged.m */,
+				3EADCB351DAA356100417F8C /* UIImage+XHGIF.h */,
+				3EADCB361DAA356100417F8C /* UIImage+XHGIF.m */,
+				3EADCB371DAA356100417F8C /* UIImageView+XHWebCache.h */,
+				3EADCB381DAA356100417F8C /* UIImageView+XHWebCache.m */,
+				3EADCB391DAA356100417F8C /* XHImageCache.h */,
+				3EADCB3A1DAA356100417F8C /* XHImageCache.m */,
+				3EADCB3B1DAA356100417F8C /* XHLaunchAd.h */,
+				3EADCB3C1DAA356100417F8C /* XHLaunchAd.m */,
+				3EADCB3D1DAA356100417F8C /* XHWebImageDownload.h */,
+				3EADCB3E1DAA356100417F8C /* XHWebImageDownload.m */,
+			);
+			path = XHLaunchAd;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -1133,12 +1176,15 @@
 				3E69FD101DA9162C00CFB630 /* UMSocialShareSelectionViewCell.m in Sources */,
 				3E56247E1DA77E5000C83533 /* SDWebImageManager.m in Sources */,
 				3E5624571DA77E4600C83533 /* UIProgressView+AFNetworking.m in Sources */,
+				3EADCB471DAA35CE00417F8C /* WebViewController.m in Sources */,
 				3E5624851DA77E5000C83533 /* UIView+WebCacheOperation.m in Sources */,
+				3EADCB411DAA356100417F8C /* UIImageView+XHWebCache.m in Sources */,
 				3E5624D21DA7802800C83533 /* ThreeViewController.m in Sources */,
 				3E56241D1DA77E3F00C83533 /* UIViewController+CustomNavigationExtension.m in Sources */,
 				3E5625051DA79BAA00C83533 /* TwoModel.m in Sources */,
 				3E5624E31DA78BF000C83533 /* OneDetailViewController.m in Sources */,
 				3E5624D51DA7802F00C83533 /* TwoViewController.m in Sources */,
+				3EADCB441DAA356100417F8C /* XHWebImageDownload.m in Sources */,
 				3E5624F31DA79A6400C83533 /* ShareView.m in Sources */,
 				3E5624F21DA79A6400C83533 /* ShareScrollView.m in Sources */,
 				3E56241C1DA77E3F00C83533 /* CustomNavigationController.m in Sources */,
@@ -1155,10 +1201,12 @@
 				3E5624521DA77E4600C83533 /* AFNetworkActivityIndicatorManager.m in Sources */,
 				3E56247D1DA77E5000C83533 /* SDWebImageDownloaderOperation.m in Sources */,
 				3E5624541DA77E4600C83533 /* UIAlertView+AFNetworking.m in Sources */,
+				3EADCB401DAA356100417F8C /* UIImage+XHGIF.m in Sources */,
 				3E5624141DA77E3800C83533 /* Factory.m in Sources */,
 				3E5624071DA77E2F00C83533 /* UIView+JHExtension.m in Sources */,
 				3E5624491DA77E4600C83533 /* AFHTTPSessionManager.m in Sources */,
 				3E5624591DA77E4600C83533 /* UIWebView+AFNetworking.m in Sources */,
+				3EADCB431DAA356100417F8C /* XHLaunchAd.m in Sources */,
 				3E5624021DA77E2F00C83533 /* JHRefreshConfig.m in Sources */,
 				3E5624061DA77E2F00C83533 /* UIScrollView+JHRefresh.m in Sources */,
 				3E5624581DA77E4600C83533 /* UIRefreshControl+AFNetworking.m in Sources */,
@@ -1171,6 +1219,7 @@
 				3E69FCA11DA88D2300CFB630 /* FMDatabaseQueue.m in Sources */,
 				3E5624161DA77E3800C83533 /* UIView+Addition.m in Sources */,
 				3E5625111DA7AE6200C83533 /* TwoNextDeatil.m in Sources */,
+				3EADCB3F1DAA356100417F8C /* UIButton+XHEnlarged.m in Sources */,
 				3E56247C1DA77E5000C83533 /* SDWebImageDownloader.m in Sources */,
 				3E5623C71DA77DA900C83533 /* AppDelegate.m in Sources */,
 				3E69FCAF1DA8979600CFB630 /* FourViewController.m in Sources */,
@@ -1196,6 +1245,7 @@
 				3E5624CF1DA77FFB00C83533 /* MainTabBar.m in Sources */,
 				3E5624841DA77E5000C83533 /* UIImageView+WebCache.m in Sources */,
 				3E56250E1DA7A48900C83533 /* TwoNextCell.m in Sources */,
+				3EADCB421DAA356100417F8C /* XHImageCache.m in Sources */,
 				3E5624561DA77E4600C83533 /* UIImageView+AFNetworking.m in Sources */,
 				3E5623C41DA77DA900C83533 /* main.m in Sources */,
 				3E69FD121DA9162C00CFB630 /* UMSocialUIManager.m in Sources */,
