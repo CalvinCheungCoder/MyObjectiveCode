@@ -30,6 +30,9 @@
     [self.window makeKeyAndVisible];
     
     
+    // UMAppKey
+    // 5608f17267e58e464e0033da
+    
     // 打开调试日志
     [[UMSocialManager defaultManager] openLog:YES];
     

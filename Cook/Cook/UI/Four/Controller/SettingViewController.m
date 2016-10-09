@@ -159,6 +159,8 @@
                 [self presentViewController:mail animated:YES completion:nil];
             }else {
                 
+                UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"提示" message:@"您的设备不支持邮件功能，反馈可以在 AppStore 进行哦！" delegate:self cancelButtonTitle:@"取消" otherButtonTitles:@"确定", nil];
+                [alert show];
             }
             
         }else if (indexPath.row == 2){

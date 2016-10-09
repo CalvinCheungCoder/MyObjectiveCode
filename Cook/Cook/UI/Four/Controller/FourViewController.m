@@ -51,7 +51,7 @@
    }else{
        
        self.image = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"favEmpty@2x"]];
-       self.image.frame = CGRectMake(30, 75, ScreenWidth - 60, (ScreenWidth - 60)*0.6);
+       self.image.frame = CGRectMake(50, 75, ScreenWidth - 100, (ScreenWidth - 100)*0.6);
        [self.view addSubview:self.image];
    }
 }
@@ -61,7 +61,7 @@
     _tableView = [[UITableView alloc] initWithFrame:self.view.bounds style:UITableViewStylePlain];
     _tableView.delegate = self;
     _tableView.dataSource = self;
-    _tableView.rowHeight = 190;
+    _tableView.rowHeight = ScreenWidth*9/20;
     _tableView.separatorStyle = UITableViewCellSelectionStyleNone;
     [self.view addSubview:_tableView];
 }

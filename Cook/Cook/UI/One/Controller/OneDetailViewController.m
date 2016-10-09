@@ -64,12 +64,8 @@
                             @"title":@"微信"},
                           @{@"image":@"shareView_friend@2x",
                             @"title":@"朋友圈"},
-                          @{@"image":@"shareView_qq@2x",
-                            @"title":@"QQ"},
                           @{@"image":@"shareView_wb@2x",
                             @"title":@"新浪微博"},
-                          @{@"image":@"shareView_qzone@2x",
-                            @"title":@"QQ空间"},
                           @{@"image":@"share_copyLink",
                             @"title":@"复制链接"}];
     
