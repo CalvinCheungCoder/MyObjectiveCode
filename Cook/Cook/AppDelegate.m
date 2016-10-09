@@ -130,7 +130,7 @@
         
         if(imageData)
         {
-            imageData(ImgUrlString2,5,@"http://www.baidu.com");
+            imageData(ImgUrlString1,5,@"http://www.baidu.com");
         }
     });
 }
