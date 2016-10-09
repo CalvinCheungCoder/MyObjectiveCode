@@ -9,7 +9,7 @@
 #import "TwoNextDeatil.h"
 #import "ShareView.h"
 
-@interface TwoNextDeatil ()<UIWebViewDelegate>
+@interface TwoNextDeatil ()<UIWebViewDelegate,CustomShareViewDelegate>
 
 @property (nonatomic,strong) UIWebView *webView;
 
@@ -60,12 +60,8 @@
                             @"title":@"微信"},
                           @{@"image":@"shareView_friend@2x",
                             @"title":@"朋友圈"},
-                          @{@"image":@"shareView_qq@2x",
-                            @"title":@"QQ"},
                           @{@"image":@"shareView_wb@2x",
                             @"title":@"新浪微博"},
-                          @{@"image":@"shareView_qzone@2x",
-                            @"title":@"QQ空间"},
                           @{@"image":@"share_copyLink",
                             @"title":@"复制链接"}];
     
@@ -99,6 +95,28 @@
     [shareView.cancleButton setTitleColor:[UIColor colorWithRed:184/255.0 green:184/255.0 blue:184/255.0 alpha:1.0] forState:UIControlStateNormal];
     [shareView setShareAry:shareAry delegate:self];
     [self.navigationController.view addSubview:shareView];
+}
+
+-(void)easyCustomShareViewButtonAction:(ShareView *)shareView title:(NSString *)title{
+    
+    if ([title isEqualToString:@"微信"]) {
+        
+    }else if ([title isEqualToString:@"朋友圈"]){
+        
+    }else if ([title isEqualToString:@"新浪微博"]){
+        
+    }else{
+        
+        // 复制链接
+        UIPasteboard *pasteboard = [UIPasteboard generalPasteboard];
+        pasteboard.string = [NSString stringWithFormat:kZhuanTiDeatail,self.number2];
+        
+        [SVProgressHUD setDefaultStyle:SVProgressHUDStyleDark];
+        // 显示文字
+        [SVProgressHUD showSuccessWithStatus:@"链接已经复制"];
+        // 整个后面的背景选择
+        [SVProgressHUD setDefaultMaskType:SVProgressHUDMaskTypeBlack];
+    }
 }
 
 -(void)getNetData{

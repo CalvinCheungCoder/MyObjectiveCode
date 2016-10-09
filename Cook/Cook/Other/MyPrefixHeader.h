@@ -19,5 +19,6 @@
 #import "NetWorking.h"
 #import "NetInterface.h"
 #import "DatabaseManager.h"
+#import "SVProgressHUD.h"
 
 #endif /* MyPrefixHeader_h */

@@ -19,6 +19,8 @@
 
 @property (nonatomic, copy) NSString *collectStr;
 
+@property(nonatomic,retain) NSTimer *timer;
+
 @end
 
 @implementation OneDetailViewController
@@ -103,8 +105,26 @@
 
 -(void)easyCustomShareViewButtonAction:(ShareView *)shareView title:(NSString *)title{
     
-    NSLog(@"title == %@",title);
+    if ([title isEqualToString:@"微信"]) {
+        
+    }else if ([title isEqualToString:@"朋友圈"]){
+        
+    }else if ([title isEqualToString:@"新浪微博"]){
+        
+    }else{
+        
+        // 复制链接
+        UIPasteboard *pasteboard = [UIPasteboard generalPasteboard];
+        pasteboard.string = [NSString stringWithFormat:kCaiPuDetail,self.number2];
+        
+        [SVProgressHUD setDefaultStyle:SVProgressHUDStyleDark];
+        // 显示文字
+        [SVProgressHUD showSuccessWithStatus:@"链接已经复制"];
+        // 整个后面的背景选择
+        [SVProgressHUD setDefaultMaskType:SVProgressHUDMaskTypeBlack];
+    }
 }
+
 
 -(void)getNetData{
     

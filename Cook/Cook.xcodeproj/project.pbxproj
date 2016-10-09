@@ -151,6 +151,11 @@
 		3EADCB431DAA356100417F8C /* XHLaunchAd.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EADCB3C1DAA356100417F8C /* XHLaunchAd.m */; };
 		3EADCB441DAA356100417F8C /* XHWebImageDownload.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EADCB3E1DAA356100417F8C /* XHWebImageDownload.m */; };
 		3EADCB471DAA35CE00417F8C /* WebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EADCB461DAA35CE00417F8C /* WebViewController.m */; };
+		3EADCB531DAA4E8E00417F8C /* SVIndefiniteAnimatedView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EADCB4A1DAA4E8E00417F8C /* SVIndefiniteAnimatedView.m */; };
+		3EADCB541DAA4E8E00417F8C /* SVProgressAnimatedView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EADCB4C1DAA4E8E00417F8C /* SVProgressAnimatedView.m */; };
+		3EADCB551DAA4E8E00417F8C /* SVProgressHUD.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 3EADCB4E1DAA4E8E00417F8C /* SVProgressHUD.bundle */; };
+		3EADCB561DAA4E8E00417F8C /* SVProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EADCB501DAA4E8E00417F8C /* SVProgressHUD.m */; };
+		3EADCB571DAA4E8E00417F8C /* SVRadialGradientLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EADCB521DAA4E8E00417F8C /* SVRadialGradientLayer.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -417,6 +422,16 @@
 		3EADCB3E1DAA356100417F8C /* XHWebImageDownload.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XHWebImageDownload.m; sourceTree = "<group>"; };
 		3EADCB451DAA35CE00417F8C /* WebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebViewController.h; sourceTree = "<group>"; };
 		3EADCB461DAA35CE00417F8C /* WebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WebViewController.m; sourceTree = "<group>"; };
+		3EADCB491DAA4E8E00417F8C /* SVIndefiniteAnimatedView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SVIndefiniteAnimatedView.h; sourceTree = "<group>"; };
+		3EADCB4A1DAA4E8E00417F8C /* SVIndefiniteAnimatedView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SVIndefiniteAnimatedView.m; sourceTree = "<group>"; };
+		3EADCB4B1DAA4E8E00417F8C /* SVProgressAnimatedView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SVProgressAnimatedView.h; sourceTree = "<group>"; };
+		3EADCB4C1DAA4E8E00417F8C /* SVProgressAnimatedView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SVProgressAnimatedView.m; sourceTree = "<group>"; };
+		3EADCB4D1DAA4E8E00417F8C /* SVProgressHUD-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SVProgressHUD-Prefix.pch"; sourceTree = "<group>"; };
+		3EADCB4E1DAA4E8E00417F8C /* SVProgressHUD.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = SVProgressHUD.bundle; sourceTree = "<group>"; };
+		3EADCB4F1DAA4E8E00417F8C /* SVProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SVProgressHUD.h; sourceTree = "<group>"; };
+		3EADCB501DAA4E8E00417F8C /* SVProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SVProgressHUD.m; sourceTree = "<group>"; };
+		3EADCB511DAA4E8E00417F8C /* SVRadialGradientLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SVRadialGradientLayer.h; sourceTree = "<group>"; };
+		3EADCB521DAA4E8E00417F8C /* SVRadialGradientLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SVRadialGradientLayer.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -490,6 +505,7 @@
 		3E5623D31DA77E0300C83533 /* Lib */ = {
 			isa = PBXGroup;
 			children = (
+				3EADCB481DAA4E8E00417F8C /* SVProgressHUD */,
 				3EADCB321DAA356100417F8C /* XHLaunchAd */,
 				3E69FCD51DA9162C00CFB630 /* UMSocial */,
 				3E69FC921DA88D2300CFB630 /* fmdb */,
@@ -1048,6 +1064,23 @@
 			path = XHLaunchAd;
 			sourceTree = "<group>";
 		};
+		3EADCB481DAA4E8E00417F8C /* SVProgressHUD */ = {
+			isa = PBXGroup;
+			children = (
+				3EADCB491DAA4E8E00417F8C /* SVIndefiniteAnimatedView.h */,
+				3EADCB4A1DAA4E8E00417F8C /* SVIndefiniteAnimatedView.m */,
+				3EADCB4B1DAA4E8E00417F8C /* SVProgressAnimatedView.h */,
+				3EADCB4C1DAA4E8E00417F8C /* SVProgressAnimatedView.m */,
+				3EADCB4D1DAA4E8E00417F8C /* SVProgressHUD-Prefix.pch */,
+				3EADCB4E1DAA4E8E00417F8C /* SVProgressHUD.bundle */,
+				3EADCB4F1DAA4E8E00417F8C /* SVProgressHUD.h */,
+				3EADCB501DAA4E8E00417F8C /* SVProgressHUD.m */,
+				3EADCB511DAA4E8E00417F8C /* SVRadialGradientLayer.h */,
+				3EADCB521DAA4E8E00417F8C /* SVRadialGradientLayer.m */,
+			);
+			path = SVProgressHUD;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -1143,6 +1176,7 @@
 				3E69FD111DA9162C00CFB630 /* UMSocialShareSelectionViewCell.xib in Resources */,
 				3E5623CC1DA77DA900C83533 /* LaunchScreen.storyboard in Resources */,
 				3E5624C31DA77ECE00C83533 /* 食谱A@2x.png in Resources */,
+				3EADCB551DAA4E8E00417F8C /* SVProgressHUD.bundle in Resources */,
 				3E5624C51DA77ECE00C83533 /* 我的A@2x.png in Resources */,
 				3E5624B51DA77EA200C83533 /* zhuantiB@2x.png in Resources */,
 				3E5624FB1DA79ACA00C83533 /* shareView_friend@2x.png in Resources */,
@@ -1164,16 +1198,19 @@
 				3E5624EC1DA7953600C83533 /* ThreeDetailViewController.m in Sources */,
 				3E69FCA01DA88D2300CFB630 /* FMDatabasePool.m in Sources */,
 				3E56247A1DA77E5000C83533 /* SDWebImageCompat.m in Sources */,
+				3EADCB561DAA4E8E00417F8C /* SVProgressHUD.m in Sources */,
 				3E5624471DA77E4600C83533 /* AFHTTPRequestOperation.m in Sources */,
 				3E5623FF1DA77E2F00C83533 /* JHRefreshCommonAniView.m in Sources */,
 				3E69FC911DA88CFA00CFB630 /* DatabaseManager.m in Sources */,
 				3E5624801DA77E5000C83533 /* UIButton+WebCache.m in Sources */,
+				3EADCB531DAA4E8E00417F8C /* SVIndefiniteAnimatedView.m in Sources */,
 				3E69FCCA1DA8E83300CFB630 /* PrivacyViewController.m in Sources */,
 				3E5624551DA77E4600C83533 /* UIButton+AFNetworking.m in Sources */,
 				3E5624531DA77E4600C83533 /* UIActivityIndicatorView+AFNetworking.m in Sources */,
 				3E69FCCD1DA8EC0700CFB630 /* AboutMeViewController.m in Sources */,
 				3E69FD0F1DA9162C00CFB630 /* UMSocialShareSelectionView.m in Sources */,
 				3E69FD101DA9162C00CFB630 /* UMSocialShareSelectionViewCell.m in Sources */,
+				3EADCB571DAA4E8E00417F8C /* SVRadialGradientLayer.m in Sources */,
 				3E56247E1DA77E5000C83533 /* SDWebImageManager.m in Sources */,
 				3E5624571DA77E4600C83533 /* UIProgressView+AFNetworking.m in Sources */,
 				3EADCB471DAA35CE00417F8C /* WebViewController.m in Sources */,
@@ -1215,6 +1252,7 @@
 				3E56244F1DA77E4600C83533 /* AFURLSessionManager.m in Sources */,
 				3E56244E1DA77E4600C83533 /* AFURLResponseSerialization.m in Sources */,
 				3E5624131DA77E3800C83533 /* BaseViewController.m in Sources */,
+				3EADCB541DAA4E8E00417F8C /* SVProgressAnimatedView.m in Sources */,
 				3E5624011DA77E2F00C83533 /* JHRefreshBaseView.m in Sources */,
 				3E69FCA11DA88D2300CFB630 /* FMDatabaseQueue.m in Sources */,
 				3E5624161DA77E3800C83533 /* UIView+Addition.m in Sources */,
