@@ -20,5 +20,6 @@
 #import "NetInterface.h"
 #import "DatabaseManager.h"
 #import "SVProgressHUD.h"
+#import <UMSocialCore/UMSocialCore.h>
 
 #endif /* MyPrefixHeader_h */

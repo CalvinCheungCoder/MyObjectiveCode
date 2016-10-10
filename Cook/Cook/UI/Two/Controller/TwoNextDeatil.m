@@ -101,7 +101,11 @@
     
     if ([title isEqualToString:@"微信"]) {
         
+        [self shareTextToWechat];
+        
     }else if ([title isEqualToString:@"朋友圈"]){
+        
+        [self WechatTimeLine];
         
     }else if ([title isEqualToString:@"新浪微博"]){
         
@@ -125,6 +129,68 @@
     NSURLRequest *request = [[NSURLRequest alloc]initWithURL:[NSURL URLWithString:url]];
     [self.webView loadRequest:request];
 }
+
+
+- (void)shareTextToWechat
+{
+    
+    NSString *url = [NSString stringWithFormat:kZhuanTiDeatail,self.number2];
+    NSString *text = [NSString stringWithFormat:@"我在早餐粥谱发现了好东西: %@，地址是: %@ 快来看看吧",_title2,url];
+    
+    UMSocialMessageObject *messageObject = [UMSocialMessageObject messageObject];
+    
+    messageObject.text = text;
+    
+    [[UMSocialManager defaultManager] shareToPlatform:UMSocialPlatformType_WechatSession messageObject:messageObject currentViewController:self completion:^(id data, NSError *error) {
+        NSString *message = nil;
+        if (!error) {
+            message = [NSString stringWithFormat:@"分享成功"];
+        } else {
+            if ((int)error.code == 2010) {
+                message = @"取消分享";
+            }else{
+                message = @"分享失败";
+            }
+        }
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"share"
+                                                        message:message
+                                                       delegate:nil
+                                              cancelButtonTitle:NSLocalizedString(@"确定", nil)
+                                              otherButtonTitles:nil];
+        [alert show];
+    }];
+}
+
+- (void)WechatTimeLine
+{
+    
+    NSString *url = [NSString stringWithFormat:kZhuanTiDeatail,self.number2];
+    NSString *text = [NSString stringWithFormat:@"我在早餐粥谱发现了好东西: %@，地址是: %@ 快来看看吧",_title2,url];
+    
+    UMSocialMessageObject *messageObject = [UMSocialMessageObject messageObject];
+    
+    messageObject.text = text;
+    
+    [[UMSocialManager defaultManager] shareToPlatform:UMSocialPlatformType_WechatTimeLine messageObject:messageObject currentViewController:self completion:^(id data, NSError *error) {
+        NSString *message = nil;
+        if (!error) {
+            message = [NSString stringWithFormat:@"分享成功"];
+        } else {
+            if ((int)error.code == 2010) {
+                message = @"取消分享";
+            }else{
+                message = @"分享失败";
+            }
+        }
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"share"
+                                                        message:message
+                                                       delegate:nil
+                                              cancelButtonTitle:NSLocalizedString(@"确定", nil)
+                                              otherButtonTitles:nil];
+        [alert show];
+    }];
+}
+
 
 #pragma mark - UIWebViewDelegate
 -(BOOL)webView:(UIWebView *)webView shouldStartLoadWithRequest:(NSURLRequest *)request navigationType:(UIWebViewNavigationType)navigationType{

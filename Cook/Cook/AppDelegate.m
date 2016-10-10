@@ -8,7 +8,6 @@
 
 #import "AppDelegate.h"
 #import "MainTabBar.h"
-#import <UMSocialCore/UMSocialCore.h>
 #import "XHLaunchAd.h"
 #import "WebViewController.h"
 
@@ -48,13 +47,13 @@
     [[UMSocialManager defaultManager] openLog:YES];
     
     // 设置友盟appkey
-    [[UMSocialManager defaultManager] setUmSocialAppkey:@"57b432afe0f55a9832001a0a"];
+    [[UMSocialManager defaultManager] setUmSocialAppkey:@"5608f17267e58e464e0033da"];
     
     // 获取友盟social版本号
     // NSLog(@"UMeng social version: %@", [UMSocialGlobal umSocialSDKVersion]);
     
     // 设置微信的appKey和appSecret
-    [[UMSocialManager defaultManager] setPlaform:UMSocialPlatformType_WechatSession appKey:@"wxdc1e388c3822c80b" appSecret:@"3baf1193c85774b3fd9d18447d76cab0" redirectURL:@"http://mobile.umeng.com/social"];
+    [[UMSocialManager defaultManager] setPlaform:UMSocialPlatformType_WechatSession appKey:@"wxa5c139734f39db4f" appSecret:@"c7eb80a03be13dd54cc8943336473fd2" redirectURL:@"http://mobile.umeng.com/social"];
     
     // 设置新浪的appKey和appSecret
     [[UMSocialManager defaultManager] setPlaform:UMSocialPlatformType_Sina appKey:@"3921700954"  appSecret:@"04b48b094faeb16683c32669824ebdad" redirectURL:@"http://sns.whalecloud.com/sina2/callback"];
