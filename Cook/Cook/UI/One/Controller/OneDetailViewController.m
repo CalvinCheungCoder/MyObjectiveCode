@@ -129,36 +129,6 @@
     }
 }
 
-// 在需要进行授权的UIViewController中加入如下代码
--(void)getAuthInfoFromWechat
-{
-    [[UMSocialManager defaultManager]  authWithPlatform:UMSocialPlatformType_WechatSession currentViewController:self completion:^(id result, NSError *error) {
-        UMSocialAuthResponse *authresponse = result;
-        NSString *message = [NSString stringWithFormat:@"result: %d\n uid: %@\n accessToken: %@\n",(int)error.code,authresponse.uid,authresponse.accessToken];
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Login"
-                                                        message:message
-                                                       delegate:nil
-                                              cancelButtonTitle:NSLocalizedString(@"确定", nil)
-                                              otherButtonTitles:nil];
-        [alert show];
-    }];
-}
-
-- (void)getUserInfoFromWechat
-{
-    [[UMSocialManager defaultManager] getUserInfoWithPlatform:UMSocialPlatformType_WechatSession currentViewController:self completion:^(id result, NSError *error) {
-        UMSocialUserInfoResponse *userinfo =result;
-        NSString *message = [NSString stringWithFormat:@"name: %@\n icon: %@\n gender: %@\n",userinfo.name,userinfo.iconurl,userinfo.gender];
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"UserInfo"
-                                                        message:message
-                                                       delegate:nil
-                                              cancelButtonTitle:NSLocalizedString(@"确定", nil)
-                                              otherButtonTitles:nil];
-        [alert show];
-    }];
-}
-
-
 -(void)getNetData{
     
     NSString *url = [NSString stringWithFormat:kCaiPuDetail,self.number2];
@@ -187,7 +157,7 @@
                 message = @"分享失败";
             }
         }
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"share"
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"分享"
                                                         message:message
                                                        delegate:nil
                                               cancelButtonTitle:NSLocalizedString(@"确定", nil)
@@ -206,6 +176,8 @@
     
     messageObject.text = text;
     
+    
+    
     [[UMSocialManager defaultManager] shareToPlatform:UMSocialPlatformType_WechatTimeLine messageObject:messageObject currentViewController:self completion:^(id data, NSError *error) {
         NSString *message = nil;
         if (!error) {
@@ -217,7 +189,7 @@
                 message = @"分享失败";
             }
         }
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"share"
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"分享"
                                                         message:message
                                                        delegate:nil
                                               cancelButtonTitle:NSLocalizedString(@"确定", nil)

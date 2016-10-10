@@ -152,7 +152,7 @@
                 message = @"分享失败";
             }
         }
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"share"
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"分享"
                                                         message:message
                                                        delegate:nil
                                               cancelButtonTitle:NSLocalizedString(@"确定", nil)
@@ -182,7 +182,7 @@
                 message = @"分享失败";
             }
         }
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"share"
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"分享"
                                                         message:message
                                                        delegate:nil
                                               cancelButtonTitle:NSLocalizedString(@"确定", nil)

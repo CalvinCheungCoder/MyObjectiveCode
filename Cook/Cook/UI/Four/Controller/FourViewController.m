@@ -61,7 +61,7 @@
     _tableView = [[UITableView alloc] initWithFrame:self.view.bounds style:UITableViewStylePlain];
     _tableView.delegate = self;
     _tableView.dataSource = self;
-    _tableView.rowHeight = ScreenWidth*9/20;
+    _tableView.rowHeight = ScreenWidth/2;
     _tableView.separatorStyle = UITableViewCellSelectionStyleNone;
     [self.view addSubview:_tableView];
 }

@@ -161,7 +161,7 @@
 
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
     
-    return ScreenWidth*9/20;
+    return ScreenWidth/2;
 }
 
 

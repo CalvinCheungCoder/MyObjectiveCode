@@ -131,7 +131,7 @@
     NSString *text = [NSString stringWithFormat:@"我在早餐粥谱发现了好东西: %@，地址是: %@ 快来看看吧",_title2,url];
     
     UMSocialMessageObject *messageObject = [UMSocialMessageObject messageObject];
-    
+
     messageObject.text = text;
     
     [[UMSocialManager defaultManager] shareToPlatform:UMSocialPlatformType_WechatSession messageObject:messageObject currentViewController:self completion:^(id data, NSError *error) {
@@ -145,7 +145,7 @@
                 message = @"分享失败";
             }
         }
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"share"
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"分享"
                                                         message:message
                                                        delegate:nil
                                               cancelButtonTitle:NSLocalizedString(@"确定", nil)
@@ -175,7 +175,7 @@
                 message = @"分享失败";
             }
         }
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"share"
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"分享"
                                                         message:message
                                                        delegate:nil
                                               cancelButtonTitle:NSLocalizedString(@"确定", nil)
