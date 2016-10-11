@@ -181,7 +181,7 @@
              @{SKStoreProductParameterITunesItemIdentifier : @"1044575251"} completionBlock:^(BOOL result, NSError *error) {
                  // block回调
                  if(error){
-                     NSLog(@"error %@ with userInfo %@",error,[error userInfo]);
+//                     NSLog(@"error %@ with userInfo %@",error,[error userInfo]);
                  }else{
                      //模态弹出appstore
                      [self presentViewController:storeProductViewContorller animated:YES completion:^{

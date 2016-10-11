@@ -12,7 +12,7 @@
 #import "WebViewController.h"
 
 //静态广告
-#define ImgUrlString1 @"http://d.hiphotos.baidu.com/image/pic/item/14ce36d3d539b60071473204e150352ac75cb7f3.jpg"
+#define ImgUrlString1 @""
 //动态广告
 #define ImgUrlString2 @"http://c.hiphotos.baidu.com/image/pic/item/d62a6059252dd42a6a943c180b3b5bb5c8eab8e7.jpg"
 
@@ -58,7 +58,7 @@
     [XHLaunchAd showWithAdFrame:CGRectMake(0, 0,ScreenWidth, ScreenHeight*880/1136) setAdImage:^(XHLaunchAd *launchAd) {
         
         // 未检测到广告数据,启动页停留时间,不设置默认为3,(设置4即表示:启动页显示了4s,还未检测到广告数据,就自动进入window根控制器)
-        launchAd.noDataDuration = 5;
+        launchAd.noDataDuration = 2;
         
         // 获取广告数据
         [self requestImageData:^(NSString *imgUrl, NSInteger duration, NSString *openUrl) {
@@ -119,19 +119,19 @@
     // 5608f17267e58e464e0033da
     
     // 打开调试日志
-    [[UMSocialManager defaultManager] openLog:YES];
+    [[UMSocialManager defaultManager] openLog:NO];
     
     // 设置友盟appkey
     [[UMSocialManager defaultManager] setUmSocialAppkey:@"5608f17267e58e464e0033da"];
     
     // 获取友盟social版本号
-    NSLog(@"UMeng social version: %@", [UMSocialGlobal umSocialSDKVersion]);
+//    NSLog(@"UMeng social version: %@", [UMSocialGlobal umSocialSDKVersion]);
     
     // 设置微信的appKey和appSecret
     [[UMSocialManager defaultManager] setPlaform:UMSocialPlatformType_WechatSession appKey:@"wxa5c139734f39db4f" appSecret:@"c7eb80a03be13dd54cc8943336473fd2" redirectURL:@"http://mobile.umeng.com/social"];
     
     // 设置新浪的appKey和appSecret
-    [[UMSocialManager defaultManager] setPlaform:UMSocialPlatformType_Sina appKey:@"3921700954"  appSecret:@"04b48b094faeb16683c32669824ebdad" redirectURL:@"http://sns.whalecloud.com/sina2/callback"];
+    [[UMSocialManager defaultManager] setPlaform:UMSocialPlatformType_Sina appKey:@"2220778449"  appSecret:@"fbac3c314dab5c7a3a9af8a0bf0065de" redirectURL:@"http://sns.whalecloud.com/sina2/callback"];
 }
 
 - (BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation
