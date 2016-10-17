@@ -1,0 +1,26 @@
+//
+//  MyPrefixHeader.pch
+//  App
+//
+//  Created by 张丁豪 on 16/9/7.
+//  Copyright © 2016年 张丁豪. All rights reserved.
+//
+// GitHub地址: https://github.com/CalvinCheungCoder/eyepetizer
+// 个人博客: http://www.zhangdinghao.cn
+// QQ: 984382258 欢迎一起学习交流
+
+#ifndef MyPrefixHeader_pch
+#define MyPrefixHeader_pch
+
+#import "MyHelper.h"
+#import "Factory.h"
+#import "Net.h"
+
+#import "AFNetworking.h"
+#import "Networking.h"
+
+#import "DatabaseManager.h"
+#import "UserData.h"
+#import "UIColor+Hex.h"
+
+#endif /* MyPrefixHeader_pch */
