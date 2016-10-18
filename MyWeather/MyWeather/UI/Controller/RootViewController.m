@@ -49,6 +49,10 @@
 
 @property (nonatomic, strong) NavHeadTitleView *NavView;//导航栏
 
+@property (nonatomic, strong) DatabaseManager *manger;
+
+@property (nonatomic, strong) NSString *cityName;
+
 @end
 
 @implementation RootViewController
@@ -59,17 +63,17 @@
     
     self.BackView = [[UIView alloc]initWithFrame:self.view.bounds];
     [self.view addSubview:self.BackView];
-    // 设置顶部视图
-//    [self SetUpUIOne];
+    
+    self.manger = [[DatabaseManager alloc]init];
+
+    [self initializeLocationService];
     
     [self setHeadView];
     
     // 创建天气 TableView
-    [self createWeathTableView];
+//    [self createWeathTableView];
     // 获取聚合天气数据
-    [self GetJuHeWeatherData];
-    
-
+//    [self GetJuHeWeatherData];
 }
 
 #pragma mark -- 头视图
@@ -88,6 +92,16 @@
 - (void)NavHeadback{
     
     MenuViewController *menu = [[MenuViewController alloc]init];
+    //弱引用转换,为了防止循环引用
+    __weak RootViewController *weakSelf = self;
+    
+    menu.CityChooseBlock = ^(NSString *city) {
+        
+        MyLog(@"blockCity ==%@",city);
+        self.cityName = city;
+        // 获取聚合天气数据
+        [self GetJuHeWeatherData];
+    };
     [self presentViewController:menu animated:YES completion:nil];
 }
 - (void)NavHeadToRight{
@@ -119,7 +133,7 @@
 -(void)GetJuHeWeatherData{
     
     self.dataArr = [[NSMutableArray alloc]init];
-    NSDictionary *parm = @{@"key":OpenID,@"cityname":@"上海市",@"dtype":@"json"};
+    NSDictionary *parm = @{@"key":OpenID,@"cityname":self.cityName,@"dtype":@"json"};
     [NetWorking requestDataByURL:JuHeWeather Parameters:parm success:^(AFHTTPRequestOperation *operation, id responseObject) {
         
         NSDictionary *resultDict = responseObject[@"result"];
@@ -161,7 +175,8 @@
             
             [self.dataArr addObject:model];
         }
-        [self.tableView reloadData];
+//        [self.tableView reloadData];
+        [self createWeathTableView];
         
     } failBlock:^(AFHTTPRequestOperation *operation, NSError *error) {
         
@@ -177,10 +192,6 @@
     topView.colors = [NSArray arrayWithObjects:(id)[[UIColor colorWithRed:0.29 green:0.47 blue:0.82 alpha:1] CGColor], (id)[[UIColor colorWithRed:0.67 green:0.65 blue:0.87 alpha:1] CGColor], nil , nil ];
     [self.BackView.layer insertSublayer:topView atIndex:0];
     
-//    UIButton *btn = [[UIButton alloc]initWithFrame:CGRectMake(ScreenWidth - 45, 25, 20, 20)];
-//    [btn setBackgroundImage:[UIImage imageNamed:@"Plus"] forState:UIControlStateNormal];
-//    [btn addTarget:self action:@selector(RightBtnClicked) forControlEvents:UIControlEventTouchUpInside];
-//    [self.BackView addSubview:btn];
     // 城市
     self.CityLabel = [[UILabel alloc]initWithFrame:CGRectMake(60, 25, ScreenWidth - 120, 30)];
     self.CityLabel.textColor = [UIColor whiteColor];
@@ -197,7 +208,6 @@
     
     // 查看生活指数
     UIButton *lifeBtn = [[UIButton alloc]initWithFrame:CGRectMake(30, ScreenHeight*0.45 - 30, ScreenWidth/2 - 60, 20)];
-//    lifeBtn.backgroundColor = [UIColor grayColor];
     [lifeBtn setTitle:@"查看生活指数" forState:UIControlStateNormal];
     [lifeBtn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
     [lifeBtn addTarget:self action:@selector(lifeBtnClick) forControlEvents:UIControlEventTouchUpInside];
@@ -206,41 +216,11 @@
     
     // 查看生活指数
     UIButton *airBtn = [[UIButton alloc]initWithFrame:CGRectMake(ScreenWidth/2 + 30, ScreenHeight*0.45 - 30, ScreenWidth/2 - 60, 20)];
-//    airBtn.backgroundColor = [UIColor grayColor];
     [airBtn setTitle:@"查看空气质量" forState:UIControlStateNormal];
     [airBtn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
     airBtn.titleLabel.font = [UIFont systemFontOfSize:12.f];
     [airBtn addTarget:self action:@selector(airBtnClick) forControlEvents:UIControlEventTouchUpInside];
     [self.BackView addSubview:airBtn];
-    
-//    // 天气图片
-//    self.weatherImage = [[UIImageView alloc]initWithFrame:CGRectMake(self.temLabel.left/2-30, self.temLabel.top + 10,60, 60)];
-//    self.weatherImage.image = [UIImage imageNamed:@"102"];
-//    [self.BackView addSubview:self.weatherImage];
-//    // 天气
-//    self.weatherLabel = [[UILabel alloc]initWithFrame:CGRectMake(10, self.weatherImage.bottom+5, self.temLabel.left - 20, 25)];
-//    self.weatherLabel.textColor = [UIColor whiteColor];
-//    self.weatherLabel.textAlignment = NSTextAlignmentCenter;
-//    self.weatherLabel.font = [UIFont systemFontOfSize:20.f];
-//    [self.BackView addSubview:self.weatherLabel];
-//    // 湿度
-//    self.humidityLabel = [[UILabel alloc]initWithFrame:CGRectMake(self.temLabel.left-5, self.temLabel.bottom+5, self.temLabel.width+10, 20)];
-//    self.humidityLabel.textColor = [UIColor whiteColor];
-//    self.humidityLabel.textAlignment = NSTextAlignmentCenter;
-//    self.humidityLabel.font = [UIFont systemFontOfSize:20.f];
-//    [self.BackView addSubview:self.humidityLabel];
-//    // 风向
-//    self.directLabel = [[UILabel alloc]initWithFrame:CGRectMake(self.temLabel.right + 10, self.temLabel.top + 10, ScreenWidth/2 - 80, 40)];
-//    self.directLabel.textColor = [UIColor whiteColor];
-//    self.directLabel.textAlignment = NSTextAlignmentCenter;
-//    self.directLabel.font = [UIFont systemFontOfSize:32.f];
-//    [self.BackView addSubview:self.directLabel];
-//    // 风力
-//    self.powerLabel = [[UILabel alloc]initWithFrame:CGRectMake(self.directLabel.left, self.directLabel.bottom+5, self.directLabel.width, 35)];
-//    self.powerLabel.textColor = [UIColor whiteColor];
-//    self.powerLabel.textAlignment = NSTextAlignmentCenter;
-//    self.powerLabel.font = [UIFont systemFontOfSize:28.f];
-//    [self.BackView addSubview:self.powerLabel];
 }
 
 -(void)RightBtnClicked{
@@ -331,14 +311,34 @@
          if (array.count >0)
          {
              CLPlacemark *placemark = [array objectAtIndex:0];
-             // 获取城市
+             //Users/Calvin/Desktop/App资源/喜马拉雅FM 5.4.33/Payload/ting.app/zone_deletepic@3x.png/ 获取城市
              NSString *currCity = placemark.locality;
              MyLog(@"currCity == %@",currCity);
+//             self.CityLabel.text = currCity;
+             self.cityName = currCity;
+             
+//             [self createWeathTableView];
+             // 获取聚合天气数据
+             [self GetJuHeWeatherData];
+             
+             // 插入城市数据
+             UserData *data = [[UserData alloc] init];
+             data.city = currCity;
+             NSMutableArray *arr = [[NSMutableArray alloc] initWithArray:[_manger findAllData]];
+             for (UserData *temp in arr) {
+                 
+                 if ([currCity isEqualToString:temp.city]) {
+                     
+                     return;
+                 }
+             }
+             [self.manger insertCollecInformation:data];
+             
              if (!currCity) {
                  // 四大直辖市的城市信息无法通过locality获得，只能通过获取省份的方法来获得（如果city为空，则可知为直辖市）
                  currCity = placemark.administrativeArea;
                  MyLog(@"currCity == %@",currCity);
-                 self.directLabel.text = currCity;
+                 
              }
          }else if (error ==nil && [array count] == 0){
              

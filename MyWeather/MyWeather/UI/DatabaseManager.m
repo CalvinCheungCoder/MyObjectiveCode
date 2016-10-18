@@ -43,7 +43,7 @@ static DatabaseManager *manager = nil;
  */
 - (void)createTable
 {   // 用字符串去写sql语句
-    NSString * sql = @"create table if not exists MyWord(id integer primary key autoincrement, word, des);";
+    NSString * sql = @"create table if not exists MyCity(id integer primary key autoincrement, city);";
     // 打开数据库
     int result = [_dataBase open];
     // 如果打开不成功，直接返回
@@ -59,7 +59,7 @@ static DatabaseManager *manager = nil;
 // 插入信息，直接将信息的model传入
 - (void)insertCollecInformation:(UserData *)data
 {
-    NSString * sql = @"insert into MyWord(word, des) values(?,?);";
+    NSString * sql = @"insert into MyCity(city) values(?);";
     @synchronized (self)
     {
         int result = [_dataBase open];
@@ -67,7 +67,7 @@ static DatabaseManager *manager = nil;
         {
             return;
         }
-        [_dataBase executeUpdate:sql,data.word, data.des];
+        [_dataBase executeUpdate:sql,data.city];
         [_dataBase close];
     }
 }
@@ -75,7 +75,7 @@ static DatabaseManager *manager = nil;
 // 找到所有数据
 - (NSArray *)findAllData
 {
-    NSString * sql = @"select * from MyWord;";
+    NSString * sql = @"select * from MyCity;";
     NSMutableArray * temp = [[NSMutableArray alloc]initWithCapacity:0];
     @synchronized (self)
     {
@@ -86,8 +86,7 @@ static DatabaseManager *manager = nil;
         FMResultSet * set = [_dataBase executeQuery:sql];
         while ([set next]) {
             UserData *model = [[UserData alloc]init];
-            model.word = [set stringForColumn:@"word"];
-            model.des = [set stringForColumn:@"des"];
+            model.city = [set stringForColumn:@"city"];
             [temp addObject:model];
         }
         [_dataBase close];
@@ -95,47 +94,32 @@ static DatabaseManager *manager = nil;
     return temp;
 }
 
-- (void)deleteObject:(NSString *)word des:(NSString *)des
+- (void)deleteObject:(NSString *)City
 {
-    NSString * sql = @"delete from MyWord where des = ?;";
+    NSString * sql = @"delete from MyCity where city = ?;";
     @synchronized (self)
     {
         int result = [_dataBase open];
         if (result != YES) {
             return;
         }
-        [_dataBase executeUpdate:sql,des];
+        [_dataBase executeUpdate:sql,City];
         [_dataBase close];
     }
 }
 
 - (void)updateDataWith:(UserData *)data
 {
-    NSString * sql = @"update MyWord when word = ? set des = ?;";
+    NSString * sql = @"update MyCity set city = ?;";
     @synchronized (self)
     {
         int result = [_dataBase open];
         if (result != YES) {
             return;
         }
-        [_dataBase executeUpdate:sql, data.word, data.des];
+        [_dataBase executeUpdate:sql, data.city];
         [_dataBase close];
     }
 }
-
-- (void)updateDataTwoWith:(UserData *)data
-{
-    NSString * sql = @"update MyWord when des = ? set word = ?;";
-    @synchronized (self)
-    {
-        int result = [_dataBase open];
-        if (result != YES) {
-            return;
-        }
-        [_dataBase executeUpdate:sql, data.word, data.des];
-        [_dataBase close];
-    }
-}
-
 
 @end

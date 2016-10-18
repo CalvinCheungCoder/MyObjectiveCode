@@ -10,9 +10,9 @@
 
 @interface UserData : NSObject
 
-@property (nonatomic, strong) NSString *word;
+@property (nonatomic, strong) NSString *city;
 
-@property (nonatomic, strong) NSString *des;
+//@property (nonatomic, strong) NSString *des;
 
 
 @end

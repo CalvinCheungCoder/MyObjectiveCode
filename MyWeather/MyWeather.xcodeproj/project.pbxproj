@@ -18,6 +18,13 @@
 		3E3DCE791DB5D311005E717E /* FMResultSet.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E3DCE741DB5D311005E717E /* FMResultSet.m */; };
 		3E3DCE7E1DB5D321005E717E /* DatabaseManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E3DCE7B1DB5D321005E717E /* DatabaseManager.m */; };
 		3E3DCE7F1DB5D321005E717E /* UserData.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E3DCE7D1DB5D321005E717E /* UserData.m */; };
+		3E3DCE811DB5D5AB005E717E /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E3DCE801DB5D5AB005E717E /* libsqlite3.tbd */; };
+		3E3DCE891DB5DCF4005E717E /* close.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E3DCE881DB5DCF4005E717E /* close.png */; };
+		3E3DCE951DB5DF9C005E717E /* CityData.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3E3DCE8B1DB5DF9C005E717E /* CityData.plist */; };
+		3E3DCE961DB5DF9C005E717E /* GYZChooseCityController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E3DCE8D1DB5DF9C005E717E /* GYZChooseCityController.m */; };
+		3E3DCE971DB5DF9C005E717E /* GYZCity.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E3DCE901DB5DF9C005E717E /* GYZCity.m */; };
+		3E3DCE981DB5DF9C005E717E /* GYZCityGroupCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E3DCE921DB5DF9C005E717E /* GYZCityGroupCell.m */; };
+		3E3DCE991DB5DF9C005E717E /* GYZCityHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E3DCE941DB5DF9C005E717E /* GYZCityHeaderView.m */; };
 		3E7E3F1F1DAB854B0031888D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E7E3F1E1DAB854B0031888D /* main.m */; };
 		3E7E3F241DAB854B0031888D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3E7E3F231DAB854B0031888D /* Assets.xcassets */; };
 		3E7E3F271DAB854B0031888D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3E7E3F251DAB854B0031888D /* LaunchScreen.storyboard */; };
@@ -135,7 +142,6 @@
 		3ECCC0A71DAE21C800498273 /* Plus.png in Resources */ = {isa = PBXBuildFile; fileRef = 3ECCC0A61DAE21C800498273 /* Plus.png */; };
 		3ECCC0A91DAE236800498273 /* toolbar_playinglist_h_p@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3ECCC0A81DAE236800498273 /* toolbar_playinglist_h_p@2x.png */; };
 		3ECCC0AB1DAE237200498273 /* upgrade_icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3ECCC0AA1DAE237200498273 /* upgrade_icon@2x.png */; };
-		3ECCC0AD1DAE241700498273 /* paycmt_smile@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3ECCC0AC1DAE241700498273 /* paycmt_smile@3x.png */; };
 		3EE8EAC31DAC7668000BE8A4 /* CCLocationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EE8EAC01DAC7668000BE8A4 /* CCLocationManager.m */; };
 		3EE8EAC41DAC7668000BE8A4 /* CLLocation+YCLocation.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EE8EAC21DAC7668000BE8A4 /* CLLocation+YCLocation.m */; };
 		6736CF70DFD0CAA76CE8E4C4 /* libPods-MyWeather.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DC082B83221C3F74DEFB17AB /* libPods-MyWeather.a */; };
@@ -184,6 +190,18 @@
 		3E3DCE7B1DB5D321005E717E /* DatabaseManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DatabaseManager.m; sourceTree = "<group>"; };
 		3E3DCE7C1DB5D321005E717E /* UserData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserData.h; sourceTree = "<group>"; };
 		3E3DCE7D1DB5D321005E717E /* UserData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserData.m; sourceTree = "<group>"; };
+		3E3DCE801DB5D5AB005E717E /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
+		3E3DCE881DB5DCF4005E717E /* close.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = close.png; sourceTree = "<group>"; };
+		3E3DCE8B1DB5DF9C005E717E /* CityData.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = CityData.plist; sourceTree = "<group>"; };
+		3E3DCE8C1DB5DF9C005E717E /* GYZChooseCityController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GYZChooseCityController.h; sourceTree = "<group>"; };
+		3E3DCE8D1DB5DF9C005E717E /* GYZChooseCityController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GYZChooseCityController.m; sourceTree = "<group>"; };
+		3E3DCE8E1DB5DF9C005E717E /* GYZChooseCityDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GYZChooseCityDelegate.h; sourceTree = "<group>"; };
+		3E3DCE8F1DB5DF9C005E717E /* GYZCity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GYZCity.h; sourceTree = "<group>"; };
+		3E3DCE901DB5DF9C005E717E /* GYZCity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GYZCity.m; sourceTree = "<group>"; };
+		3E3DCE911DB5DF9C005E717E /* GYZCityGroupCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GYZCityGroupCell.h; sourceTree = "<group>"; };
+		3E3DCE921DB5DF9C005E717E /* GYZCityGroupCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GYZCityGroupCell.m; sourceTree = "<group>"; };
+		3E3DCE931DB5DF9C005E717E /* GYZCityHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GYZCityHeaderView.h; sourceTree = "<group>"; };
+		3E3DCE941DB5DF9C005E717E /* GYZCityHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GYZCityHeaderView.m; sourceTree = "<group>"; };
 		3E7E3F1A1DAB854B0031888D /* MyWeather.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyWeather.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3E7E3F1E1DAB854B0031888D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		3E7E3F231DAB854B0031888D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -361,7 +379,6 @@
 		3ECCC0A61DAE21C800498273 /* Plus.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Plus.png; sourceTree = "<group>"; };
 		3ECCC0A81DAE236800498273 /* toolbar_playinglist_h_p@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "toolbar_playinglist_h_p@2x.png"; sourceTree = "<group>"; };
 		3ECCC0AA1DAE237200498273 /* upgrade_icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "upgrade_icon@2x.png"; sourceTree = "<group>"; };
-		3ECCC0AC1DAE241700498273 /* paycmt_smile@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "paycmt_smile@3x.png"; sourceTree = "<group>"; };
 		3EE8EABF1DAC7668000BE8A4 /* CCLocationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCLocationManager.h; sourceTree = "<group>"; };
 		3EE8EAC01DAC7668000BE8A4 /* CCLocationManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCLocationManager.m; sourceTree = "<group>"; };
 		3EE8EAC11DAC7668000BE8A4 /* CLLocation+YCLocation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CLLocation+YCLocation.h"; sourceTree = "<group>"; };
@@ -374,6 +391,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3E3DCE811DB5D5AB005E717E /* libsqlite3.tbd in Frameworks */,
 				3EA318FA1DABB75F001FEDEC /* UIKit.framework in Frameworks */,
 				3EA318F81DABB759001FEDEC /* QuartzCore.framework in Frameworks */,
 				3EA318F61DABB752001FEDEC /* Foundation.framework in Frameworks */,
@@ -444,6 +462,23 @@
 			path = fmdb;
 			sourceTree = "<group>";
 		};
+		3E3DCE8A1DB5DF9C005E717E /* GYZChooseCity */ = {
+			isa = PBXGroup;
+			children = (
+				3E3DCE8B1DB5DF9C005E717E /* CityData.plist */,
+				3E3DCE8C1DB5DF9C005E717E /* GYZChooseCityController.h */,
+				3E3DCE8D1DB5DF9C005E717E /* GYZChooseCityController.m */,
+				3E3DCE8E1DB5DF9C005E717E /* GYZChooseCityDelegate.h */,
+				3E3DCE8F1DB5DF9C005E717E /* GYZCity.h */,
+				3E3DCE901DB5DF9C005E717E /* GYZCity.m */,
+				3E3DCE911DB5DF9C005E717E /* GYZCityGroupCell.h */,
+				3E3DCE921DB5DF9C005E717E /* GYZCityGroupCell.m */,
+				3E3DCE931DB5DF9C005E717E /* GYZCityHeaderView.h */,
+				3E3DCE941DB5DF9C005E717E /* GYZCityHeaderView.m */,
+			);
+			path = GYZChooseCity;
+			sourceTree = "<group>";
+		};
 		3E7E3F111DAB854B0031888D = {
 			isa = PBXGroup;
 			children = (
@@ -511,6 +546,7 @@
 		3E7E3F561DAB8F510031888D /* Lib */ = {
 			isa = PBXGroup;
 			children = (
+				3E3DCE8A1DB5DF9C005E717E /* GYZChooseCity */,
 				3E3DCE691DB5D311005E717E /* fmdb */,
 				3E1E2CF61DB1FD4D0086497E /* CreateRing */,
 				3EE8EABE1DAC7668000BE8A4 /* CCLocation */,
@@ -536,7 +572,7 @@
 		3E7E3F5A1DAB8F510031888D /* Res */ = {
 			isa = PBXGroup;
 			children = (
-				3ECCC0AC1DAE241700498273 /* paycmt_smile@3x.png */,
+				3E3DCE881DB5DCF4005E717E /* close.png */,
 				3ECCC0AA1DAE237200498273 /* upgrade_icon@2x.png */,
 				3ECCC0A81DAE236800498273 /* toolbar_playinglist_h_p@2x.png */,
 				3ECCC0A61DAE21C800498273 /* Plus.png */,
@@ -698,6 +734,7 @@
 		3EA318F21DABB74A001FEDEC /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				3E3DCE801DB5D5AB005E717E /* libsqlite3.tbd */,
 				3EA318F91DABB75F001FEDEC /* UIKit.framework */,
 				3EA318F71DABB759001FEDEC /* QuartzCore.framework */,
 				3EA318F51DABB752001FEDEC /* Foundation.framework */,
@@ -957,9 +994,9 @@
 				3EA319671DABCAD6001FEDEC /* 999.png in Resources */,
 				3EA3195D1DABCAD6001FEDEC /* 407.png in Resources */,
 				3EA319351DABCAD6001FEDEC /* 100.png in Resources */,
-				3ECCC0AD1DAE241700498273 /* paycmt_smile@3x.png in Resources */,
 				3EA3195A1DABCAD6001FEDEC /* 404.png in Resources */,
 				3EA319461DABCAD6001FEDEC /* 212.png in Resources */,
+				3E3DCE891DB5DCF4005E717E /* close.png in Resources */,
 				3EA319391DABCAD6001FEDEC /* 104.png in Resources */,
 				3EA3195C1DABCAD6001FEDEC /* 406.png in Resources */,
 				3EA3194C1DABCAD6001FEDEC /* 304.png in Resources */,
@@ -1000,6 +1037,7 @@
 				3EA319481DABCAD6001FEDEC /* 300.png in Resources */,
 				3EA319551DABCAD6001FEDEC /* 313.png in Resources */,
 				3EA3194B1DABCAD6001FEDEC /* 303.png in Resources */,
+				3E3DCE951DB5DF9C005E717E /* CityData.plist in Resources */,
 				3EA3194E1DABCAD6001FEDEC /* 306.png in Resources */,
 				3E7E3F271DAB854B0031888D /* LaunchScreen.storyboard in Resources */,
 				3ECCC0A91DAE236800498273 /* toolbar_playinglist_h_p@2x.png in Resources */,
@@ -1096,6 +1134,7 @@
 				3E7E3FD61DAB8F960031888D /* UIView+JHExtension.m in Sources */,
 				3ECCC0901DAE014400498273 /* NSAttributedString+Extension.m in Sources */,
 				3E7E3FAF1DAB8F8D0031888D /* Factory.m in Sources */,
+				3E3DCE961DB5DF9C005E717E /* GYZChooseCityController.m in Sources */,
 				3ECCC0921DAE014400498273 /* UIApplication+Extension.m in Sources */,
 				3E7E3F891DAB8F760031888D /* AFHTTPRequestOperation.m in Sources */,
 				3E7E3FD41DAB8F960031888D /* UIScrollView+JHExtension.m in Sources */,
@@ -1110,6 +1149,7 @@
 				3E7E3FCE1DAB8F960031888D /* JHRefreshCommonAniView.m in Sources */,
 				3E3DCE751DB5D311005E717E /* FMDatabase.m in Sources */,
 				3E7E3F901DAB8F760031888D /* AFURLResponseSerialization.m in Sources */,
+				3E3DCE981DB5DF9C005E717E /* GYZCityGroupCell.m in Sources */,
 				3E3DCE771DB5D311005E717E /* FMDatabasePool.m in Sources */,
 				3E7E3F951DAB8F760031888D /* UIActivityIndicatorView+AFNetworking.m in Sources */,
 				3E7E3F8E1DAB8F760031888D /* AFURLConnectionOperation.m in Sources */,
@@ -1127,9 +1167,11 @@
 				3EA5E94E1DACE7B1003E26EB /* RootViewController.m in Sources */,
 				3ECCC0971DAE119D00498273 /* MyWeatherDataTool.m in Sources */,
 				3E7E3FD01DAB8F960031888D /* JHRefreshBaseView.m in Sources */,
+				3E3DCE991DB5DF9C005E717E /* GYZCityHeaderView.m in Sources */,
 				3E7E4C091DB0CC0100BDFB4D /* LifeIndexViewController.m in Sources */,
 				3EE8EAC41DAC7668000BE8A4 /* CLLocation+YCLocation.m in Sources */,
 				3E7E3F1F1DAB854B0031888D /* main.m in Sources */,
+				3E3DCE971DB5DF9C005E717E /* GYZCity.m in Sources */,
 				3E7E3F941DAB8F760031888D /* AFNetworkActivityIndicatorManager.m in Sources */,
 				3E3DCE791DB5D311005E717E /* FMResultSet.m in Sources */,
 				3ECCC08F1DAE014400498273 /* Foundation+Log.m in Sources */,

@@ -14,7 +14,7 @@
 #define DatabasePath [NSHomeDirectory() stringByAppendingString:[NSString stringWithFormat:@"/Documents/%@",DatabaseName]]
 
 // 数据库的文件名称
-#define DatabaseName @"MyWord.db"
+#define DatabaseName @"MyCity.db"
 
 @interface DatabaseManager : NSObject
 
@@ -32,11 +32,9 @@
 - (NSArray *)findAllData;
 
 // 删除指定的元素(叫name的全删掉)
-- (void)deleteObject:(NSString *)word des:(NSString *)des;
+- (void)deleteObject:(NSString *)City;
 
 // 刷新数据
 - (void)updateDataWith:(UserData *)data;
-
-- (void)updateDataTwoWith:(UserData *)data;
 
 @end

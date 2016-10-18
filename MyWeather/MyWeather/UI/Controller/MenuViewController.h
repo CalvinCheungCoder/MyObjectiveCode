@@ -10,4 +10,7 @@
 
 @interface MenuViewController : UIViewController
 
+//定义block
+@property (nonatomic,copy) void (^CityChooseBlock)(NSString *City);
+
 @end
