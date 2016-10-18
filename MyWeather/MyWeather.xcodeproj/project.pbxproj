@@ -11,6 +11,13 @@
 		3E1E2CFC1DB1FDCF0086497E /* UIColor+Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E1E2CFB1DB1FDCF0086497E /* UIColor+Extensions.m */; };
 		3E2CB4281DB220E1001CC838 /* NavHeadTitleView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E2CB4261DB220E1001CC838 /* NavHeadTitleView.m */; };
 		3E3DCE681DB5D18F005E717E /* MenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E3DCE671DB5D18F005E717E /* MenuViewController.m */; };
+		3E3DCE751DB5D311005E717E /* FMDatabase.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E3DCE6B1DB5D311005E717E /* FMDatabase.m */; };
+		3E3DCE761DB5D311005E717E /* FMDatabaseAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E3DCE6D1DB5D311005E717E /* FMDatabaseAdditions.m */; };
+		3E3DCE771DB5D311005E717E /* FMDatabasePool.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E3DCE6F1DB5D311005E717E /* FMDatabasePool.m */; };
+		3E3DCE781DB5D311005E717E /* FMDatabaseQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E3DCE711DB5D311005E717E /* FMDatabaseQueue.m */; };
+		3E3DCE791DB5D311005E717E /* FMResultSet.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E3DCE741DB5D311005E717E /* FMResultSet.m */; };
+		3E3DCE7E1DB5D321005E717E /* DatabaseManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E3DCE7B1DB5D321005E717E /* DatabaseManager.m */; };
+		3E3DCE7F1DB5D321005E717E /* UserData.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E3DCE7D1DB5D321005E717E /* UserData.m */; };
 		3E7E3F1F1DAB854B0031888D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E7E3F1E1DAB854B0031888D /* main.m */; };
 		3E7E3F241DAB854B0031888D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3E7E3F231DAB854B0031888D /* Assets.xcassets */; };
 		3E7E3F271DAB854B0031888D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3E7E3F251DAB854B0031888D /* LaunchScreen.storyboard */; };
@@ -162,6 +169,21 @@
 		3E2CB4261DB220E1001CC838 /* NavHeadTitleView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NavHeadTitleView.m; sourceTree = "<group>"; };
 		3E3DCE661DB5D18F005E717E /* MenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuViewController.h; sourceTree = "<group>"; };
 		3E3DCE671DB5D18F005E717E /* MenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MenuViewController.m; sourceTree = "<group>"; };
+		3E3DCE6A1DB5D311005E717E /* FMDatabase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabase.h; sourceTree = "<group>"; };
+		3E3DCE6B1DB5D311005E717E /* FMDatabase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabase.m; sourceTree = "<group>"; };
+		3E3DCE6C1DB5D311005E717E /* FMDatabaseAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabaseAdditions.h; sourceTree = "<group>"; };
+		3E3DCE6D1DB5D311005E717E /* FMDatabaseAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabaseAdditions.m; sourceTree = "<group>"; };
+		3E3DCE6E1DB5D311005E717E /* FMDatabasePool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabasePool.h; sourceTree = "<group>"; };
+		3E3DCE6F1DB5D311005E717E /* FMDatabasePool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabasePool.m; sourceTree = "<group>"; };
+		3E3DCE701DB5D311005E717E /* FMDatabaseQueue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabaseQueue.h; sourceTree = "<group>"; };
+		3E3DCE711DB5D311005E717E /* FMDatabaseQueue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabaseQueue.m; sourceTree = "<group>"; };
+		3E3DCE721DB5D311005E717E /* FMDB.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDB.h; sourceTree = "<group>"; };
+		3E3DCE731DB5D311005E717E /* FMResultSet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMResultSet.h; sourceTree = "<group>"; };
+		3E3DCE741DB5D311005E717E /* FMResultSet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMResultSet.m; sourceTree = "<group>"; };
+		3E3DCE7A1DB5D321005E717E /* DatabaseManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DatabaseManager.h; sourceTree = "<group>"; };
+		3E3DCE7B1DB5D321005E717E /* DatabaseManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DatabaseManager.m; sourceTree = "<group>"; };
+		3E3DCE7C1DB5D321005E717E /* UserData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserData.h; sourceTree = "<group>"; };
+		3E3DCE7D1DB5D321005E717E /* UserData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserData.m; sourceTree = "<group>"; };
 		3E7E3F1A1DAB854B0031888D /* MyWeather.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyWeather.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3E7E3F1E1DAB854B0031888D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		3E7E3F231DAB854B0031888D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -404,6 +426,24 @@
 			path = CustomView;
 			sourceTree = "<group>";
 		};
+		3E3DCE691DB5D311005E717E /* fmdb */ = {
+			isa = PBXGroup;
+			children = (
+				3E3DCE6A1DB5D311005E717E /* FMDatabase.h */,
+				3E3DCE6B1DB5D311005E717E /* FMDatabase.m */,
+				3E3DCE6C1DB5D311005E717E /* FMDatabaseAdditions.h */,
+				3E3DCE6D1DB5D311005E717E /* FMDatabaseAdditions.m */,
+				3E3DCE6E1DB5D311005E717E /* FMDatabasePool.h */,
+				3E3DCE6F1DB5D311005E717E /* FMDatabasePool.m */,
+				3E3DCE701DB5D311005E717E /* FMDatabaseQueue.h */,
+				3E3DCE711DB5D311005E717E /* FMDatabaseQueue.m */,
+				3E3DCE721DB5D311005E717E /* FMDB.h */,
+				3E3DCE731DB5D311005E717E /* FMResultSet.h */,
+				3E3DCE741DB5D311005E717E /* FMResultSet.m */,
+			);
+			path = fmdb;
+			sourceTree = "<group>";
+		};
 		3E7E3F111DAB854B0031888D = {
 			isa = PBXGroup;
 			children = (
@@ -471,6 +511,7 @@
 		3E7E3F561DAB8F510031888D /* Lib */ = {
 			isa = PBXGroup;
 			children = (
+				3E3DCE691DB5D311005E717E /* fmdb */,
 				3E1E2CF61DB1FD4D0086497E /* CreateRing */,
 				3EE8EABE1DAC7668000BE8A4 /* CCLocation */,
 				3E7E3FB21DAB8F960031888D /* JHRefresh */,
@@ -511,6 +552,10 @@
 		3E7E3F5B1DAB8F510031888D /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				3E3DCE7A1DB5D321005E717E /* DatabaseManager.h */,
+				3E3DCE7B1DB5D321005E717E /* DatabaseManager.m */,
+				3E3DCE7C1DB5D321005E717E /* UserData.h */,
+				3E3DCE7D1DB5D321005E717E /* UserData.m */,
 				3E2CB4221DB220E1001CC838 /* CustomView */,
 				3EA5E9421DACE7B1003E26EB /* Controller */,
 				3EA5E9471DACE7B1003E26EB /* Model */,
@@ -1047,6 +1092,7 @@
 				3E7E3FCD1DAB8F960031888D /* JHRefreshAniBaseView.m in Sources */,
 				3E7E3F9A1DAB8F760031888D /* UIRefreshControl+AFNetworking.m in Sources */,
 				3E7E3F961DAB8F760031888D /* UIAlertView+AFNetworking.m in Sources */,
+				3E3DCE7F1DB5D321005E717E /* UserData.m in Sources */,
 				3E7E3FD61DAB8F960031888D /* UIView+JHExtension.m in Sources */,
 				3ECCC0901DAE014400498273 /* NSAttributedString+Extension.m in Sources */,
 				3E7E3FAF1DAB8F8D0031888D /* Factory.m in Sources */,
@@ -1062,7 +1108,9 @@
 				3E7E3F931DAB8F760031888D /* README.md in Sources */,
 				3E7E3F981DAB8F760031888D /* UIImageView+AFNetworking.m in Sources */,
 				3E7E3FCE1DAB8F960031888D /* JHRefreshCommonAniView.m in Sources */,
+				3E3DCE751DB5D311005E717E /* FMDatabase.m in Sources */,
 				3E7E3F901DAB8F760031888D /* AFURLResponseSerialization.m in Sources */,
+				3E3DCE771DB5D311005E717E /* FMDatabasePool.m in Sources */,
 				3E7E3F951DAB8F760031888D /* UIActivityIndicatorView+AFNetworking.m in Sources */,
 				3E7E3F8E1DAB8F760031888D /* AFURLConnectionOperation.m in Sources */,
 				3ECCC0931DAE014400498273 /* UILabel+Font.m in Sources */,
@@ -1075,6 +1123,7 @@
 				3EA5E94F1DACE7B1003E26EB /* WeatherModel.m in Sources */,
 				3E7E3FB11DAB8F8D0031888D /* UIView+Addition.m in Sources */,
 				3E7E3FD31DAB8F960031888D /* JHRefreshHeaderView.m in Sources */,
+				3E3DCE781DB5D311005E717E /* FMDatabaseQueue.m in Sources */,
 				3EA5E94E1DACE7B1003E26EB /* RootViewController.m in Sources */,
 				3ECCC0971DAE119D00498273 /* MyWeatherDataTool.m in Sources */,
 				3E7E3FD01DAB8F960031888D /* JHRefreshBaseView.m in Sources */,
@@ -1082,10 +1131,13 @@
 				3EE8EAC41DAC7668000BE8A4 /* CLLocation+YCLocation.m in Sources */,
 				3E7E3F1F1DAB854B0031888D /* main.m in Sources */,
 				3E7E3F941DAB8F760031888D /* AFNetworkActivityIndicatorManager.m in Sources */,
+				3E3DCE791DB5D311005E717E /* FMResultSet.m in Sources */,
 				3ECCC08F1DAE014400498273 /* Foundation+Log.m in Sources */,
+				3E3DCE761DB5D311005E717E /* FMDatabaseAdditions.m in Sources */,
 				3EA5E9501DACE7B1003E26EB /* WeatherCell.m in Sources */,
 				3E1E2CF91DB1FD680086497E /* MyCreateRingView.m in Sources */,
 				3E7E3FD51DAB8F960031888D /* UIScrollView+JHRefresh.m in Sources */,
+				3E3DCE7E1DB5D321005E717E /* DatabaseManager.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

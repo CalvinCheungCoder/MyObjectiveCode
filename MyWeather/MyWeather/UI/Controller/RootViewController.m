@@ -12,7 +12,7 @@
 #import "WeatherModel.h"
 #import "AirViewController.h"
 #import "LifeIndexViewController.h"
-
+#import "MenuViewController.h"
 #import "NavHeadTitleView.h"
 
 @interface RootViewController ()<UITableViewDelegate,UITableViewDataSource,CLLocationManagerDelegate,NavHeadTitleViewDelegate>
@@ -87,7 +87,8 @@
 
 - (void)NavHeadback{
     
-    
+    MenuViewController *menu = [[MenuViewController alloc]init];
+    [self presentViewController:menu animated:YES completion:nil];
 }
 - (void)NavHeadToRight{
     

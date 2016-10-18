@@ -19,5 +19,7 @@
 #import "NetWorking.h"
 #import "Net.h"
 #import <CoreLocation/CoreLocation.h>
+#import "DatabaseManager.h"
+#import "UserData.h"
 
 #endif
