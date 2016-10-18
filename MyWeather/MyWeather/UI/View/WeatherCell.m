@@ -59,9 +59,9 @@
     
     self.weatherLabel.frame = CGRectMake(self.weathImage.right + 5, 8, self.width/2-70, 35);
     
-    self.timeLabel.frame = CGRectMake(10, 10, self.width/2 - 30, 20);
+    self.timeLabel.frame = CGRectMake(10, 15, self.width/2 - 30, 20);
     
-    self.timeLabelTwo.frame = CGRectMake(10, 35, self.width/2-30, 20);
+//    self.timeLabelTwo.frame = CGRectMake(10, 35, self.width/2-30, 20);
     
     self.temLabel.frame = CGRectMake(self.width-80, 10, 70, 30);
 }

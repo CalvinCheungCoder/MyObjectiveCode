@@ -7,9 +7,8 @@
 //
 
 #import "MenuViewController.h"
-#import "GYZChooseCityController.h"
 
-@interface MenuViewController ()<UITableViewDelegate,UITableViewDataSource,GYZChooseCityDelegate>
+@interface MenuViewController ()<UITableViewDelegate,UITableViewDataSource>
 
 @property (nonatomic, strong) DatabaseManager *manger;
 
@@ -47,53 +46,10 @@
     label.textColor = [UIColor whiteColor];
     label.font = [UIFont systemFontOfSize:18.f];
     [self.view addSubview:label];
-    
-    UIButton *AddBtn = [[UIButton alloc]initWithFrame:CGRectMake(ScreenWidth - 40, 30, 20, 20)];
-    [AddBtn setBackgroundImage:[UIImage imageNamed:@"Plus.png"] forState:UIControlStateNormal];
-    [AddBtn addTarget:self action:@selector(AddBtnClick) forControlEvents:UIControlEventTouchUpInside];
-    [self.view addSubview:AddBtn];
-}
-
-#pragma mark -- 添加城市
--(void)AddBtnClick{
-    
-    GYZChooseCityController *cityPickerVC = [[GYZChooseCityController alloc] init];
-    [cityPickerVC setDelegate:self];
-//    cityPickerVC.ChooseCity = self;
-    // 最近访问城市，如果不设置，将自动管理
-    cityPickerVC.hotCitys = @[@"100010000", @"200010000", @"300210000", @"600010000", @"300110000"];
-    
-    [self presentViewController:[[UINavigationController alloc] initWithRootViewController:cityPickerVC] animated:YES completion:^{
-        
-    }];
-}
-
-#pragma mark -- GYZCityPickerDelegate
-- (void)cityPickerController:(GYZChooseCityController *)chooseCityController didSelectCity:(GYZCity *)city
-{
-    // 插入城市数据
-    UserData *data = [[UserData alloc] init];
-    data.city = city.cityName;
-    NSMutableArray *arr = [[NSMutableArray alloc] initWithArray:[_manger findAllData]];
-    for (UserData *temp in arr) {
-        
-        if ([city.cityName isEqualToString:temp.city]) {
-            
-            return;
-        }
-    }
-    [self.manger insertCollecInformation:data];
-    [chooseCityController dismissViewControllerAnimated:YES completion:^{
-        
-    }];
-}
-
-- (void)cityPickerControllerDidCancel:(GYZChooseCityController *)chooseCityController
-{
-    [chooseCityController dismissViewControllerAnimated:YES completion:nil];
 }
 
 
+#pragma mark -- 加载数据
 - (void)initData {
     
     _manger = [DatabaseManager manager];
@@ -170,7 +126,7 @@
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     
-    //判断block是否为空
+    // 判断block是否为空
     UserData *model = _dataArr[indexPath.row];
     if (self.CityChooseBlock) {
         self.CityChooseBlock(model.city);

@@ -15,11 +15,13 @@
 #import "MenuViewController.h"
 #import "NavHeadTitleView.h"
 #import "WeatherLineChart.h"
+#import "GYZChooseCityController.h"
 
-@interface RootViewController ()<UITableViewDelegate,UITableViewDataSource,CLLocationManagerDelegate,NavHeadTitleViewDelegate>
+@interface RootViewController ()<UITableViewDelegate,UITableViewDataSource,CLLocationManagerDelegate,NavHeadTitleViewDelegate,GYZChooseCityDelegate>
 
+// 定位管理
 @property (nonatomic, strong) CLLocationManager *locationManager;
-
+// 顶部View
 @property (nonatomic, strong) UIView *BackView;
 // 顶部背景
 @property (nonatomic, strong) UIView *colorBackgroundView;
@@ -29,31 +31,57 @@
 @property (nonatomic, strong) UILabel *temLabel;
 // 更新时间
 @property (nonatomic, strong) UILabel *UpdateLabel;
-
+// tableView
 @property (nonatomic, strong) UITableView *tableView;
-
+// 数据
 @property (nonatomic, strong) NSMutableArray *dataArr;
 // 生活指数
 @property (nonatomic, strong) NSDictionary *suggestionDict;
 // 空气质量
 @property (nonatomic, strong) NSDictionary *aqiDict;
-
+// headTableView
 @property (nonatomic, strong) UIView *headLineView;
-
+// 分栏按钮
 @property (nonatomic, strong) UIButton *seleBtn;
-
-@property (nonatomic, strong) NavHeadTitleView *NavView;//导航栏
-
+// 导航栏
+@property (nonatomic, strong) NavHeadTitleView *NavView;
+// 城市管理
 @property (nonatomic, strong) DatabaseManager *manger;
-
+// 城市名
 @property (nonatomic, strong) NSString *cityName;
+// 左滑动
+@property (nonatomic, strong) UISwipeGestureRecognizer *swipeLeft;
+// 右滑动
+@property (nonatomic, strong) UISwipeGestureRecognizer *swipeRight;
+// 标记
+@property (nonatomic, assign) NSInteger tag;
+// 小圆点
+@property (nonatomic, strong) UIPageControl *pageControl;
 
-@property (nonatomic, weak  ) WeatherLineChart *chartMax;
-@property (nonatomic, weak  ) WeatherLineChart *chartMin;
 
 @end
 
 @implementation RootViewController
+
+- (UISwipeGestureRecognizer *)swipeLeft {
+    
+    if (!_swipeLeft) {
+        _swipeLeft = [[UISwipeGestureRecognizer alloc] initWithTarget:self
+                                                               action:@selector(swipeGeneralInfoViewLeft)];
+        _swipeLeft.direction = UISwipeGestureRecognizerDirectionLeft;
+    }
+    return _swipeLeft;
+}
+
+- (UISwipeGestureRecognizer *)swipeRight {
+    
+    if (!_swipeRight) {
+        _swipeRight = [[UISwipeGestureRecognizer alloc] initWithTarget:self
+                                                                action:@selector(swipeGeneralInfoViewRight)];
+        _swipeRight.direction = UISwipeGestureRecognizerDirectionRight;
+    }
+    return _swipeRight;
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -72,6 +100,53 @@
     [self createWeathTableView];
     // 获取聚合天气数据
 //    [self GetJuHeWeatherData];
+    
+}
+
+#pragma mark -- 标记
+- (void)setIntTag{
+    
+    _manger = [DatabaseManager manager];
+    NSArray *arr = [[NSMutableArray alloc] initWithArray:[_manger findAllData]];
+    UserData *cityData = [[UserData alloc]init];
+    for (int i = 0; i < arr.count; i ++) {
+        cityData = arr[i];
+        NSString *city = [NSString stringWithFormat:@"%@",cityData.city];
+        if ([self.cityName isEqualToString:city]) {
+            
+            self.tag = i;
+            [self GetJuHeWeatherData];
+        }
+    }
+}
+
+#pragma mark -- 向左滑动
+- (void)swipeGeneralInfoViewLeft{
+    
+    _manger = [DatabaseManager manager];
+    NSArray *arr = [[NSMutableArray alloc] initWithArray:[_manger findAllData]];
+    if (self.tag == arr.count-1) {
+        
+        return;
+        
+    }else{
+        
+        self.tag ++;
+        [self GetJuHeWeatherData];
+    }
+}
+
+#pragma mark -- 向右滑动
+- (void)swipeGeneralInfoViewRight{
+    
+    if (self.tag == 0) {
+        
+        return;
+    }else{
+        
+        self.tag --;
+        [self GetJuHeWeatherData];
+    }
 }
 
 #pragma mark -- 头视图
@@ -80,7 +155,7 @@
     self.NavView = [[NavHeadTitleView alloc]initWithFrame:CGRectMake(0, 0, ScreenWidth, 64)];
     self.NavView.title = @"";
     self.NavView.color = [UIColor whiteColor];
-    self.NavView.backTitleImage = @"Plus";
+    self.NavView.backTitleImage = @"menu";
     self.NavView.rightTitleImage = @"Plus";
     self.NavView.delegate = self;
     [self.view addSubview:self.NavView];
@@ -97,13 +172,54 @@
     menu.CityChooseBlock = ^(NSString *city) {
         
         self.cityName = city;
-        // 获取聚合天气数据
-        [self GetJuHeWeatherData];
+        
+        [self setIntTag];
     };
     [self presentViewController:menu animated:YES completion:nil];
 }
+
+#pragma mark -- 添加城市
 - (void)NavHeadToRight{
     
+    GYZChooseCityController *cityPickerVC = [[GYZChooseCityController alloc] init];
+    [cityPickerVC setDelegate:self];
+    // 最近访问城市，如果不设置，将自动管理
+    cityPickerVC.hotCitys = @[@"100010000", @"200010000", @"300210000", @"600010000", @"300110000"];
+    
+    [self presentViewController:[[UINavigationController alloc] initWithRootViewController:cityPickerVC] animated:YES completion:^{
+        
+    }];
+}
+
+#pragma mark -- GYZCityPickerDelegate
+- (void)cityPickerController:(GYZChooseCityController *)chooseCityController didSelectCity:(GYZCity *)city
+{
+    // 插入城市数据
+    UserData *data = [[UserData alloc] init];
+    data.city = city.cityName;
+    NSMutableArray *arr = [[NSMutableArray alloc] initWithArray:[_manger findAllData]];
+    for (UserData *temp in arr) {
+        
+        if ([city.cityName isEqualToString:temp.city]) {
+            
+            self.cityName = city.cityName;
+            [self GetJuHeWeatherData];
+            
+            return;
+        }
+    }
+    
+    [self.manger insertCollecInformation:data];
+    // 加载数据
+    self.cityName = city.cityName;
+    [self GetJuHeWeatherData];
+    
+    [chooseCityController dismissViewControllerAnimated:YES completion:nil];
+}
+
+- (void)cityPickerControllerDidCancel:(GYZChooseCityController *)chooseCityController
+{
+    [chooseCityController dismissViewControllerAnimated:YES completion:nil];
 }
 
 #pragma mark -- 定位
@@ -131,17 +247,25 @@
 -(void)GetJuHeWeatherData{
     
     self.dataArr = [NSMutableArray new];
+    
+    _manger = [DatabaseManager manager];
+    NSArray *arr = [[NSMutableArray alloc] initWithArray:[_manger findAllData]];
+    UserData *cityData = [[UserData alloc]init];
+    cityData = arr[self.tag];
+    self.pageControl.numberOfPages = arr.count;
+    self.pageControl.currentPage = self.tag;
+    self.cityName = [NSString stringWithFormat:@"%@",cityData.city];
     NSString *str = [self.cityName substringToIndex:self.cityName.length-1];
     NSDictionary *parm = @{@"apikey":APIKEY,@"city":str};
     [NetWorking requestDataByURL:WorldWeather Parameters:parm success:^(AFHTTPRequestOperation *operation, id responseObject) {
         
         NSDictionary *resultDict = responseObject[@"HeWeather data service 3.0"][0];
-        MyLog(@"resultDict == %@",resultDict);
+//        MyLog(@"resultDict == %@",resultDict);
         // 基本信息
         NSDictionary *basic = responseObject[@"HeWeather data service 3.0"][0][@"basic"];
 //        MyLog(@"basic == %@",basic);
         self.CityLabel.text = [NSString stringWithFormat:@"%@",basic[@"city"]];
-        self.UpdateLabel.text = [NSString stringWithFormat:@"更新时间:%@",basic[@"update"][@"loc"]];
+        self.UpdateLabel.text = [NSString stringWithFormat:@"更新时间：%@",basic[@"update"][@"loc"]];
         
         // 实况天气
         NSDictionary *now = responseObject[@"HeWeather data service 3.0"][0][@"now"];
@@ -152,7 +276,7 @@
         NSDictionary *weatherDict = responseObject[@"HeWeather data service 3.0"][0][@"daily_forecast"];
         _dataArr = [NSMutableArray new];
         for (NSDictionary *Dict in weatherDict) {
-            MyLog(@"dict == %@",Dict);
+            
             WeatherModel *model = [[WeatherModel alloc]init];
             
             model.textday = [NSString stringWithFormat:@"%@",Dict[@"cond"][@"txt_d"]];
@@ -195,8 +319,8 @@
     [NetWorking requestDataByURL:WorldWeather Parameters:parm success:^(AFHTTPRequestOperation *operation, id responseObject) {
         
         // 三小时预报
-//        NSDictionary *hourWeather = responseObject[@"HeWeather data service 3.0"][0][@"hourly_forecast"];
-//        
+        NSDictionary *hourWeather = responseObject[@"HeWeather data service 3.0"][0][@"hourly_forecast"];
+//
 //        _dataArr = [NSMutableArray new];
 //        for (NSDictionary *Dict in hourWeather) {
 //            MyLog(@"dict == %@",Dict);
@@ -219,7 +343,6 @@
 //            [_dataArr addObject:model];
 //        }
 //        [self.tableView reloadData];
-
         
     } failBlock:^(AFHTTPRequestOperation *operation, NSError *error) {
         
@@ -241,11 +364,14 @@
     self.CityLabel.textAlignment = NSTextAlignmentCenter;
     self.CityLabel.font = [UIFont systemFontOfSize:20.f];
     [self.BackView addSubview:self.CityLabel];
+    // 小圆点
+    self.pageControl = [[UIPageControl alloc]initWithFrame:CGRectMake(40, self.CityLabel.bottom+5, ScreenWidth-80, 10)];
+    [self.BackView addSubview:self.pageControl];
     // 温度
-    self.temLabel = [[UILabel alloc]initWithFrame:CGRectMake(ScreenWidth/2-60, self.CityLabel.bottom + 40, 120, 90)];
+    self.temLabel = [[UILabel alloc]initWithFrame:CGRectMake(ScreenWidth/2-50, self.CityLabel.bottom + 40, 120, 90)];
     self.temLabel.textColor = [UIColor whiteColor];
     self.temLabel.textAlignment = NSTextAlignmentCenter;
-    self.temLabel.font = [UIFont systemFontOfSize:78.f];
+    self.temLabel.font = [UIFont systemFontOfSize:72.f];
     [self.BackView addSubview:self.temLabel];
     
     // 查看生活指数
@@ -269,11 +395,9 @@
     self.UpdateLabel.textAlignment = NSTextAlignmentRight;
     self.UpdateLabel.font = [UIFont systemFontOfSize:10.f];
     [self.BackView addSubview:self.UpdateLabel];
-}
-
-#pragma mark -- RightBtn
--(void)RightBtnClicked{
     
+    [self.BackView addGestureRecognizer:self.swipeLeft];
+    [self.BackView addGestureRecognizer:self.swipeRight];
 }
 
 #pragma mark -- 生活指数
@@ -351,10 +475,6 @@
         _headLineView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, ScreenWidth, 40)];
         _headLineView.backgroundColor = [UIColor whiteColor];
         
-        UILabel *line = [[UILabel alloc]initWithFrame:CGRectMake(0,39.5, ScreenWidth, 0.5)];
-        line.backgroundColor = [UIColor grayColor];
-        [_headLineView addSubview:line];
-        
         NSArray *arr = [NSArray arrayWithObjects:@"未来天气",@"分时天气", nil];
         for (int i = 0;i < 2;i ++)
         {
@@ -423,9 +543,6 @@
              MyLog(@"currCity == %@",currCity);
              self.cityName = currCity;
              
-             // 获取聚合天气数据
-             [self GetJuHeWeatherData];
-             
              if (!currCity) {
                  // 四大直辖市的城市信息无法通过locality获得，只能通过获取省份的方法来获得（如果city为空，则可知为直辖市）
                  currCity = placemark.administrativeArea;
@@ -440,10 +557,15 @@
                  
                  if ([currCity isEqualToString:temp.city]) {
                      
+                     // 设置标记
+                     [self setIntTag];
                      return ;
                  }
              }
              [self.manger insertCollecInformation:data];
+             
+             // 设置标记
+             [self setIntTag];
              
          }else if (error == nil && [array count] == 0){
              

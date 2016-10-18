@@ -27,6 +27,7 @@
 		3E3DCE991DB5DF9C005E717E /* GYZCityHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E3DCE941DB5DF9C005E717E /* GYZCityHeaderView.m */; };
 		3E3DCE9C1DB5F943005E717E /* WeatherLineChart.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E3DCE9B1DB5F943005E717E /* WeatherLineChart.m */; };
 		3E3DCEBC1DB62353005E717E /* OneViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E3DCEBB1DB62353005E717E /* OneViewController.m */; };
+		3E3DCECD1DB6637F005E717E /* menu.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E3DCECC1DB6637F005E717E /* menu.png */; };
 		3E7E3F1F1DAB854B0031888D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E7E3F1E1DAB854B0031888D /* main.m */; };
 		3E7E3F241DAB854B0031888D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3E7E3F231DAB854B0031888D /* Assets.xcassets */; };
 		3E7E3F271DAB854B0031888D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3E7E3F251DAB854B0031888D /* LaunchScreen.storyboard */; };
@@ -139,9 +140,7 @@
 		3ECCC09E1DAE191A00498273 /* allCities.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3ECCC09B1DAE191A00498273 /* allCities.plist */; };
 		3ECCC09F1DAE191A00498273 /* allCitiesDics.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3ECCC09C1DAE191A00498273 /* allCitiesDics.plist */; };
 		3ECCC0A01DAE191A00498273 /* hotCities.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3ECCC09D1DAE191A00498273 /* hotCities.plist */; };
-		3ECCC0A51DAE21C400498273 /* menu.png in Resources */ = {isa = PBXBuildFile; fileRef = 3ECCC0A41DAE21C400498273 /* menu.png */; };
 		3ECCC0A71DAE21C800498273 /* Plus.png in Resources */ = {isa = PBXBuildFile; fileRef = 3ECCC0A61DAE21C800498273 /* Plus.png */; };
-		3ECCC0A91DAE236800498273 /* toolbar_playinglist_h_p@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3ECCC0A81DAE236800498273 /* toolbar_playinglist_h_p@2x.png */; };
 		3ECCC0AB1DAE237200498273 /* upgrade_icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3ECCC0AA1DAE237200498273 /* upgrade_icon@2x.png */; };
 		3EE8EAC31DAC7668000BE8A4 /* CCLocationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EE8EAC01DAC7668000BE8A4 /* CCLocationManager.m */; };
 		3EE8EAC41DAC7668000BE8A4 /* CLLocation+YCLocation.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EE8EAC21DAC7668000BE8A4 /* CLLocation+YCLocation.m */; };
@@ -207,6 +206,7 @@
 		3E3DCE9B1DB5F943005E717E /* WeatherLineChart.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WeatherLineChart.m; sourceTree = "<group>"; };
 		3E3DCEBA1DB62353005E717E /* OneViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OneViewController.h; sourceTree = "<group>"; };
 		3E3DCEBB1DB62353005E717E /* OneViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OneViewController.m; sourceTree = "<group>"; };
+		3E3DCECC1DB6637F005E717E /* menu.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = menu.png; sourceTree = "<group>"; };
 		3E7E3F1A1DAB854B0031888D /* MyWeather.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyWeather.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3E7E3F1E1DAB854B0031888D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		3E7E3F231DAB854B0031888D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -378,9 +378,7 @@
 		3ECCC09B1DAE191A00498273 /* allCities.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = allCities.plist; sourceTree = "<group>"; };
 		3ECCC09C1DAE191A00498273 /* allCitiesDics.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = allCitiesDics.plist; sourceTree = "<group>"; };
 		3ECCC09D1DAE191A00498273 /* hotCities.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = hotCities.plist; sourceTree = "<group>"; };
-		3ECCC0A41DAE21C400498273 /* menu.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = menu.png; sourceTree = "<group>"; };
 		3ECCC0A61DAE21C800498273 /* Plus.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Plus.png; sourceTree = "<group>"; };
-		3ECCC0A81DAE236800498273 /* toolbar_playinglist_h_p@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "toolbar_playinglist_h_p@2x.png"; sourceTree = "<group>"; };
 		3ECCC0AA1DAE237200498273 /* upgrade_icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "upgrade_icon@2x.png"; sourceTree = "<group>"; };
 		3EE8EABF1DAC7668000BE8A4 /* CCLocationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCLocationManager.h; sourceTree = "<group>"; };
 		3EE8EAC01DAC7668000BE8A4 /* CCLocationManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCLocationManager.m; sourceTree = "<group>"; };
@@ -575,11 +573,10 @@
 		3E7E3F5A1DAB8F510031888D /* Res */ = {
 			isa = PBXGroup;
 			children = (
+				3E3DCECC1DB6637F005E717E /* menu.png */,
 				3E3DCE881DB5DCF4005E717E /* close.png */,
 				3ECCC0AA1DAE237200498273 /* upgrade_icon@2x.png */,
-				3ECCC0A81DAE236800498273 /* toolbar_playinglist_h_p@2x.png */,
 				3ECCC0A61DAE21C800498273 /* Plus.png */,
-				3ECCC0A41DAE21C400498273 /* menu.png */,
 				3ECCC09B1DAE191A00498273 /* allCities.plist */,
 				3ECCC09C1DAE191A00498273 /* allCitiesDics.plist */,
 				3ECCC09D1DAE191A00498273 /* hotCities.plist */,
@@ -994,6 +991,7 @@
 				3EA319521DABCAD6001FEDEC /* 310.png in Resources */,
 				3EA319401DABCAD6001FEDEC /* 206.png in Resources */,
 				3EA3193A1DABCAD6001FEDEC /* 200.png in Resources */,
+				3E3DCECD1DB6637F005E717E /* menu.png in Resources */,
 				3EA319441DABCAD6001FEDEC /* 210.png in Resources */,
 				3ECCC0AB1DAE237200498273 /* upgrade_icon@2x.png in Resources */,
 				3EA319671DABCAD6001FEDEC /* 999.png in Resources */,
@@ -1020,7 +1018,6 @@
 				3EA3194D1DABCAD6001FEDEC /* 305.png in Resources */,
 				3ECCC09F1DAE191A00498273 /* allCitiesDics.plist in Resources */,
 				3EA3194A1DABCAD6001FEDEC /* 302.png in Resources */,
-				3ECCC0A51DAE21C400498273 /* menu.png in Resources */,
 				3EA319431DABCAD6001FEDEC /* 209.png in Resources */,
 				3EA319611DABCAD6001FEDEC /* 503.png in Resources */,
 				3E7E3F241DAB854B0031888D /* Assets.xcassets in Resources */,
@@ -1045,7 +1042,6 @@
 				3E3DCE951DB5DF9C005E717E /* CityData.plist in Resources */,
 				3EA3194E1DABCAD6001FEDEC /* 306.png in Resources */,
 				3E7E3F271DAB854B0031888D /* LaunchScreen.storyboard in Resources */,
-				3ECCC0A91DAE236800498273 /* toolbar_playinglist_h_p@2x.png in Resources */,
 				3EA319471DABCAD6001FEDEC /* 213.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

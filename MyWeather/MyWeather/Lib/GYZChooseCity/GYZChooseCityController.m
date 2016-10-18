@@ -55,7 +55,7 @@ NSString *const cityCell = @"CityCell";
 -(void)viewDidLoad{
     [super viewDidLoad];
     // tabBar颜色
-    self.navigationController.navigationBar.barTintColor= RGB(74, 119, 210);
+    self.navigationController.navigationBar.barTintColor = RGB(74, 119, 210);
     // 设置title颜色的大小
     self.navigationController.navigationBar.titleTextAttributes = @{NSForegroundColorAttributeName: [UIColor whiteColor],NSFontAttributeName:[UIFont boldSystemFontOfSize:18]};
     // title
