@@ -21,13 +21,14 @@
 @property (nonatomic, strong) CLLocationManager *locationManager;
 
 @property (nonatomic, strong) UIView *BackView;
-
 // 顶部背景
 @property (nonatomic, strong) UIView *colorBackgroundView;
 // 城市
 @property (nonatomic, strong) UILabel *CityLabel;
 // 温度
 @property (nonatomic, strong) UILabel *temLabel;
+// 更新时间
+@property (nonatomic, strong) UILabel *UpdateLabel;
 
 @property (nonatomic, strong) UITableView *tableView;
 
@@ -36,6 +37,10 @@
 @property (nonatomic, strong) NSDictionary *suggestionDict;
 // 空气质量
 @property (nonatomic, strong) NSDictionary *aqiDict;
+
+@property (nonatomic, strong) UIView *headLineView;
+
+@property (nonatomic, strong) UIButton *seleBtn;
 
 @property (nonatomic, strong) NavHeadTitleView *NavView;//导航栏
 
@@ -126,14 +131,17 @@
 -(void)GetJuHeWeatherData{
     
     self.dataArr = [NSMutableArray new];
-    NSDictionary *parm = @{@"apikey":APIKEY,@"city":@"上海"};
+    NSString *str = [self.cityName substringToIndex:self.cityName.length-1];
+    NSDictionary *parm = @{@"apikey":APIKEY,@"city":str};
     [NetWorking requestDataByURL:WorldWeather Parameters:parm success:^(AFHTTPRequestOperation *operation, id responseObject) {
         
-//        NSDictionary *resultDict = responseObject[@"HeWeather data service 3.0"][0];
+        NSDictionary *resultDict = responseObject[@"HeWeather data service 3.0"][0];
+        MyLog(@"resultDict == %@",resultDict);
         // 基本信息
         NSDictionary *basic = responseObject[@"HeWeather data service 3.0"][0][@"basic"];
 //        MyLog(@"basic == %@",basic);
         self.CityLabel.text = [NSString stringWithFormat:@"%@",basic[@"city"]];
+        self.UpdateLabel.text = [NSString stringWithFormat:@"更新时间:%@",basic[@"update"][@"loc"]];
         
         // 实况天气
         NSDictionary *now = responseObject[@"HeWeather data service 3.0"][0][@"now"];
@@ -165,10 +173,6 @@
         }
         [self.tableView reloadData];
         
-        // 三小时预报
-        NSDictionary *hourWeather = responseObject[@"HeWeather data service 3.0"][0][@"hourly_forecast"];
-//        MyLog(@"hourly_forecast = %@",hourWeather);
-        
         // 生活指数
         self.suggestionDict = responseObject[@"HeWeather data service 3.0"][0][@"suggestion"];
 //        MyLog(@"suggestion == %@",suggestion);
@@ -176,6 +180,46 @@
         // 空气质量
         self.aqiDict = responseObject[@"HeWeather data service 3.0"][0][@"aqi"];
 //        MyLog(@"aqi == %@",aqi);
+        
+    } failBlock:^(AFHTTPRequestOperation *operation, NSError *error) {
+        
+    }];
+}
+
+#pragma mark -- 获取分时数据
+- (void)getSetHourWeather{
+    
+    self.dataArr = [NSMutableArray new];
+    NSString *str = [self.cityName substringToIndex:self.cityName.length-1];
+    NSDictionary *parm = @{@"apikey":APIKEY,@"city":str};
+    [NetWorking requestDataByURL:WorldWeather Parameters:parm success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        
+        // 三小时预报
+//        NSDictionary *hourWeather = responseObject[@"HeWeather data service 3.0"][0][@"hourly_forecast"];
+//        
+//        _dataArr = [NSMutableArray new];
+//        for (NSDictionary *Dict in hourWeather) {
+//            MyLog(@"dict == %@",Dict);
+//            WeatherModel *model = [[WeatherModel alloc]init];
+//            
+//            model.textday = [NSString stringWithFormat:@"%@",Dict[@"cond"][@"txt_d"]];
+//            model.weathImage = [NSString stringWithFormat:@"%@",Dict[@"cond"][@"code_d"]];
+//            model.high = [NSString stringWithFormat:@"%@",Dict[@"tmp"][@"max"]];
+//            model.low = [NSString stringWithFormat:@"%@",Dict[@"tmp"][@"min"]];
+//            
+//            NSString *dateString = [NSString stringWithFormat:@"%@",Dict[@"date"]];
+//            NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+//            [dateFormatter setDateFormat:@"yyyy-MM-dd"];
+//            NSDate *date = [dateFormatter dateFromString:dateString];
+//            date = [date dateByAddingTimeInterval:[[NSTimeZone systemTimeZone] secondsFromGMT]];
+//            NetWorking *work = [[NetWorking alloc]init];
+//            NSString *weekday = [work weekdayFromDate:date];
+//            model.date = weekday;
+//            
+//            [_dataArr addObject:model];
+//        }
+//        [self.tableView reloadData];
+
         
     } failBlock:^(AFHTTPRequestOperation *operation, NSError *error) {
         
@@ -205,20 +249,26 @@
     [self.BackView addSubview:self.temLabel];
     
     // 查看生活指数
-    UIButton *lifeBtn = [[UIButton alloc]initWithFrame:CGRectMake(30, ScreenHeight*0.45 - 30, ScreenWidth/2 - 60, 20)];
+    UIButton *lifeBtn = [[UIButton alloc]initWithFrame:CGRectMake(30, ScreenHeight*0.45 - 50, ScreenWidth/2 - 60, 20)];
     [lifeBtn setTitle:@"查看生活指数" forState:UIControlStateNormal];
     [lifeBtn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
     [lifeBtn addTarget:self action:@selector(lifeBtnClick) forControlEvents:UIControlEventTouchUpInside];
-    lifeBtn.titleLabel.font = [UIFont systemFontOfSize:12.f];
+    lifeBtn.titleLabel.font = [UIFont systemFontOfSize:14.f];
     [self.BackView addSubview:lifeBtn];
     
     // 查看生活指数
-    UIButton *airBtn = [[UIButton alloc]initWithFrame:CGRectMake(ScreenWidth/2 + 30, ScreenHeight*0.45 - 30, ScreenWidth/2 - 60, 20)];
+    UIButton *airBtn = [[UIButton alloc]initWithFrame:CGRectMake(ScreenWidth/2 + 30, ScreenHeight*0.45 - 50, ScreenWidth/2 - 60, 20)];
     [airBtn setTitle:@"查看空气质量" forState:UIControlStateNormal];
     [airBtn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
-    airBtn.titleLabel.font = [UIFont systemFontOfSize:12.f];
+    airBtn.titleLabel.font = [UIFont systemFontOfSize:14.f];
     [airBtn addTarget:self action:@selector(airBtnClick) forControlEvents:UIControlEventTouchUpInside];
     [self.BackView addSubview:airBtn];
+    
+    self.UpdateLabel = [[UILabel alloc]initWithFrame:CGRectMake(10, airBtn.bottom + 10, ScreenWidth-20, 18)];
+    self.UpdateLabel.textColor = [UIColor whiteColor];
+    self.UpdateLabel.textAlignment = NSTextAlignmentRight;
+    self.UpdateLabel.font = [UIFont systemFontOfSize:10.f];
+    [self.BackView addSubview:self.UpdateLabel];
 }
 
 #pragma mark -- RightBtn
@@ -249,6 +299,7 @@
     self.tableView.dataSource = self;
     self.tableView.delegate = self;
     self.tableView.separatorStyle = UITableViewCellSelectionStyleNone;
+    self.tableView.showsVerticalScrollIndicator = NO;
     [self.BackView addSubview:self.tableView];
 }
 
@@ -274,6 +325,7 @@
     }
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
     
+    
     WeatherModel *model = self.dataArr[indexPath.row];
     cell.temLabel.text = [NSString stringWithFormat:@"%@°~%@°",model.low,model.high];
     cell.timeLabel.text = model.date;
@@ -293,6 +345,61 @@
     return 60;
 }
 
+-(UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
+{
+    if (!_headLineView) {
+        _headLineView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, ScreenWidth, 40)];
+        _headLineView.backgroundColor = [UIColor whiteColor];
+        
+        UILabel *line = [[UILabel alloc]initWithFrame:CGRectMake(0,39.5, ScreenWidth, 0.5)];
+        line.backgroundColor = [UIColor grayColor];
+        [_headLineView addSubview:line];
+        
+        NSArray *arr = [NSArray arrayWithObjects:@"未来天气",@"分时天气", nil];
+        for (int i = 0;i < 2;i ++)
+        {
+            UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
+            btn.frame = CGRectMake(i*(ScreenWidth/2), 5, ScreenWidth/2, 30);
+            btn.tag = i;
+            [btn setTitle:arr[i] forState:(UIControlStateNormal)];
+            [btn setTitleColor:[UIColor grayColor] forState:(UIControlStateNormal)];
+            [btn setTitleColor:[UIColor blackColor] forState:(UIControlStateSelected)];
+            [btn addTarget:self action:@selector(headBtnClick:) forControlEvents:(UIControlEventTouchUpInside)];
+            btn.titleLabel.font = [UIFont systemFontOfSize:14];
+            [_headLineView addSubview:btn];
+            if (i == 0)
+            {   btn.selected = YES;
+                self.seleBtn = btn;
+                btn.titleLabel.font = [UIFont systemFontOfSize:14];
+            } else {
+                btn.selected = NO;
+            }
+        }
+    }
+    return _headLineView;
+}
+
+-(CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
+{
+    return 40;
+}
+
+#pragma mark -- BtnClick
+- (void)headBtnClick:(UIButton *)Btn{
+    
+    if (Btn.tag == 0) {
+        
+        self.seleBtn.selected = NO;
+        self.seleBtn = Btn;
+        self.seleBtn.selected = YES;
+        
+    }else{
+        
+        self.seleBtn.selected = NO;
+        self.seleBtn = Btn;
+        self.seleBtn.selected = YES;
+    }
+}
 
 #pragma mark -- CLLocationManagerDelegate
 - (void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray *)locations
@@ -323,10 +430,6 @@
                  // 四大直辖市的城市信息无法通过locality获得，只能通过获取省份的方法来获得（如果city为空，则可知为直辖市）
                  currCity = placemark.administrativeArea;
                  MyLog(@"currCity == %@",currCity);
-//                 self.cityName = currCity;
-//                 
-//                 // 获取聚合天气数据
-//                 [self GetJuHeWeatherData];
              }
              
              // 插入城市数据
