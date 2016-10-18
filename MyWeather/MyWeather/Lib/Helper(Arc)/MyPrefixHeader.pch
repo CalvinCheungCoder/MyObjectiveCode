@@ -1,0 +1,23 @@
+//
+//  MyPrefixHeader.pch
+//  LoveGoodFood
+//
+//  Created by qianfeng on 15/8/31.
+//  Copyright (c) 2015年 王立. All rights reserved.
+//
+
+#ifndef LoveGoodFood_MyPrefixHeader_pch
+#define LoveGoodFood_MyPrefixHeader_pch
+
+#import "MyHelper.h"
+#import "Factory.h"
+#import "UIView+Addition.h"
+
+#import "AFNetworking.h"
+#import "JHRefresh.h"
+#import "CustomNavigationController.h"
+#import "NetWorking.h"
+#import "Net.h"
+#import <CoreLocation/CoreLocation.h>
+
+#endif

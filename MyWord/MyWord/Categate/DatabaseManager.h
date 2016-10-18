@@ -37,4 +37,6 @@
 // 刷新数据
 - (void)updateDataWith:(UserData *)data;
 
+- (void)updateDataTwoWith:(UserData *)data;
+
 @end

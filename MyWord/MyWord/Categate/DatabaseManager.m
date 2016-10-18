@@ -111,7 +111,21 @@ static DatabaseManager *manager = nil;
 
 - (void)updateDataWith:(UserData *)data
 {
-    NSString * sql = @"update MyWord set word = ?, des = ?;";
+    NSString * sql = @"update MyWord when word = ? set des = ?;";
+    @synchronized (self)
+    {
+        int result = [_dataBase open];
+        if (result != YES) {
+            return;
+        }
+        [_dataBase executeUpdate:sql, data.word, data.des];
+        [_dataBase close];
+    }
+}
+
+- (void)updateDataTwoWith:(UserData *)data
+{
+    NSString * sql = @"update MyWord when des = ? set word = ?;";
     @synchronized (self)
     {
         int result = [_dataBase open];

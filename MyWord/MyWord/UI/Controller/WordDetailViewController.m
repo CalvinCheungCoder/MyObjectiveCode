@@ -27,13 +27,14 @@
 
 - (void)setUpUI{
     
-    UILabel *label = [[UILabel alloc]initWithFrame:CGRectMake(20, 80, ScreenWidth - 40, 20)];
+    UILabel *label = [[UILabel alloc]initWithFrame:CGRectMake(20, 80, ScreenWidth - 40, 60)];
     label.text = [NSString stringWithFormat:@"单词:%@",self.data.word];
     label.textAlignment = NSTextAlignmentLeft;
+    label.numberOfLines = 2;
     label.textColor = [UIColor blackColor];
     [self.view addSubview:label];
     
-    UILabel *des = [[UILabel alloc]initWithFrame:CGRectMake(20, 110, ScreenWidth - 40, 30)];
+    UILabel *des = [[UILabel alloc]initWithFrame:CGRectMake(20, 150, ScreenWidth - 40, 30)];
     des.textAlignment = NSTextAlignmentLeft;
     des.text = [NSString stringWithFormat:@"注释:%@",self.data.des];
     des.textColor = [UIColor grayColor];

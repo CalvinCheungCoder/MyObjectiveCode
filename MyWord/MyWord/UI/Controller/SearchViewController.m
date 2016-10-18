@@ -13,6 +13,8 @@
 
 @property (nonatomic, strong) UITextField *search;
 
+@property (nonatomic, copy) NSString *url;
+
 @end
 
 @implementation SearchViewController
@@ -39,11 +41,47 @@
     // 再次编辑就清空
     _search.clearsOnBeginEditing = YES;
     _search.textAlignment = NSTextAlignmentLeft;
-    _search.keyboardType = UIKeyboardTypeWebSearch;
+    _search.keyboardType = UIKeyboardTypeDefault;
+    _search.returnKeyType = UIReturnKeySearch;
     _search.delegate = self;
     [self.view addSubview:_search];
 }
 
+- (void)textFieldDidEndEditing:(UITextField *)textField{
+    
+    
+}
+
+- (BOOL)textFieldShouldReturn:(UITextField *)textField
+{
+    [_search resignFirstResponder];
+    
+    NSString *str = _search.text;
+    str = [str stringByReplacingOccurrencesOfString:@" " withString:@""];
+    _url = [NSString stringWithFormat:@"%@%@%@",searchOne,_search.text,searchTwo];
+    [Networking requestDataByURL:self.url Parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        
+        MyLog(@"请求链接 == %@",self.url);
+        NSDictionary *ecDict = responseObject[@"ec"];
+        NSDictionary *wordDict = ecDict[@"word"];
+        MyLog(@"wordDict == %@",wordDict);
+//        NSString *usphone = [wordDict objectForKey:@"usphone"];
+//        NSString *ukphone = [NSString stringWithFormat:@"%@",wordDict[@"ukphone"]];
+//        MyLog(@"usphone == %@",usphone);
+//        MyLog(@"ukphone == %@",ukphone);
+//        for (NSDictionary *dict in wordDict[@"trs"]) {
+//            NSDictionary *tr = dict[@"tr"];
+//            NSDictionary *l = tr[@"l"];
+//            NSString *wordStr = l[@"i"];
+//            MyLog(@"wordStr == %@",wordStr);
+//        }
+        
+    } failBlock:^(AFHTTPRequestOperation *operation, NSError *error) {
+        
+    }];
+    
+    return YES;
+}
 
 -(void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
     

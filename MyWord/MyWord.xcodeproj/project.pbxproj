@@ -59,6 +59,7 @@
 		3E4FB4691DB4F0FC00D5C512 /* UIRefreshControl+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E4FB4551DB4F0FC00D5C512 /* UIRefreshControl+AFNetworking.m */; };
 		3E4FB46A1DB4F0FC00D5C512 /* UIWebView+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E4FB4571DB4F0FC00D5C512 /* UIWebView+AFNetworking.m */; };
 		3E4FB46F1DB4F10C00D5C512 /* Networking.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E4FB46E1DB4F10C00D5C512 /* Networking.m */; };
+		3E4FB4721DB4FC4F00D5C512 /* WordCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E4FB4711DB4FC4F00D5C512 /* WordCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -162,6 +163,8 @@
 		3E4FB46C1DB4F10C00D5C512 /* Net.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Net.h; sourceTree = "<group>"; };
 		3E4FB46D1DB4F10C00D5C512 /* Networking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Networking.h; sourceTree = "<group>"; };
 		3E4FB46E1DB4F10C00D5C512 /* Networking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Networking.m; sourceTree = "<group>"; };
+		3E4FB4701DB4FC4F00D5C512 /* WordCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WordCell.h; sourceTree = "<group>"; };
+		3E4FB4711DB4FC4F00D5C512 /* WordCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WordCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -358,6 +361,8 @@
 			children = (
 				3E1173501DB3684B00B28C82 /* MyWordCell.h */,
 				3E1173511DB3684B00B28C82 /* MyWordCell.m */,
+				3E4FB4701DB4FC4F00D5C512 /* WordCell.h */,
+				3E4FB4711DB4FC4F00D5C512 /* WordCell.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -547,6 +552,7 @@
 				3E4FB45A1DB4F0FC00D5C512 /* AFHTTPSessionManager.m in Sources */,
 				3E4FB45E1DB4F0FC00D5C512 /* AFURLRequestSerialization.m in Sources */,
 				3E11735E1DB3684B00B28C82 /* UIColor+FlatColors.m in Sources */,
+				3E4FB4721DB4FC4F00D5C512 /* WordCell.m in Sources */,
 				3E11735B1DB3684B00B28C82 /* FMResultSet.m in Sources */,
 				3E1173561DB3684B00B28C82 /* UIViewController+CustomNavigationExtension.m in Sources */,
 				3E1173661DB3684B00B28C82 /* RootViewController.m in Sources */,

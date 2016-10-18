@@ -24,7 +24,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
-    self.view.backgroundColor = [UIColor colorWithHex:0x0d87cd];
+    self.view.backgroundColor = RGB(200, 200, 200);
     
     self.title = @"AddWord";
     
@@ -38,7 +38,7 @@
     _word = [[UITextField alloc]initWithFrame:CGRectMake(20, 100, ScreenWidth - 40, 46)];
 //    word.background = [[UIImage imageNamed:@"liveRadioProvinceBg_Normal@2x"]imageWithRenderingMode:UIImageRenderingModeAutomatic];
     _word.backgroundColor = [UIColor whiteColor];
-    _word.layer.cornerRadius = 8;
+    _word.layer.cornerRadius = 5;
     _word.placeholder = @"请输入单词";
     _word.font = [UIFont fontWithName:@"Arial" size:16.0f];
     _word.textColor = [UIColor redColor];
@@ -54,7 +54,7 @@
     _desText = [[UITextField alloc]initWithFrame:CGRectMake(20, 160, ScreenWidth - 40, 46)];
     //    word.background = [[UIImage imageNamed:@"liveRadioProvinceBg_Normal@2x"]imageWithRenderingMode:UIImageRenderingModeAutomatic];
     _desText.backgroundColor = [UIColor whiteColor];
-    _desText.layer.cornerRadius = 8;
+    _desText.layer.cornerRadius = 5;
     _desText.placeholder = @"请输入单词释义";
     _desText.font = [UIFont fontWithName:@"Arial" size:16.0f];
     _desText.textColor = [UIColor redColor];
