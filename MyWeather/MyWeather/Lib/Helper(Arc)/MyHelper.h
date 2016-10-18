@@ -42,7 +42,7 @@
 #define LightGrayColor [UIColor lightGrayColor]
 #define LightTextColor [UIColor lightTextColor]
 
-
+#define IS_iOS8      [[[UIDevice currentDevice] systemVersion] floatValue] >= 8.0
 
 #ifdef DEBUG
 #define MyLog(FORMAT, ...) fprintf(stderr,"%s: 第%d行\t%s\n",[[[NSString stringWithUTF8String:__FILE__] lastPathComponent] UTF8String], __LINE__, [[NSString stringWithFormat:FORMAT, ##__VA_ARGS__] UTF8String]);

@@ -16,6 +16,7 @@
 @property (nonatomic, strong) UILabel *temLabel;
 // 时间
 @property (nonatomic, strong) UILabel *timeLabel;
+@property (nonatomic, strong) UILabel *timeLabelTwo;
 // 天气
 @property (nonatomic, strong) UILabel *weatherLabel;
 

@@ -36,4 +36,12 @@
     }];
 }
 
+- (NSString *)weekdayFromDate:(NSDate *)date {
+    
+    NSArray *weekdays = @[[NSNull null], @"周日", @"周一", @"周二", @"周三", @"周四", @"周五", @"周六"];
+    NSCalendar *calendar = [NSCalendar currentCalendar];
+    [calendar setTimeZone:[[NSTimeZone alloc] initWithName:@"Asia/Beijing"]];
+    NSDateComponents *dateComponents = [calendar components:NSCalendarUnitWeekday fromDate:date];
+    return [weekdays objectAtIndex:dateComponents.weekday];
+}
 @end

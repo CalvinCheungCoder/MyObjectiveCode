@@ -25,6 +25,8 @@
 		3E3DCE971DB5DF9C005E717E /* GYZCity.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E3DCE901DB5DF9C005E717E /* GYZCity.m */; };
 		3E3DCE981DB5DF9C005E717E /* GYZCityGroupCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E3DCE921DB5DF9C005E717E /* GYZCityGroupCell.m */; };
 		3E3DCE991DB5DF9C005E717E /* GYZCityHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E3DCE941DB5DF9C005E717E /* GYZCityHeaderView.m */; };
+		3E3DCE9C1DB5F943005E717E /* WeatherLineChart.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E3DCE9B1DB5F943005E717E /* WeatherLineChart.m */; };
+		3E3DCEBC1DB62353005E717E /* OneViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E3DCEBB1DB62353005E717E /* OneViewController.m */; };
 		3E7E3F1F1DAB854B0031888D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E7E3F1E1DAB854B0031888D /* main.m */; };
 		3E7E3F241DAB854B0031888D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3E7E3F231DAB854B0031888D /* Assets.xcassets */; };
 		3E7E3F271DAB854B0031888D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3E7E3F251DAB854B0031888D /* LaunchScreen.storyboard */; };
@@ -124,7 +126,6 @@
 		3EA319651DABCAD6001FEDEC /* 900.png in Resources */ = {isa = PBXBuildFile; fileRef = 3EA319321DABCAD6001FEDEC /* 900.png */; };
 		3EA319661DABCAD6001FEDEC /* 901.png in Resources */ = {isa = PBXBuildFile; fileRef = 3EA319331DABCAD6001FEDEC /* 901.png */; };
 		3EA319671DABCAD6001FEDEC /* 999.png in Resources */ = {isa = PBXBuildFile; fileRef = 3EA319341DABCAD6001FEDEC /* 999.png */; };
-		3EA5E94D1DACE7B1003E26EB /* OtherViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EA5E9441DACE7B1003E26EB /* OtherViewController.m */; };
 		3EA5E94E1DACE7B1003E26EB /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EA5E9461DACE7B1003E26EB /* RootViewController.m */; };
 		3EA5E94F1DACE7B1003E26EB /* WeatherModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EA5E9491DACE7B1003E26EB /* WeatherModel.m */; };
 		3EA5E9501DACE7B1003E26EB /* WeatherCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EA5E94C1DACE7B1003E26EB /* WeatherCell.m */; };
@@ -202,6 +203,10 @@
 		3E3DCE921DB5DF9C005E717E /* GYZCityGroupCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GYZCityGroupCell.m; sourceTree = "<group>"; };
 		3E3DCE931DB5DF9C005E717E /* GYZCityHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GYZCityHeaderView.h; sourceTree = "<group>"; };
 		3E3DCE941DB5DF9C005E717E /* GYZCityHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GYZCityHeaderView.m; sourceTree = "<group>"; };
+		3E3DCE9A1DB5F943005E717E /* WeatherLineChart.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WeatherLineChart.h; sourceTree = "<group>"; };
+		3E3DCE9B1DB5F943005E717E /* WeatherLineChart.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WeatherLineChart.m; sourceTree = "<group>"; };
+		3E3DCEBA1DB62353005E717E /* OneViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OneViewController.h; sourceTree = "<group>"; };
+		3E3DCEBB1DB62353005E717E /* OneViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OneViewController.m; sourceTree = "<group>"; };
 		3E7E3F1A1DAB854B0031888D /* MyWeather.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyWeather.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3E7E3F1E1DAB854B0031888D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		3E7E3F231DAB854B0031888D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -351,8 +356,6 @@
 		3EA319321DABCAD6001FEDEC /* 900.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 900.png; sourceTree = "<group>"; };
 		3EA319331DABCAD6001FEDEC /* 901.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 901.png; sourceTree = "<group>"; };
 		3EA319341DABCAD6001FEDEC /* 999.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 999.png; sourceTree = "<group>"; };
-		3EA5E9431DACE7B1003E26EB /* OtherViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OtherViewController.h; sourceTree = "<group>"; };
-		3EA5E9441DACE7B1003E26EB /* OtherViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OtherViewController.m; sourceTree = "<group>"; };
 		3EA5E9451DACE7B1003E26EB /* RootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RootViewController.h; sourceTree = "<group>"; };
 		3EA5E9461DACE7B1003E26EB /* RootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RootViewController.m; sourceTree = "<group>"; };
 		3EA5E9481DACE7B1003E26EB /* WeatherModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WeatherModel.h; sourceTree = "<group>"; };
@@ -588,6 +591,8 @@
 		3E7E3F5B1DAB8F510031888D /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				3E3DCE9A1DB5F943005E717E /* WeatherLineChart.h */,
+				3E3DCE9B1DB5F943005E717E /* WeatherLineChart.m */,
 				3E3DCE7A1DB5D321005E717E /* DatabaseManager.h */,
 				3E3DCE7B1DB5D321005E717E /* DatabaseManager.m */,
 				3E3DCE7C1DB5D321005E717E /* UserData.h */,
@@ -805,8 +810,6 @@
 		3EA5E9421DACE7B1003E26EB /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				3EA5E9431DACE7B1003E26EB /* OtherViewController.h */,
-				3EA5E9441DACE7B1003E26EB /* OtherViewController.m */,
 				3EA5E9451DACE7B1003E26EB /* RootViewController.h */,
 				3EA5E9461DACE7B1003E26EB /* RootViewController.m */,
 				3E3DCE661DB5D18F005E717E /* MenuViewController.h */,
@@ -815,6 +818,8 @@
 				3E7E4C081DB0CC0100BDFB4D /* LifeIndexViewController.m */,
 				3E7E4C0A1DB0CC0800BDFB4D /* AirViewController.h */,
 				3E7E4C0B1DB0CC0800BDFB4D /* AirViewController.m */,
+				3E3DCEBA1DB62353005E717E /* OneViewController.h */,
+				3E3DCEBB1DB62353005E717E /* OneViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -1116,6 +1121,7 @@
 			files = (
 				3EE8EAC31DAC7668000BE8A4 /* CCLocationManager.m in Sources */,
 				3E7E3F991DAB8F760031888D /* UIProgressView+AFNetworking.m in Sources */,
+				3E3DCEBC1DB62353005E717E /* OneViewController.m in Sources */,
 				3E1E2CFC1DB1FDCF0086497E /* UIColor+Extensions.m in Sources */,
 				3E7E3FAE1DAB8F8D0031888D /* BaseViewController.m in Sources */,
 				3E7E3F971DAB8F760031888D /* UIButton+AFNetworking.m in Sources */,
@@ -1124,7 +1130,6 @@
 				3E7E3FD21DAB8F960031888D /* JHRefreshFooterView.m in Sources */,
 				3E7E4C0C1DB0CC0800BDFB4D /* AirViewController.m in Sources */,
 				3E3DCE681DB5D18F005E717E /* MenuViewController.m in Sources */,
-				3EA5E94D1DACE7B1003E26EB /* OtherViewController.m in Sources */,
 				3ECCC0911DAE014400498273 /* NSString+Extension.m in Sources */,
 				3ECCC0941DAE014400498273 /* UIView+Frame.m in Sources */,
 				3E7E3FCD1DAB8F960031888D /* JHRefreshAniBaseView.m in Sources */,
@@ -1136,6 +1141,7 @@
 				3E7E3FAF1DAB8F8D0031888D /* Factory.m in Sources */,
 				3E3DCE961DB5DF9C005E717E /* GYZChooseCityController.m in Sources */,
 				3ECCC0921DAE014400498273 /* UIApplication+Extension.m in Sources */,
+				3E3DCE9C1DB5F943005E717E /* WeatherLineChart.m in Sources */,
 				3E7E3F891DAB8F760031888D /* AFHTTPRequestOperation.m in Sources */,
 				3E7E3FD41DAB8F960031888D /* UIScrollView+JHExtension.m in Sources */,
 				3E7E3FB01DAB8F8D0031888D /* NetWorking.m in Sources */,
@@ -1323,7 +1329,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/MyWeather/Lib/Helper(Arc)/MyPrefixHeader.pch";
 				INFOPLIST_FILE = MyWeather/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = zhangdinghao.MyWeather;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1339,7 +1345,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/MyWeather/Lib/Helper(Arc)/MyPrefixHeader.pch";
 				INFOPLIST_FILE = MyWeather/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = zhangdinghao.MyWeather;
 				PRODUCT_NAME = "$(TARGET_NAME)";

@@ -14,6 +14,8 @@
 
 #define APIKEY @"a522432f39911715e1d2adf509046c00"
 
+#define WorldWeather @"http://apis.baidu.com/heweather/weather/free"
+
 #define Weather @"http://apis.baidu.com/thinkpage/weather_api/suggestion"
 
 #define LifeIndex @"http://apis.baidu.com/thinkpage/weather_api/daily"
