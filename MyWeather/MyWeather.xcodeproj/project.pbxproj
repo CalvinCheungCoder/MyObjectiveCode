@@ -142,6 +142,8 @@
 		3ECCC0A01DAE191A00498273 /* hotCities.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3ECCC09D1DAE191A00498273 /* hotCities.plist */; };
 		3ECCC0A71DAE21C800498273 /* Plus.png in Resources */ = {isa = PBXBuildFile; fileRef = 3ECCC0A61DAE21C800498273 /* Plus.png */; };
 		3ECCC0AB1DAE237200498273 /* upgrade_icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3ECCC0AA1DAE237200498273 /* upgrade_icon@2x.png */; };
+		3ED7E2E71DB7228D0005FD44 /* LifeIndexCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3ED7E2E61DB7228D0005FD44 /* LifeIndexCell.m */; };
+		3ED7E2EA1DB727C20005FD44 /* LifeModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 3ED7E2E91DB727C20005FD44 /* LifeModel.m */; };
 		3EE8EAC31DAC7668000BE8A4 /* CCLocationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EE8EAC01DAC7668000BE8A4 /* CCLocationManager.m */; };
 		3EE8EAC41DAC7668000BE8A4 /* CLLocation+YCLocation.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EE8EAC21DAC7668000BE8A4 /* CLLocation+YCLocation.m */; };
 		6736CF70DFD0CAA76CE8E4C4 /* libPods-MyWeather.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DC082B83221C3F74DEFB17AB /* libPods-MyWeather.a */; };
@@ -380,6 +382,10 @@
 		3ECCC09D1DAE191A00498273 /* hotCities.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = hotCities.plist; sourceTree = "<group>"; };
 		3ECCC0A61DAE21C800498273 /* Plus.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Plus.png; sourceTree = "<group>"; };
 		3ECCC0AA1DAE237200498273 /* upgrade_icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "upgrade_icon@2x.png"; sourceTree = "<group>"; };
+		3ED7E2E51DB7228D0005FD44 /* LifeIndexCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LifeIndexCell.h; sourceTree = "<group>"; };
+		3ED7E2E61DB7228D0005FD44 /* LifeIndexCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LifeIndexCell.m; sourceTree = "<group>"; };
+		3ED7E2E81DB727C20005FD44 /* LifeModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LifeModel.h; sourceTree = "<group>"; };
+		3ED7E2E91DB727C20005FD44 /* LifeModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LifeModel.m; sourceTree = "<group>"; };
 		3EE8EABF1DAC7668000BE8A4 /* CCLocationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCLocationManager.h; sourceTree = "<group>"; };
 		3EE8EAC01DAC7668000BE8A4 /* CCLocationManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCLocationManager.m; sourceTree = "<group>"; };
 		3EE8EAC11DAC7668000BE8A4 /* CLLocation+YCLocation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CLLocation+YCLocation.h"; sourceTree = "<group>"; };
@@ -826,6 +832,8 @@
 			children = (
 				3EA5E9481DACE7B1003E26EB /* WeatherModel.h */,
 				3EA5E9491DACE7B1003E26EB /* WeatherModel.m */,
+				3ED7E2E81DB727C20005FD44 /* LifeModel.h */,
+				3ED7E2E91DB727C20005FD44 /* LifeModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -835,6 +843,8 @@
 			children = (
 				3EA5E94B1DACE7B1003E26EB /* WeatherCell.h */,
 				3EA5E94C1DACE7B1003E26EB /* WeatherCell.m */,
+				3ED7E2E51DB7228D0005FD44 /* LifeIndexCell.h */,
+				3ED7E2E61DB7228D0005FD44 /* LifeIndexCell.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1137,6 +1147,7 @@
 				3E7E3FAF1DAB8F8D0031888D /* Factory.m in Sources */,
 				3E3DCE961DB5DF9C005E717E /* GYZChooseCityController.m in Sources */,
 				3ECCC0921DAE014400498273 /* UIApplication+Extension.m in Sources */,
+				3ED7E2E71DB7228D0005FD44 /* LifeIndexCell.m in Sources */,
 				3E3DCE9C1DB5F943005E717E /* WeatherLineChart.m in Sources */,
 				3E7E3F891DAB8F760031888D /* AFHTTPRequestOperation.m in Sources */,
 				3E7E3FD41DAB8F960031888D /* UIScrollView+JHExtension.m in Sources */,
@@ -1154,6 +1165,7 @@
 				3E3DCE981DB5DF9C005E717E /* GYZCityGroupCell.m in Sources */,
 				3E3DCE771DB5D311005E717E /* FMDatabasePool.m in Sources */,
 				3E7E3F951DAB8F760031888D /* UIActivityIndicatorView+AFNetworking.m in Sources */,
+				3ED7E2EA1DB727C20005FD44 /* LifeModel.m in Sources */,
 				3E7E3F8E1DAB8F760031888D /* AFURLConnectionOperation.m in Sources */,
 				3ECCC0931DAE014400498273 /* UILabel+Font.m in Sources */,
 				3E7E3F8D1DAB8F760031888D /* AFSecurityPolicy.m in Sources */,
