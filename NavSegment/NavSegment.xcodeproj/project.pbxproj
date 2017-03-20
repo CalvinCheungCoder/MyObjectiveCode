@@ -9,10 +9,10 @@
 /* Begin PBXBuildFile section */
 		3E44AC6C1E7FAE2900A99ACE /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E44AC6B1E7FAE2900A99ACE /* main.m */; };
 		3E44AC6F1E7FAE2900A99ACE /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E44AC6E1E7FAE2900A99ACE /* AppDelegate.m */; };
-		3E44AC721E7FAE2900A99ACE /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E44AC711E7FAE2900A99ACE /* ViewController.m */; };
 		3E44AC751E7FAE2900A99ACE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3E44AC731E7FAE2900A99ACE /* Main.storyboard */; };
 		3E44AC771E7FAE2900A99ACE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3E44AC761E7FAE2900A99ACE /* Assets.xcassets */; };
 		3E44AC7A1E7FAE2900A99ACE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3E44AC781E7FAE2900A99ACE /* LaunchScreen.storyboard */; };
+		3E44AC831E7FAE4E00A99ACE /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E44AC821E7FAE4E00A99ACE /* RootViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,12 +20,12 @@
 		3E44AC6B1E7FAE2900A99ACE /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		3E44AC6D1E7FAE2900A99ACE /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		3E44AC6E1E7FAE2900A99ACE /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		3E44AC701E7FAE2900A99ACE /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		3E44AC711E7FAE2900A99ACE /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		3E44AC741E7FAE2900A99ACE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		3E44AC761E7FAE2900A99ACE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3E44AC791E7FAE2900A99ACE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3E44AC7B1E7FAE2900A99ACE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3E44AC811E7FAE4E00A99ACE /* RootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RootViewController.h; sourceTree = "<group>"; };
+		3E44AC821E7FAE4E00A99ACE /* RootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RootViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,8 +60,8 @@
 			children = (
 				3E44AC6D1E7FAE2900A99ACE /* AppDelegate.h */,
 				3E44AC6E1E7FAE2900A99ACE /* AppDelegate.m */,
-				3E44AC701E7FAE2900A99ACE /* ViewController.h */,
-				3E44AC711E7FAE2900A99ACE /* ViewController.m */,
+				3E44AC811E7FAE4E00A99ACE /* RootViewController.h */,
+				3E44AC821E7FAE4E00A99ACE /* RootViewController.m */,
 				3E44AC731E7FAE2900A99ACE /* Main.storyboard */,
 				3E44AC761E7FAE2900A99ACE /* Assets.xcassets */,
 				3E44AC781E7FAE2900A99ACE /* LaunchScreen.storyboard */,
@@ -110,6 +110,7 @@
 				TargetAttributes = {
 					3E44AC661E7FAE2900A99ACE = {
 						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = 4D73HGMM93;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -150,9 +151,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3E44AC721E7FAE2900A99ACE /* ViewController.m in Sources */,
 				3E44AC6F1E7FAE2900A99ACE /* AppDelegate.m in Sources */,
 				3E44AC6C1E7FAE2900A99ACE /* main.m in Sources */,
+				3E44AC831E7FAE4E00A99ACE /* RootViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -270,6 +271,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 4D73HGMM93;
 				INFOPLIST_FILE = NavSegment/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.zhangdinghao.NavSegment;
@@ -281,6 +283,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 4D73HGMM93;
 				INFOPLIST_FILE = NavSegment/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.zhangdinghao.NavSegment;

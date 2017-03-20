@@ -1,5 +1,5 @@
 //
-//  ViewController.h
+//  RootViewController.h
 //  NavSegment
 //
 //  Created by 张丁豪 on 2017/3/20.
@@ -8,8 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
-
+@interface RootViewController : UIViewController
 
 @end
-
