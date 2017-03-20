@@ -13,6 +13,8 @@
 		3E44AC771E7FAE2900A99ACE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3E44AC761E7FAE2900A99ACE /* Assets.xcassets */; };
 		3E44AC7A1E7FAE2900A99ACE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3E44AC781E7FAE2900A99ACE /* LaunchScreen.storyboard */; };
 		3E44AC831E7FAE4E00A99ACE /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E44AC821E7FAE4E00A99ACE /* RootViewController.m */; };
+		3E44AC861E7FAEF800A99ACE /* OneTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E44AC851E7FAEF800A99ACE /* OneTableView.m */; };
+		3E44AC8C1E7FAF1F00A99ACE /* TwoTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E44AC8B1E7FAF1F00A99ACE /* TwoTableView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +28,10 @@
 		3E44AC7B1E7FAE2900A99ACE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3E44AC811E7FAE4E00A99ACE /* RootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RootViewController.h; sourceTree = "<group>"; };
 		3E44AC821E7FAE4E00A99ACE /* RootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RootViewController.m; sourceTree = "<group>"; };
+		3E44AC841E7FAEF800A99ACE /* OneTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OneTableView.h; sourceTree = "<group>"; };
+		3E44AC851E7FAEF800A99ACE /* OneTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OneTableView.m; sourceTree = "<group>"; };
+		3E44AC8A1E7FAF1F00A99ACE /* TwoTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TwoTableView.h; sourceTree = "<group>"; };
+		3E44AC8B1E7FAF1F00A99ACE /* TwoTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TwoTableView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +68,10 @@
 				3E44AC6E1E7FAE2900A99ACE /* AppDelegate.m */,
 				3E44AC811E7FAE4E00A99ACE /* RootViewController.h */,
 				3E44AC821E7FAE4E00A99ACE /* RootViewController.m */,
+				3E44AC841E7FAEF800A99ACE /* OneTableView.h */,
+				3E44AC851E7FAEF800A99ACE /* OneTableView.m */,
+				3E44AC8A1E7FAF1F00A99ACE /* TwoTableView.h */,
+				3E44AC8B1E7FAF1F00A99ACE /* TwoTableView.m */,
 				3E44AC731E7FAE2900A99ACE /* Main.storyboard */,
 				3E44AC761E7FAE2900A99ACE /* Assets.xcassets */,
 				3E44AC781E7FAE2900A99ACE /* LaunchScreen.storyboard */,
@@ -152,7 +162,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				3E44AC6F1E7FAE2900A99ACE /* AppDelegate.m in Sources */,
+				3E44AC8C1E7FAF1F00A99ACE /* TwoTableView.m in Sources */,
 				3E44AC6C1E7FAE2900A99ACE /* main.m in Sources */,
+				3E44AC861E7FAEF800A99ACE /* OneTableView.m in Sources */,
 				3E44AC831E7FAE4E00A99ACE /* RootViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
