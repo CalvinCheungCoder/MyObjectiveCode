@@ -70,10 +70,12 @@
 {
     HKQuantityType *heightType = [HKObjectType quantityTypeForIdentifier:HKQuantityTypeIdentifierHeight];
     HKQuantityType *weightType = [HKObjectType quantityTypeForIdentifier:HKQuantityTypeIdentifierBodyMass];
+    HKQuantityType *stepCountType = [HKObjectType quantityTypeForIdentifier:HKQuantityTypeIdentifierStepCount];
+    HKQuantityType *distance = [HKObjectType quantityTypeForIdentifier:HKQuantityTypeIdentifierDistanceWalkingRunning];
     HKQuantityType *temperatureType = [HKQuantityType quantityTypeForIdentifier:HKQuantityTypeIdentifierBodyTemperature];
     HKQuantityType *activeEnergyType = [HKObjectType quantityTypeForIdentifier:HKQuantityTypeIdentifierActiveEnergyBurned];
     
-    return [NSSet setWithObjects:heightType, temperatureType, weightType,activeEnergyType,nil];
+    return [NSSet setWithObjects:heightType, temperatureType, weightType,activeEnergyType,stepCountType,distance,nil];
 }
 
 /*!
@@ -94,7 +96,7 @@
     return [NSSet setWithObjects:heightType, temperatureType,birthdayType,sexType,weightType,stepCountType, distance, activeEnergyType,nil];
 }
 
-//获取步数
+// 获取步数
 - (void)getStepCount:(void(^)(double value, NSError *error))completion
 {
     HKQuantityType *stepType = [HKObjectType quantityTypeForIdentifier:HKQuantityTypeIdentifierStepCount];
@@ -124,7 +126,7 @@
     [self.healthStore executeQuery:query];
 }
 
-//获取公里数
+// 获取公里数
 - (void)getDistance:(void(^)(double value, NSError *error))completion
 {
     HKQuantityType *distanceType = [HKObjectType quantityTypeForIdentifier:HKQuantityTypeIdentifierDistanceWalkingRunning];

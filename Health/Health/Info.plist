@@ -3,9 +3,9 @@
 <plist version="1.0">
 <dict>
 	<key>NSHealthShareUsageDescription</key>
-	<string>fwjl</string>
+	<string>读取健康数据</string>
 	<key>NSHealthUpdateUsageDescription</key>
-	<string>访问健康</string>
+	<string>访问健康并更新数据</string>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>en</string>
 	<key>CFBundleExecutable</key>

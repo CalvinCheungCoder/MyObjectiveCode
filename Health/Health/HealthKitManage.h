@@ -20,10 +20,15 @@
 
 +(id)shareInstance;
 
+/*
+ *  @brief  检查是否支持获取健康数据
+ */
 - (void)authorizeHealthKit:(void(^)(BOOL success, NSError *error))compltion;
 
+// 获取步数
 - (void)getStepCount:(void(^)(double value, NSError *error))completion;
 
+// 获取公里数
 - (void)getDistance:(void(^)(double value, NSError *error))completion;
 
 @end

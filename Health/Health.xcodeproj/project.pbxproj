@@ -18,6 +18,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3E19B95A1E7F6C6000D0BBB7 /* iHealth.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = iHealth.pch; sourceTree = "<group>"; };
 		3E211D201D98FBE4000008C5 /* Health.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Health.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3E211D241D98FBE4000008C5 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		3E211D261D98FBE4000008C5 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -78,6 +79,7 @@
 				3E211D311D98FBE4000008C5 /* LaunchScreen.storyboard */,
 				3E211D341D98FBE4000008C5 /* Info.plist */,
 				3E211D231D98FBE4000008C5 /* Supporting Files */,
+				3E19B95A1E7F6C6000D0BBB7 /* iHealth.pch */,
 			);
 			path = Health;
 			sourceTree = "<group>";
@@ -298,6 +300,8 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = Health/Health.entitlements;
 				DEVELOPMENT_TEAM = PRKPCBLSYK;
+				GCC_INCREASE_PRECOMPILED_HEADER_SHARING = NO;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/Health/iHealth.pch";
 				INFOPLIST_FILE = Health/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -312,6 +316,8 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = Health/Health.entitlements;
 				DEVELOPMENT_TEAM = PRKPCBLSYK;
+				GCC_INCREASE_PRECOMPILED_HEADER_SHARING = NO;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/Health/iHealth.pch";
 				INFOPLIST_FILE = Health/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -339,6 +345,7 @@
 				3E211D391D98FBE4000008C5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

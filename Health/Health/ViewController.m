@@ -17,7 +17,7 @@
 
 @property (nonatomic, strong) HKHealthStore *healthStore;
 
-@property (nonatomic, assign) float bushu;
+@property (nonatomic, assign) NSInteger bushu;
 
 @end
 
@@ -39,14 +39,24 @@
     for (int i = 0; i < 6; i ++) {
         
         UIButton *btn = [[UIButton alloc]init];
-        btn.frame = CGRectMake(50, 70 * (i + 1), [UIScreen mainScreen].bounds.size.width - 100, 46);
+        btn.frame = CGRectMake(20, 60 * (i + 1), [UIScreen mainScreen].bounds.size.width/2 - 30, 40);
         btn.backgroundColor = [UIColor grayColor];
         [btn setTitle:arr[i] forState:UIControlStateNormal];
         [btn setTintColor:[UIColor whiteColor]];
         btn.tag = i;
-        btn.layer.cornerRadius = 6;
+        btn.layer.cornerRadius = 3;
         [btn addTarget:self action:@selector(BtnClicked:) forControlEvents:UIControlEventTouchUpInside];
         [self.view addSubview:btn];
+        
+        UIButton *btnTwo = [[UIButton alloc]init];
+        btnTwo.frame = CGRectMake([UIScreen mainScreen].bounds.size.width/2+10, 60 * (i + 1), [UIScreen mainScreen].bounds.size.width/2 - 30, 40);
+        btnTwo.backgroundColor = [UIColor grayColor];
+        [btnTwo setTitle:arr[i] forState:UIControlStateNormal];
+        [btnTwo setTintColor:[UIColor whiteColor]];
+        btnTwo.tag = i+100;
+        btnTwo.layer.cornerRadius = 3;
+        [btnTwo addTarget:self action:@selector(BtnTwoClicked:) forControlEvents:UIControlEventTouchUpInside];
+        [self.view addSubview:btnTwo];
     }
     
     stepLabel = [[UILabel alloc] initWithFrame:CGRectMake(50, [UIScreen mainScreen].bounds.size.height - 120, [UIScreen mainScreen].bounds.size.width - 100, 40)];
@@ -62,7 +72,6 @@
     distanceLabel.textAlignment = NSTextAlignmentCenter;
     distanceLabel.layer.cornerRadius = 6;
     [self.view addSubview:distanceLabel];
-    
 }
 
 
@@ -72,10 +81,9 @@
     [manage authorizeHealthKit:^(BOOL success, NSError *error) {
         
         if (success) {
-            NSLog(@"success");
             [manage getStepCount:^(double value, NSError *error) {
-                NSLog(@"1count-->%.0f", value);
-                NSLog(@"1error-->%@", error.localizedDescription);
+                MyLog(@"1count-->%.0f", value);
+                MyLog(@"1error-->%@", error.localizedDescription);
                 dispatch_async(dispatch_get_main_queue(), ^{
                     stepLabel.text = [NSString stringWithFormat:@"步数：%.0f步", value];
                 });
@@ -83,7 +91,7 @@
             }];
         }
         else {
-            NSLog(@"fail");
+            MyLog(@"记步fail");
         }
     }];
 }
@@ -94,18 +102,16 @@
     [manage authorizeHealthKit:^(BOOL success, NSError *error) {
         
         if (success) {
-            NSLog(@"success");
             [manage getDistance:^(double value, NSError *error) {
-                NSLog(@"2count-->%.2f", value);
-                NSLog(@"2error-->%@", error.localizedDescription);
+                MyLog(@"2count-->%.2f", value);
+                MyLog(@"2error-->%@", error.localizedDescription);
                 dispatch_async(dispatch_get_main_queue(), ^{
                     distanceLabel.text = [NSString stringWithFormat:@"公里数：%.2f公里", value];
                 });
-                
             }];
         }
         else {
-            NSLog(@"fail");
+            MyLog(@"公里数fail");
         }
     }];
 }
@@ -125,25 +131,25 @@
             break;
         case 2:
             // 增加 100 步
-            self.bushu = 100;
+            self.bushu = arc4random()%80+20;
             [self addBushu];
             
             break;
         case 3:
             // 增加 500 步
-            self.bushu = 500;
+            self.bushu = arc4random()%450+50;
             [self addBushu];
             
             break;
         case 4:
             // 增加 1000 步
-            self.bushu = 1000;
+            self.bushu = arc4random()%900+100;
             [self addBushu];
             
             break;
         case 5:
             // 增加 2000 步
-            self.bushu = 2000;
+            self.bushu = arc4random()%1900+100;
             [self addBushu];
             
             break;
@@ -151,36 +157,25 @@
         default:
             break;
     }
-    
-
 }
 
 -(void)addBushu{
     
-    
     dispatch_queue_t queue = dispatch_get_global_queue(0, 0);
     dispatch_async(queue, ^{
         // block会在子线程中执行
-        NSLog(@"%@", [NSThread currentThread]);
-        
+        MyLog(@"%@", [NSThread currentThread]);
         // 数据看类型为步数.
         HKQuantityType *quantityTypeIdentifier = [HKObjectType quantityTypeForIdentifier:HKQuantityTypeIdentifierStepCount];
-        
         // 表示步数的数据单位的数量
         HKQuantity *quantity = [HKQuantity quantityWithUnit:[HKUnit countUnit] doubleValue:_bushu];
-        
         // 数量样本.
         HKQuantitySample *temperatureSample = [HKQuantitySample quantitySampleWithType:quantityTypeIdentifier quantity:quantity startDate:[NSDate date] endDate:[NSDate date] metadata:nil];
-        
-        
-
         
         dispatch_queue_t queue = dispatch_get_main_queue();
         dispatch_sync(queue, ^{
             // block一定会在主线程执行
-            NSLog(@"%@", [NSThread currentThread]);
-            
-            
+            MyLog(@"%@", [NSThread currentThread]);
             // 保存
             [self.healthStore saveObject:temperatureSample withCompletion:^(BOOL success, NSError *error) {
                 if (success) {
@@ -194,18 +189,86 @@
                     [alert show];
                 }
             }];
-            
         });
     });
-    NSLog(@"------------");
-    
-    
-    
-    
-    
-    
-    
+}
 
+- (void)BtnTwoClicked:(UIButton *)Btn{
+    
+    switch (Btn.tag) {
+        case 1000:
+            // 记步
+            [self jibu];
+            
+            break;
+        case 101:
+            // distance
+            [self distance];
+            
+            break;
+        case 102:
+            // 增加 100 步
+            self.bushu = arc4random()%80+20;
+            [self addDistance];
+            
+            break;
+        case 103:
+            // 增加 500 步
+            self.bushu = arc4random()%450+50;
+            [self addDistance];
+            
+            break;
+        case 104:
+            // 增加 1000 步
+            self.bushu = arc4random()%900+100;
+            [self addDistance];
+            
+            break;
+        case 105:
+            // 增加 2000 步
+            self.bushu = arc4random()%1900+100;
+            [self addDistance];
+            
+            break;
+            
+        default:
+            break;
+    }
+}
+
+-(void)addDistance{
+    
+    // 数据看类型为步数.
+    HKQuantityType *WalkingRunning = [HKObjectType quantityTypeForIdentifier:HKQuantityTypeIdentifierDistanceWalkingRunning];
+    // 表示步数的数据单位的数量
+    HKQuantity *running = [HKQuantity quantityWithUnit:[HKUnit countUnit] doubleValue:4];
+    // 数量样本.
+    HKQuantitySample *runingSample = [HKQuantitySample quantitySampleWithType:WalkingRunning quantity:running startDate:[NSDate date] endDate:[NSDate date] metadata:nil];
+    
+    [self.healthStore saveObject:runingSample withCompletion:^(BOOL success, NSError *error) {
+        if (success) {
+            MyLog(@"增加公里成功");
+        }else {
+            MyLog(@"增加公里失败");
+        }
+    }];
+    
+    
+//    dispatch_queue_t queue = dispatch_get_global_queue(0, 0);
+//    dispatch_async(queue, ^{
+//        // block会在子线程中执行
+//        MyLog(@"%@", [NSThread currentThread]);
+//        
+//        
+////        HKQuantitySample *runningSample = [HKQuantitySample quantitySampleWithType:WalkingRunning quantity:running startDate:[NSDate date] endDate:[NSDate date] metadata:nil];
+//        
+//        dispatch_queue_t queue = dispatch_get_main_queue();
+//        dispatch_sync(queue, ^{
+//            // block一定会在主线程执行
+//            MyLog(@"%@", [NSThread currentThread]);
+//            
+//        });
+//    });
 }
 
 
