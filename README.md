@@ -9,6 +9,10 @@ Objective-C代码集合
 
 在 Navigation 上添加可以左右滑动的 Segment
 
+### NavDropdownMenu
+
+在 Navigation 上添加类似新浪微博的筛选菜单
+
 ###  LateralSpreads
 
 侧滑页面，左侧滑出页面的比例根据需要调整
