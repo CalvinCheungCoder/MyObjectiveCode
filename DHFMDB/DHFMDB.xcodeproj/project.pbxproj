@@ -20,6 +20,7 @@
 		3E44ACFF1E80D3D500A99ACE /* FMDatabaseQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E44ACF81E80D3D500A99ACE /* FMDatabaseQueue.m */; };
 		3E44AD001E80D3D500A99ACE /* FMResultSet.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E44ACFB1E80D3D500A99ACE /* FMResultSet.m */; };
 		3E44AD031E80D3F800A99ACE /* libsqlite3.0.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E44AD021E80D3F800A99ACE /* libsqlite3.0.tbd */; };
+		3E44AD061E80DC1600A99ACE /* News.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E44AD051E80DC1600A99ACE /* News.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -47,6 +48,8 @@
 		3E44ACFA1E80D3D500A99ACE /* FMResultSet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMResultSet.h; sourceTree = "<group>"; };
 		3E44ACFB1E80D3D500A99ACE /* FMResultSet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMResultSet.m; sourceTree = "<group>"; };
 		3E44AD021E80D3F800A99ACE /* libsqlite3.0.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.0.tbd; path = usr/lib/libsqlite3.0.tbd; sourceTree = SDKROOT; };
+		3E44AD041E80DC1600A99ACE /* News.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = News.h; sourceTree = "<group>"; };
+		3E44AD051E80DC1600A99ACE /* News.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = News.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,6 +89,8 @@
 				3E44ACD91E80D39100A99ACE /* AppDelegate.m */,
 				3E44ACDB1E80D39100A99ACE /* ViewController.h */,
 				3E44ACDC1E80D39100A99ACE /* ViewController.m */,
+				3E44AD041E80DC1600A99ACE /* News.h */,
+				3E44AD051E80DC1600A99ACE /* News.m */,
 				3E44ACDE1E80D39100A99ACE /* Main.storyboard */,
 				3E44ACE11E80D39100A99ACE /* Assets.xcassets */,
 				3E44ACE31E80D39100A99ACE /* LaunchScreen.storyboard */,
@@ -211,6 +216,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3E44AD061E80DC1600A99ACE /* News.m in Sources */,
 				3E44ACEF1E80D3C100A99ACE /* DHFMDB.m in Sources */,
 				3E44ACFF1E80D3D500A99ACE /* FMDatabaseQueue.m in Sources */,
 				3E44ACDD1E80D39100A99ACE /* ViewController.m in Sources */,
@@ -376,6 +382,7 @@
 				3E44ACEB1E80D39100A99ACE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
