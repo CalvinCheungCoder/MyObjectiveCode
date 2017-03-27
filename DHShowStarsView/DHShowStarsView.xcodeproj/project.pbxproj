@@ -13,6 +13,7 @@
 		3E6043EB1E8907BA00DAA6A3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3E6043E91E8907BA00DAA6A3 /* Main.storyboard */; };
 		3E6043ED1E8907BA00DAA6A3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3E6043EC1E8907BA00DAA6A3 /* Assets.xcassets */; };
 		3E6043F01E8907BA00DAA6A3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3E6043EE1E8907BA00DAA6A3 /* LaunchScreen.storyboard */; };
+		3E6043F91E8907F300DAA6A3 /* DHStarsView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E6043F81E8907F300DAA6A3 /* DHStarsView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,8 @@
 		3E6043EC1E8907BA00DAA6A3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3E6043EF1E8907BA00DAA6A3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3E6043F11E8907BA00DAA6A3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3E6043F71E8907F300DAA6A3 /* DHStarsView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DHStarsView.h; sourceTree = "<group>"; };
+		3E6043F81E8907F300DAA6A3 /* DHStarsView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DHStarsView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +65,8 @@
 				3E6043E41E8907BA00DAA6A3 /* AppDelegate.m */,
 				3E6043E61E8907BA00DAA6A3 /* ViewController.h */,
 				3E6043E71E8907BA00DAA6A3 /* ViewController.m */,
+				3E6043F71E8907F300DAA6A3 /* DHStarsView.h */,
+				3E6043F81E8907F300DAA6A3 /* DHStarsView.m */,
 				3E6043E91E8907BA00DAA6A3 /* Main.storyboard */,
 				3E6043EC1E8907BA00DAA6A3 /* Assets.xcassets */,
 				3E6043EE1E8907BA00DAA6A3 /* LaunchScreen.storyboard */,
@@ -110,6 +115,7 @@
 				TargetAttributes = {
 					3E6043DC1E8907BA00DAA6A3 = {
 						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = 974CV8BD8Z;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -150,6 +156,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3E6043F91E8907F300DAA6A3 /* DHStarsView.m in Sources */,
 				3E6043E81E8907BA00DAA6A3 /* ViewController.m in Sources */,
 				3E6043E51E8907BA00DAA6A3 /* AppDelegate.m in Sources */,
 				3E6043E21E8907BA00DAA6A3 /* main.m in Sources */,
@@ -270,6 +277,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 974CV8BD8Z;
 				INFOPLIST_FILE = DHShowStarsView/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.zhangdinghao.DHShowStarsView;
@@ -281,6 +289,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 974CV8BD8Z;
 				INFOPLIST_FILE = DHShowStarsView/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.zhangdinghao.DHShowStarsView;
