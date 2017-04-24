@@ -19,8 +19,9 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
     
-    DHSwitch *nkColorSwitch1 = [[DHSwitch alloc] initWithFrame:CGRectMake(20, 92, 70, 35)];
+    DHSwitch *nkColorSwitch1 = [[DHSwitch alloc] initWithFrame:CGRectMake(20, 92, 80, 35)];
     [nkColorSwitch1 addTarget:self action:@selector(switchPressed:) forControlEvents:UIControlEventValueChanged];
+    nkColorSwitch1.type = SwitchOfRoundedSquare;
     nkColorSwitch1.onBackLabel.text = @"打开";
     nkColorSwitch1.offBackLabel.text = @"关闭";
     nkColorSwitch1.onBackLabel.textColor = [UIColor whiteColor];
@@ -31,7 +32,8 @@
     [self.view addSubview:nkColorSwitch1];
 }
 
-#pragma mark NKColorSwitch
+#pragma mark --
+#pragma mark -- NKColorSwitch
 - (void)switchPressed:(id)sender
 {
     DHSwitch *nkswitch = (DHSwitch *)sender;

@@ -21,5 +21,6 @@
 #import "DatabaseManager.h"
 #import "SVProgressHUD.h"
 #import <UMSocialCore/UMSocialCore.h>
+#import "BaseViewController.h"
 
 #endif /* MyPrefixHeader_h */

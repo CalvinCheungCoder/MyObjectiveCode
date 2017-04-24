@@ -25,7 +25,7 @@
     UILabel *label = [Factory createLabelWithTitle:@"关于我们" frame:CGRectMake(0, 0, 40, 40) textColor:[UIColor whiteColor] fontSize:18.f];
     self.navigationItem.titleView = label;
     
-    self.webView = [[UIWebView alloc]initWithFrame:self.view.bounds];
+    self.webView = [[UIWebView alloc]initWithFrame:CGRectMake(0, 0, ScreenWidth, ScreenHeight-64)];
     self.webView.opaque = NO;
     self.webView.backgroundColor = [UIColor whiteColor];
     [self.view addSubview:self.webView];

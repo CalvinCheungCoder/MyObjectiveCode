@@ -34,13 +34,9 @@
     // Do any additional setup after loading the view.
     self.view.backgroundColor = [UIColor whiteColor];
     
-    UILabel *label = [Factory createLabelWithTitle:@"列表" frame:CGRectMake(0, 0, 40, 40) textColor:[UIColor whiteColor] fontSize:16.f];
-    self.navigationItem.titleView = label;
-    
+    self.title = @"列表";
     [self createView];
-    
     [self getNetData];
-    
 }
 
 -(void)createView{

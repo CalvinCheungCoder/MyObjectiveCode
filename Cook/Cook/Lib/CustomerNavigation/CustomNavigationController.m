@@ -21,13 +21,6 @@
 
 @implementation CustomWrapNavigationController
 
--(void)viewWillAppear:(BOOL)animated{
-    
-    [super viewWillAppear:YES];
-    
-    self.navigationBar.barTintColor = [UIColor colorWithRed:1 green:0.56 blue:0.36 alpha:1];
-}
-
 - (UIViewController *)popViewControllerAnimated:(BOOL)animated {
     return [self.navigationController popViewControllerAnimated:animated];
 }

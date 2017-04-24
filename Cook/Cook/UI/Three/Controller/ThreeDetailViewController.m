@@ -30,11 +30,9 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    self.title = self.title2;
     
-    UILabel *label = [Factory createLabelWithTitle:self.title2 frame:CGRectMake(0, 0, 40, 40) textColor:[UIColor whiteColor] fontSize:16.f];
-    self.navigationItem.titleView = label;
-    
-    self.webView = [[UIWebView alloc]initWithFrame:CGRectMake(0, 0, self.view.width, self.view.height)];
+    self.webView = [[UIWebView alloc]initWithFrame:CGRectMake(0, 0, ScreenWidth, ScreenHeight-64)];
     self.webView.opaque = NO;
     self.webView.backgroundColor = [UIColor whiteColor];
     self.webView.delegate = self;
@@ -95,15 +93,15 @@
     
     if ([title isEqualToString:@"微信"]) {
         
-        [self shareTextToWechat];
+        [self shareWebPageToPlatformType:UMSocialPlatformType_WechatSession];
         
     }else if ([title isEqualToString:@"朋友圈"]){
         
-        [self WechatTimeLine];
+        [self shareWebPageToPlatformType:UMSocialPlatformType_WechatTimeLine];
         
     }else if ([title isEqualToString:@"新浪微博"]){
         
-        [self shareTextToWeibo];
+        [self shareTextToPlatformType:UMSocialPlatformType_Sina];
         
     }else{
         
@@ -126,93 +124,45 @@
     [self.webView loadRequest:request];
 }
 
-- (void)shareTextToWechat
-{
-    
-    NSString *url = [NSString stringWithFormat:kKnowledgeDetail,self.ID2];
-    NSString *text = [NSString stringWithFormat:@"我在早餐粥谱发现了好东西: %@，地址是: %@ 快来看看吧",_title2,url];
-    
-    UMSocialMessageObject *messageObject = [UMSocialMessageObject messageObject];
 
-    messageObject.text = text;
-    
-    [[UMSocialManager defaultManager] shareToPlatform:UMSocialPlatformType_WechatSession messageObject:messageObject currentViewController:self completion:^(id data, NSError *error) {
-        NSString *message = nil;
-        if (!error) {
-            message = [NSString stringWithFormat:@"分享成功"];
-        } else {
-            if ((int)error.code == 2010) {
-                message = @"取消分享";
-            }else{
-                message = @"分享失败";
-            }
+#pragma mark --
+#pragma mark -- 分享网页
+- (void)shareWebPageToPlatformType:(UMSocialPlatformType)platformType
+{
+    //创建分享消息对象
+    UMSocialMessageObject *messageObject = [UMSocialMessageObject messageObject];
+    //创建网页内容对象
+    UMShareWebpageObject *shareObject = [UMShareWebpageObject shareObjectWithTitle:[NSString stringWithFormat:@"%@",self.title2] descr:self.title2 thumImage:[UIImage imageNamed:@"appicon"]];
+    //设置网页地址
+    shareObject.webpageUrl = [NSString stringWithFormat:kKnowledgeDetail,self.ID2];
+    //分享消息对象设置分享内容对象
+    messageObject.shareObject = shareObject;
+    //调用分享接口
+    [[UMSocialManager defaultManager] shareToPlatform:platformType messageObject:messageObject currentViewController:self completion:^(id data, NSError *error) {
+        if (error) {
+            NSLog(@"************Share fail with error %@*********",error);
+        }else{
+            NSLog(@"response data is %@",data);
         }
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"分享"
-                                                        message:message
-                                                       delegate:nil
-                                              cancelButtonTitle:NSLocalizedString(@"确定", nil)
-                                              otherButtonTitles:nil];
-        [alert show];
     }];
 }
 
-- (void)WechatTimeLine
+#pragma mark --
+#pragma mark -- 分享文本
+- (void)shareTextToPlatformType:(UMSocialPlatformType)platformType
 {
-    
-    NSString *url = [NSString stringWithFormat:kKnowledgeDetail,self.ID2];
-    NSString *text = [NSString stringWithFormat:@"我在早餐粥谱发现了好东西: %@，地址是: %@ 快来看看吧",_title2,url];
-    
+    //创建分享消息对象
     UMSocialMessageObject *messageObject = [UMSocialMessageObject messageObject];
+    //设置文本
+    messageObject.text = [NSString stringWithFormat:@"%@%@",[NSString stringWithFormat:@"%@",self.title2],[NSString stringWithFormat:kKnowledgeDetail,self.ID2]];
     
-    messageObject.text = text;
-    
-    [[UMSocialManager defaultManager] shareToPlatform:UMSocialPlatformType_WechatTimeLine messageObject:messageObject currentViewController:self completion:^(id data, NSError *error) {
-        NSString *message = nil;
-        if (!error) {
-            message = [NSString stringWithFormat:@"分享成功"];
-        } else {
-            if ((int)error.code == 2010) {
-                message = @"取消分享";
-            }else{
-                message = @"分享失败";
-            }
+    //调用分享接口
+    [[UMSocialManager defaultManager] shareToPlatform:platformType messageObject:messageObject currentViewController:self completion:^(id data, NSError *error) {
+        if (error) {
+            NSLog(@"************Share fail with error %@*********",error);
+        }else{
+            NSLog(@"response data is %@",data);
         }
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"分享"
-                                                        message:message
-                                                       delegate:nil
-                                              cancelButtonTitle:NSLocalizedString(@"确定", nil)
-                                              otherButtonTitles:nil];
-        [alert show];
-    }];
-}
-
-- (void)shareTextToWeibo
-{
-    
-    NSString *url = [NSString stringWithFormat:kKnowledgeDetail,self.ID2];
-    NSString *text = [NSString stringWithFormat:@"我在早餐粥谱发现了好东西: %@，地址是: %@ 快来看看吧",_title2,url];
-    
-    UMSocialMessageObject *messageObject = [UMSocialMessageObject messageObject];
-    
-    messageObject.text = text;
-    
-    [[UMSocialManager defaultManager] shareToPlatform:UMSocialPlatformType_Sina messageObject:messageObject currentViewController:self completion:^(id data, NSError *error) {
-        NSString *message = nil;
-        if (!error) {
-            message = [NSString stringWithFormat:@"分享成功"];
-        } else {
-            if ((int)error.code == 2010) {
-                message = @"取消分享";
-            }else{
-                message = @"分享失败";
-            }
-        }
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"分享"
-                                                        message:message
-                                                       delegate:nil
-                                              cancelButtonTitle:NSLocalizedString(@"确定", nil)
-                                              otherButtonTitles:nil];
-        [alert show];
     }];
 }
 

@@ -13,16 +13,12 @@
 
 static const CGFloat kAnimateDuration = 0.3f;
 static const CGFloat kHorizontalAdjustment = 3.0f;
-static const CGFloat kRectShapeCornerRadius = 4.0f;
+static const CGFloat kRectShapeCornerRadius = 3.0f;
 static const CGFloat kThumbShadowOpacity = 0.3f;
 static const CGFloat kThumbShadowRadius = 0.5f;
 static const CGFloat kSwitchBorderWidth = 1.75f;
 
 @interface DHSwitch();
-
-@property (nonatomic, strong) UIView *onBackgroundView;
-@property (nonatomic, strong) UIView *offBackgroundView;
-@property (nonatomic, strong) UIView *thumbView;
 
 @end
 
@@ -32,7 +28,7 @@ static const CGFloat kSwitchBorderWidth = 1.75f;
 @synthesize offBackgroundView = _offBackgroundView;
 @synthesize thumbView = _thumbView;
 @synthesize on = _on;
-@synthesize shape = _shape;
+@synthesize type = _type;
 @synthesize onTintColor = _onTintColor;
 @synthesize offTintColor = _offTintColor;
 @synthesize thumbTintColor = _thumbTintColor;
@@ -60,10 +56,10 @@ static const CGFloat kSwitchBorderWidth = 1.75f;
     [self setupUI];
 }
 
-
 - (void)setupUI
 {
-    self.shape = ColorSwitchShapeOval;
+    // default
+    self.type = SwitchOfDefault;
     
     [self setBackgroundColor:[UIColor clearColor]];
     // Background view for ON
@@ -75,10 +71,10 @@ static const CGFloat kSwitchBorderWidth = 1.75f;
     [self addSubview:self.onBackgroundView];
     
     // 打开时候的文字
-    self.onBackLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0,VW(self.onBackgroundView)/2 , VH(self.onBackgroundView))];
+    self.onBackLabel = [[UILabel alloc] initWithFrame:CGRectMake(3, 0,VW(self.onBackgroundView)/2 , VH(self.onBackgroundView))];
     self.onBackLabel.textColor = [UIColor blackColor];
     self.onBackLabel.textAlignment = NSTextAlignmentCenter;
-    self.onBackLabel.font = [UIFont systemFontOfSize:14];
+    self.onBackLabel.font = [UIFont systemFontOfSize:13];
     [self.onBackgroundView addSubview:self.onBackLabel];
     
     // Background view for OFF
@@ -89,8 +85,8 @@ static const CGFloat kSwitchBorderWidth = 1.75f;
     [self.offBackgroundView.layer setRasterizationScale:[UIScreen mainScreen].scale];
     [self addSubview:self.offBackgroundView];
     
-    self.offBackLabel = [[UILabel alloc] initWithFrame:CGRectMake(VW(self.offBackgroundView)/2, 0, VW(self.offBackgroundView)/2, VH(self.offBackgroundView))];
-    self.offBackLabel.font = [UIFont systemFontOfSize:14];
+    self.offBackLabel = [[UILabel alloc] initWithFrame:CGRectMake(VW(self.offBackgroundView)/2-3, 0, VW(self.offBackgroundView)/2, VH(self.offBackgroundView))];
+    self.offBackLabel.font = [UIFont systemFontOfSize:13];
     self.offBackLabel.textAlignment = NSTextAlignmentCenter;
     [self.offBackgroundView addSubview:self.offBackLabel];
     
@@ -132,7 +128,6 @@ static const CGFloat kSwitchBorderWidth = 1.75f;
 - (void)handlePan:(UIPanGestureRecognizer *)recognizer
 {
     CGPoint translation = [recognizer translationInView:self.thumbView];
-    
     // Check the new center to see if within the boud
     CGPoint newCenter = CGPointMake(recognizer.view.center.x + translation.x,
                                     recognizer.view.center.y);
@@ -186,13 +181,10 @@ static const CGFloat kSwitchBorderWidth = 1.75f;
 {
     if (recognizer.state == UIGestureRecognizerStateEnded)
     {
-        if (self.isOn)
-        {
+        if (self.isOn){
             // Animate move to left
             [self animateToDestination:CGPointMake((self.thumbView.frame.size.width+kHorizontalAdjustment)/2, recognizer.view.center.y) withDuration:kAnimateDuration switch:NO];
-        }
-        else
-        {
+        }else{
             // Animate move to right
             [self animateToDestination:CGPointMake(self.onBackgroundView.frame.size.width - (self.thumbView.frame.size.width+kHorizontalAdjustment)/2, recognizer.view.center.y) withDuration:kAnimateDuration switch:YES];
         }
@@ -203,13 +195,10 @@ static const CGFloat kSwitchBorderWidth = 1.75f;
 {
     if (recognizer.state == UIGestureRecognizerStateEnded)
     {
-        if (self.isOn)
-        {
+        if (self.isOn){
             // Animate move to left
             [self animateToDestination:CGPointMake((self.thumbView.frame.size.width+kHorizontalAdjustment)/2, self.thumbView.center.y) withDuration:kAnimateDuration switch:NO];
-        }
-        else
-        {
+        }else{
             // Animate move to right
             [self animateToDestination:CGPointMake(self.onBackgroundView.frame.size.width - (self.thumbView.frame.size.width+kHorizontalAdjustment)/2, self.thumbView.center.y) withDuration:kAnimateDuration switch:YES];
         }
@@ -225,20 +214,16 @@ static const CGFloat kSwitchBorderWidth = 1.75f;
                         options:UIViewAnimationOptionCurveEaseOut
                      animations:^{
                          self.thumbView.center = centerPoint;
-                         if (on)
-                         {
+                         if (on){
                              [self.onBackgroundView setAlpha:1.0];
                              [self.offBackgroundView setAlpha:0.0];
-                         }
-                         else
-                         {
+                         }else{
                              [self.onBackgroundView setAlpha:0.0];
                              [self.offBackgroundView setAlpha:1.0];
                          }
                      }
                      completion:^(BOOL finished) {
-                         if (finished)
-                         {
+                         if (finished){
                              [self updateSwitch:on];
                          }
                      }];
@@ -253,7 +238,6 @@ static const CGFloat kSwitchBorderWidth = 1.75f;
     [self sendActionsForControlEvents:UIControlEventValueChanged];
 }
 
-
 #pragma mark --
 #pragma mark -- Accessor
 - (BOOL)isOn
@@ -266,18 +250,13 @@ static const CGFloat kSwitchBorderWidth = 1.75f;
     if (_on != on)
         _on = on;
     
-    if (_on)
-    {
+    if (_on){
         [self.onBackgroundView setAlpha:1.0];
         self.offBackgroundView.transform = CGAffineTransformMakeScale(0.0, 0.0);
-        
         self.thumbView.center = CGPointMake(self.onBackgroundView.frame.size.width - (self.thumbView.frame.size.width+kHorizontalAdjustment)/2, self.thumbView.center.y);
-    }
-    else
-    {
+    }else{
         [self.onBackgroundView setAlpha:0.0];
         self.offBackgroundView.transform = CGAffineTransformMakeScale(1.0, 1.0);
-        
         self.thumbView.center = CGPointMake((self.thumbView.frame.size.width+kHorizontalAdjustment)/2, self.thumbView.center.y);
     }
 }
@@ -286,7 +265,6 @@ static const CGFloat kSwitchBorderWidth = 1.75f;
 {
     if (_onTintColor != color)
         _onTintColor = color;
-    
     [self.onBackgroundView setBackgroundColor:color];
 }
 
@@ -294,9 +272,7 @@ static const CGFloat kSwitchBorderWidth = 1.75f;
 {
     if (_onTintBorderColor != color)
         _onTintBorderColor = color;
-    
     [self.onBackgroundView.layer setBorderColor:color.CGColor];
-    
     if (color)
         [self.onBackgroundView.layer setBorderWidth:kSwitchBorderWidth];
     else
@@ -307,7 +283,6 @@ static const CGFloat kSwitchBorderWidth = 1.75f;
 {
     if (_offTintColor != color)
         _offTintColor = color;
-    
     [self.offBackgroundView setBackgroundColor:color];
 }
 
@@ -315,9 +290,7 @@ static const CGFloat kSwitchBorderWidth = 1.75f;
 {
     if (_offTintBorderColor != color)
         _offTintBorderColor = color;
-    
     [self.offBackgroundView.layer setBorderColor:color.CGColor];
-    
     if (color)
         [self.offBackgroundView.layer setBorderWidth:kSwitchBorderWidth];
     else
@@ -328,29 +301,35 @@ static const CGFloat kSwitchBorderWidth = 1.75f;
 {
     if (_thumbTintColor != color)
         _thumbTintColor = color;
-    
     [self.thumbView setBackgroundColor:color];
 }
 
-- (void)setShape:(ColorSwitchShape)newShape
+
+/**
+ 设置类型
+
+ @param newType 不同的类型
+ */
+- (void)setType:(SwitchType)newType
 {
-    if (_shape != newShape)
-        _shape = newShape;
+    if (_type != newType)
+        _type = newType;
     
-    if (newShape == ColorSwitchShapeOval)
-    {
-        [self.onBackgroundView.layer setCornerRadius:self.frame.size.height/2];
-        [self.offBackgroundView.layer setCornerRadius:self.frame.size.height/2];
+    if (newType == SwitchOfDefault){
+        self.onBackgroundView.layer.cornerRadius = self.frame.size.height/2;
+        self.offBackgroundView.layer.cornerRadius = self.frame.size.height/2;
+//        [self.onBackgroundView.layer setCornerRadius:self.frame.size.height/2];
+//        [self.offBackgroundView.layer setCornerRadius:self.frame.size.height/2];
         [self.thumbView.layer setCornerRadius:(self.frame.size.height-kHorizontalAdjustment)/2];
-    }
-    else if (newShape == ColorSwitchShapeRectangle)
-    {
+        
+    }else if (newType == SwitchOfRoundedSquare){
+        
         [self.onBackgroundView.layer setCornerRadius:kRectShapeCornerRadius];
         [self.offBackgroundView.layer setCornerRadius:kRectShapeCornerRadius];
         [self.thumbView.layer setCornerRadius:kRectShapeCornerRadius];
-    }
-    else if (newShape == ColorSwitchShapeRectangleNoCorner)
-    {
+        
+    }else if (newType == SwitchOfSquare){
+        
         [self.onBackgroundView.layer setCornerRadius:0];
         [self.offBackgroundView.layer setCornerRadius:0];
         [self.thumbView.layer setCornerRadius:0];
@@ -362,14 +341,12 @@ static const CGFloat kSwitchBorderWidth = 1.75f;
     if (_shadow != showShadow)
         _shadow = showShadow;
     
-    if (showShadow)
-    {
+    if (showShadow){
         [self.thumbView.layer setShadowOffset:CGSizeMake(0, 1)];
         [self.thumbView.layer setShadowRadius:kThumbShadowRadius];
         [self.thumbView.layer setShadowOpacity:kThumbShadowOpacity];
-    }
-    else
-    {
+        
+    }else{
         [self.thumbView.layer setShadowRadius:0.0];
         [self.thumbView.layer setShadowOpacity:0.0];
     }

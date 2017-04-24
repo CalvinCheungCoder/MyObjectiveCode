@@ -123,6 +123,7 @@
 				TargetAttributes = {
 					3E8ECAEC1E839EC4004BC1B5 = {
 						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = PRKPCBLSYK;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -284,6 +285,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = PRKPCBLSYK;
 				INFOPLIST_FILE = DHSwitch/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.zhangdinghao.DHSwitch;
@@ -295,6 +297,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = PRKPCBLSYK;
 				INFOPLIST_FILE = DHSwitch/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.zhangdinghao.DHSwitch;
@@ -321,6 +324,7 @@
 				3E8ECB061E839EC4004BC1B5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

@@ -2,28 +2,18 @@
 //  ViewController.m
 //  DHPageControl
 //
-//  Created by 张丁豪 on 2017/3/22.
-//  Copyright © 2017年 张丁豪. All rights reserved.
+//  Created by 张丁豪 on 2017/3/31.
+//  Copyright © 2017年 calvin. All rights reserved.
 //
 
 #import "ViewController.h"
-#import "DHPageControl.h"
+#import "DHCycleScrollView.h"
 
-#define ScreenWidth [[UIScreen mainScreen] bounds].size.width
+@interface ViewController ()<DHCycleScrollViewDelegate>
 
-#define ScreenHeight [[UIScreen mainScreen] bounds].size.height
+@property (nonatomic, strong) DHCycleScrollView *scrollView;
 
-#define RGBA(r,g,b,a) [UIColor colorWithRed:r/255.0 green:g/255.0 blue:b/255.0 alpha:a]
-
-#define RGB(r,g,b) RGBA(r,g,b,1.f)
-
-#define RandomColor RGB(arc4random()%256,arc4random()%256,arc4random()%256)
-
-#define PageNumber 4
-
-@interface ViewController ()<UIScrollViewDelegate,DHPageControlDelegate>
-
-@property (nonatomic, strong) DHPageControl *pageControl;
+@property (nonatomic ,strong) NSArray *imageArray;
 
 @end
 
@@ -33,45 +23,35 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
     
-    UIScrollView *guideScrollView = [[UIScrollView alloc] initWithFrame:self.view.bounds];
-    guideScrollView.delegate = self;
-    guideScrollView.contentSize = CGSizeMake(ScreenWidth * PageNumber, ScreenHeight);
-    guideScrollView.contentOffset = CGPointMake(0, 0);
-    guideScrollView.showsVerticalScrollIndicator = NO;
-    guideScrollView.showsHorizontalScrollIndicator = NO;
-    guideScrollView.bounces = NO;
-    guideScrollView.pagingEnabled = YES;
-    [self.view addSubview:guideScrollView];
+    self.view.backgroundColor = [UIColor colorWithRed:241/255.0 green:241/255.0 blue:241/255.0 alpha:1];
     
-    for (int i = 0; i < PageNumber; i ++) {
-        UIView *view = [[UIView alloc] initWithFrame:CGRectMake(i * ScreenWidth, 0, ScreenWidth, ScreenHeight)];
-        view.backgroundColor = RandomColor;
-        [guideScrollView addSubview:view];
-    }
+    // 设置顶部轮播器
+    self.scrollView = [[DHCycleScrollView alloc] initWithFrame:CGRectMake(0,0, [UIScreen mainScreen].bounds.size.width, 180)];
+    self.scrollView.delegate = self;
+    self.scrollView.backgroundColor = [UIColor whiteColor];
+    // 设置分页位置
+    self.scrollView.pageControlAliment = DHCycleScrollViewPageContolAlimentRight;
+    // 设置时间间隔
+    self.scrollView.autoScrollTimeInterval = 3.0;
+    // 设置当前分页圆点颜色
+    self.scrollView.currentPageDotColor = [UIColor whiteColor];
+    // 设置其它分页圆点颜色
+    self.scrollView.pageDotColor = [UIColor lightGrayColor];
+    // 设置背景图
+    self.scrollView.placeholderImage = [UIImage imageNamed:@"bannerIcon"];
+    // 设置动画样式
+    self.scrollView.pageControlStyle = DHCycleScrollViewPageContolStyleAnimated;
     
-    self.pageControl = [[DHPageControl alloc]initWithStyel:DHPageControlStyelRectangle];
-    self.pageControl.numberOfPages = PageNumber;
-    self.pageControl.center = CGPointMake(self.view.frame.size.width/2, 140);
-    self.pageControl.pageIndicatorTintColor = [UIColor lightGrayColor];
-    self.pageControl.currentPageIndicatorTintColor = [UIColor colorWithRed:81/255.0 green:182/255.0 blue:200/255.0 alpha:1];
-    self.pageControl.defersCurrentPageDisplay = NO;
-    self.pageControl.delegate = self;
-    [self.view addSubview:self.pageControl];
-}
-
--(void)pageControl:(DHPageControl *)pageControl changgeCurrentPage:(NSInteger)currentPage{
-    
-    
+    self.imageArray = @[@"001",@"002",@"003",@"004",@"005"];
+    self.scrollView.localizationImageNamesGroup = self.imageArray;
+    [self.view addSubview:self.scrollView];
 }
 
 #pragma mark --
-#pragma mark -- scrollView delegate
-- (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView{
+#pragma mark -- SDCycleScrollViewDElegate
+- (void)cycleScrollView:(DHCycleScrollView *)cycleScrollView didSelectItemAtIndex:(NSInteger)index{
     
-    CGPoint point = scrollView.contentOffset;
-    int currentpage = point.x/ScreenWidth;
-    
-    self.pageControl.currentPage = currentpage;
+    NSLog(@"点击了 == %ld",index);
 }
 
 

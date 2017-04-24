@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface PrivacyViewController : UIViewController
+@interface PrivacyViewController : BaseViewController
 
 @end

@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface TwoNextDeatil : UIViewController
+@interface TwoNextDeatil : BaseViewController
 
 @property (nonatomic,copy) NSString *number2;
 @property (nonatomic,copy) NSString *title2;

@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ThreeDetailViewController : UIViewController
+@interface ThreeDetailViewController : BaseViewController
 
 @property (nonatomic,copy) NSString *ID2;
 @property (nonatomic,copy) NSString *title2;

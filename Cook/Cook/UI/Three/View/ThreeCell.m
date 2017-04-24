@@ -16,7 +16,7 @@
     if (self = [super initWithStyle:style reuseIdentifier:reuseIdentifier]) {
         
         UIView *backView = [[UIView alloc] init];
-        backView.backgroundColor = [UIColor colorWithRed:1 green:0.56 blue:0.36 alpha:1];
+        backView.backgroundColor = RGB(253, 163, 62);
         [self.contentView addSubview:backView];
         self.backView = backView;
         

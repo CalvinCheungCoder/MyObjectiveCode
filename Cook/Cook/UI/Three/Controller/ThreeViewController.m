@@ -32,8 +32,10 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
-    UILabel *label = [Factory createLabelWithTitle:@"小知识" frame:CGRectMake(0, 0, 40, 40) textColor:[UIColor whiteColor] fontSize:18.f];
-    self.navigationItem.titleView = label;
+    self.title = @"小知识";
+    
+//    UILabel *label = [Factory createLabelWithTitle:@"小知识" frame:CGRectMake(0, 0, 40, 40) textColor:[UIColor whiteColor] fontSize:18.f];
+//    self.navigationItem.titleView = label;
     
     _dataArr = [[NSMutableArray alloc]init];
     [self resetParame];
@@ -75,7 +77,7 @@
 
 -(void)createView{
     
-    _tableView = [[UITableView alloc]initWithFrame:self.view.bounds style:UITableViewStylePlain];
+    _tableView = [[UITableView alloc]initWithFrame:CGRectMake(0, 0, ScreenWidth, ScreenHeight-64) style:UITableViewStylePlain];
     _tableView.dataSource = self;
     _tableView.delegate = self;
     [self.view  addSubview:_tableView];

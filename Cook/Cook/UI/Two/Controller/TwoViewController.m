@@ -33,9 +33,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
-    UILabel *label = [Factory createLabelWithTitle:@"热门专题" frame:CGRectMake(0, 0, 40, 40) textColor:[UIColor whiteColor] fontSize:18.f];
-    self.navigationItem.titleView = label;
-    
+    self.title = @"热门专题";
     _dataArr = [[NSMutableArray alloc]init];
     
     [self createView];
@@ -77,7 +75,7 @@
 
 -(void)createView{
     
-    _tableView = [[UITableView alloc]initWithFrame:self.view.bounds style:UITableViewStylePlain];
+    _tableView = [[UITableView alloc]initWithFrame:CGRectMake(0, 0, ScreenWidth, ScreenHeight-64) style:UITableViewStylePlain];
     _tableView.dataSource = self;
     _tableView.delegate = self;
 //    self.tableView.separatorStyle = UITableViewCellSelectionStyleNone;

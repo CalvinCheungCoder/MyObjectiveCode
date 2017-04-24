@@ -22,7 +22,7 @@
     UILabel *label = [Factory createLabelWithTitle:@"服务协议" frame:CGRectMake(0, 0, 40, 40) textColor:[UIColor whiteColor] fontSize:18.f];
     self.navigationItem.titleView = label;
     
-    UIWebView *webView = [[UIWebView alloc]initWithFrame:self.view.bounds];
+    UIWebView *webView = [[UIWebView alloc]initWithFrame:CGRectMake(0, 0, ScreenWidth, ScreenHeight-64)];
     webView.opaque = NO;
     webView.backgroundColor = [UIColor whiteColor];
     NSString *path = [[NSBundle mainBundle] bundlePath];

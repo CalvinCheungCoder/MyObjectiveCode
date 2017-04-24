@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface FourViewController : UIViewController
+@interface FourViewController : BaseViewController
 
 - (void)initData;
 

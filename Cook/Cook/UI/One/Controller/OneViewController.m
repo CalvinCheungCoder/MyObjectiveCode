@@ -34,9 +34,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
-    self.view.backgroundColor = [UIColor whiteColor];
-    _label = [Factory createLabelWithTitle:@"营养粥谱" frame:CGRectMake(0, 0, 40, 40) textColor:[UIColor whiteColor] fontSize:18.f];
-    self.navigationItem.titleView = _label;
+    self.title = @"营养粥谱";
     
     _dataArr = [[NSMutableArray alloc]init];
     
@@ -93,7 +91,7 @@
 
 -(void)setTableView{
     
-    self.tableView = [[UITableView alloc]initWithFrame:self.view.bounds style:UITableViewStylePlain];
+    self.tableView = [[UITableView alloc]initWithFrame:CGRectMake(0, 0, ScreenWidth, ScreenHeight-64) style:UITableViewStylePlain];
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
     self.tableView.separatorStyle = UITableViewCellSelectionStyleNone;

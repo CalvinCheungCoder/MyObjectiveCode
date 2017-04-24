@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "0820"
+   LastUpgradeVersion = "0830"
    version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "3EF692461E8278F500CA03E6"
+               BlueprintIdentifier = "3E08D3971E8E0472003658A7"
                BuildableName = "DHPageControl.app"
                BlueprintName = "DHPageControl"
                ReferencedContainer = "container:DHPageControl.xcodeproj">
@@ -32,7 +32,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "3EF692461E8278F500CA03E6"
+            BlueprintIdentifier = "3E08D3971E8E0472003658A7"
             BuildableName = "DHPageControl.app"
             BlueprintName = "DHPageControl"
             ReferencedContainer = "container:DHPageControl.xcodeproj">
@@ -55,7 +55,7 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "3EF692461E8278F500CA03E6"
+            BlueprintIdentifier = "3E08D3971E8E0472003658A7"
             BuildableName = "DHPageControl.app"
             BlueprintName = "DHPageControl"
             ReferencedContainer = "container:DHPageControl.xcodeproj">
@@ -74,7 +74,7 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "3EF692461E8278F500CA03E6"
+            BlueprintIdentifier = "3E08D3971E8E0472003658A7"
             BuildableName = "DHPageControl.app"
             BlueprintName = "DHPageControl"
             ReferencedContainer = "container:DHPageControl.xcodeproj">

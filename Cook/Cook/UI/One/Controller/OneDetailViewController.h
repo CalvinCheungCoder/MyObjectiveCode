@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface OneDetailViewController : UIViewController
+@interface OneDetailViewController : BaseViewController
 
 @property (nonatomic,copy) NSString *number2;
 @property (nonatomic,copy) NSString *title2;

@@ -29,9 +29,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    UILabel *label = [Factory createLabelWithTitle:@"收藏" frame:CGRectMake(0, 0, 40, 40) textColor:[UIColor whiteColor] fontSize:18.f];
-    self.navigationItem.titleView = label;
-    
+    self.title = @"收藏";
     [self createView];
 }
 
@@ -58,7 +56,7 @@
 
 - (void)createView {
     
-    _tableView = [[UITableView alloc] initWithFrame:self.view.bounds style:UITableViewStylePlain];
+    _tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, ScreenWidth, ScreenHeight-64) style:UITableViewStylePlain];
     _tableView.delegate = self;
     _tableView.dataSource = self;
     _tableView.rowHeight = ScreenWidth/2;

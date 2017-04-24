@@ -37,38 +37,69 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
-    [self createViewController];
+//    [self createViewController];
+    
+    // 创建子控制器
+    [self createSubViewControllers];
+    // 设置所有的、分栏元素项
+    [self setTabBarItems];
 }
 
--(void)createViewController{
-    // 通过UIAppearance设置标题颜色
-    [[UITabBarItem appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName : [UIColor colorWithRed:1 green:0.56 blue:0.36 alpha:1]} forState:UIControlStateSelected];
+
+// 创建子控制器
+- (void)createSubViewControllers{
     
-    //粥谱
-    OneViewController *menu = [[OneViewController alloc] init];
-    CustomNavigationController *navMenu = [[CustomNavigationController alloc] initWithRootViewController:menu];
-    navMenu.tabBarItem = [[UITabBarItem alloc]initWithTitle:@"粥谱" image:[[UIImage imageNamed:@"食谱A"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal] selectedImage:[[UIImage imageNamed:@"食谱B"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]];
+    // 状态栏颜色
+    [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
     
-    //专题
-    TwoViewController *special = [[TwoViewController alloc] init];
-    CustomNavigationController *navSpecial = [[CustomNavigationController alloc] initWithRootViewController:special];
-    navSpecial.tabBarItem = [[UITabBarItem alloc]initWithTitle:@"专题" image:[[UIImage imageNamed:@"zhuantiA"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]selectedImage:[[UIImage imageNamed:@"zhuantiB"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]];
+    OneViewController *One = [[OneViewController alloc]init];
+    CustomNavigationController *navi = [[CustomNavigationController alloc]initWithRootViewController:One];
+    navi.fullScreenPopGestureEnabled = YES;
     
-    //小知识
-    ThreeViewController *knowledge = [[ThreeViewController alloc] init];
-    CustomNavigationController *navknowledge = [[CustomNavigationController alloc] initWithRootViewController:knowledge];
-    navknowledge.tabBarItem = [[UITabBarItem alloc]initWithTitle:@"小知识" image:[[UIImage imageNamed:@"xiaozhishiA"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]selectedImage:[[UIImage imageNamed:@"xiaozhishiB"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]];
+    TwoViewController *Two = [[TwoViewController alloc]init];
+    CustomNavigationController *navi2 = [[CustomNavigationController alloc]initWithRootViewController:Two];
+    navi2.fullScreenPopGestureEnabled = YES;
     
-    FourViewController *coller = [[FourViewController alloc] init];
-    CustomNavigationController *navCollec = [[CustomNavigationController alloc] initWithRootViewController:coller];
-    navCollec.tabBarItem = [[UITabBarItem alloc]initWithTitle:@"收藏" image:[[UIImage imageNamed:@"我的A"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]selectedImage:[[UIImage imageNamed:@"我的B"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]];
+    ThreeViewController *four = [[ThreeViewController alloc]init];
+    CustomNavigationController *navi4 = [[CustomNavigationController alloc]initWithRootViewController:four];
+    navi4.fullScreenPopGestureEnabled = YES;
     
-    SettingViewController *setting = [[SettingViewController alloc]init];
-    CustomNavigationController *setingNav = [[CustomNavigationController alloc]initWithRootViewController:setting];
-    setingNav.tabBarItem = [[UITabBarItem alloc]initWithTitle:@"设置" image:[[UIImage imageNamed:@"icon_setting_n@2x"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]selectedImage:[[UIImage imageNamed:@"icon_setting_h@2x"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]];
+    FourViewController *Three = [[FourViewController alloc]init];
+    CustomNavigationController *navi3 = [[CustomNavigationController alloc]initWithRootViewController:Three];
+    navi3.fullScreenPopGestureEnabled = YES;
     
-    self.viewControllers = @[navMenu,navSpecial,navknowledge,navCollec,setingNav];
+    SettingViewController *five = [[SettingViewController alloc]init];
+    CustomNavigationController *navi5 = [[CustomNavigationController alloc]initWithRootViewController:five];
+    navi5.fullScreenPopGestureEnabled = YES;
+    
+    self.viewControllers = @[navi,navi2,navi4,navi3,navi5];
 }
 
+// 设置所有的、分栏元素项
+- (void)setTabBarItems{
+    
+    NSArray *titleArr = @[@"粥谱",@"专题",@"小知识",@"收藏",@"设置"];
+    NSArray *normalImgArr = @[@"one",@"two",@"three",@"four",@"set@2x"];
+    NSArray *selectedImgArr = @[@"oneSele",@"twoSele",@"threeSele",@"fourSele",@"setSele@2x"];
+    // 循环设置信息
+    for (int i = 0; i<titleArr.count; i++)
+    {
+        UIViewController *vc = self.viewControllers[i];
+        vc.tabBarItem = [[UITabBarItem alloc]initWithTitle:titleArr[i] image:[UIImage imageNamed:normalImgArr[i]] selectedImage:[[UIImage imageNamed:selectedImgArr[i]]imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]];
+        vc.tabBarItem.tag = i+1;
+    }
+    
+    [[UITabBarItem appearance]setTitleTextAttributes:@{NSForegroundColorAttributeName:RGB(254, 200, 89)} forState:UIControlStateSelected];
+    
+    // 消除Tabbar黑线
+//    [[UITabBar appearance] setShadowImage:[[UIImage alloc]init]];
+//    [[UITabBar appearance] setBackgroundImage:[[UIImage alloc]init]];
+    // 设置Tabbar背景色
+    [[UITabBar appearance]setBackgroundColor:[UIColor whiteColor]];
+    [[UITabBar appearance]setBarTintColor:[UIColor whiteColor]];
+    
+    //获取导航条最高权限
+    [[UINavigationBar appearance] setTitleTextAttributes:@{NSFontAttributeName:[UIFont systemFontOfSize:20]}];
+}
 
 @end
