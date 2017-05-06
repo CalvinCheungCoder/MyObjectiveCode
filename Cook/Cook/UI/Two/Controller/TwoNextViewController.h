@@ -12,6 +12,8 @@
 
 @property (nonatomic,copy) NSString *ID2;
 
+@property (nonatomic,copy) NSString *titleStr;
+
 -(instancetype)initWithID:(NSString *)ID;
 
 @end

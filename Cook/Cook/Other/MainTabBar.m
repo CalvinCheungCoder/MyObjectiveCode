@@ -89,7 +89,7 @@
         vc.tabBarItem.tag = i+1;
     }
     
-    [[UITabBarItem appearance]setTitleTextAttributes:@{NSForegroundColorAttributeName:RGB(254, 200, 89)} forState:UIControlStateSelected];
+    [[UITabBarItem appearance]setTitleTextAttributes:@{NSForegroundColorAttributeName:RGB(253, 163, 62)} forState:UIControlStateSelected];
     
     // 消除Tabbar黑线
 //    [[UITabBar appearance] setShadowImage:[[UIImage alloc]init]];

@@ -32,9 +32,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    self.view.backgroundColor = [UIColor whiteColor];
     
-    self.title = @"列表";
+    self.title = self.titleStr;
     [self createView];
     [self getNetData];
 }

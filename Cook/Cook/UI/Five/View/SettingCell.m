@@ -36,7 +36,7 @@
     
     self.ImageView.frame = CGRectMake(10, 15, 25, 25);
     
-    self.titleLabel.frame = CGRectMake(45, 15, self.width - 80, 30);
+    self.titleLabel.frame = CGRectMake(45, 12.5, self.width - 80, 30);
 }
 
 @end

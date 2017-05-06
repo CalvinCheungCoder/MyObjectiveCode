@@ -114,6 +114,7 @@
     
     TwoModel *model = _dataArr[indexPath.row];
     TwoNextViewController *detail = [[TwoNextViewController alloc]initWithID:model.ID];
+    detail.titleStr = model.title;
     detail.hidesBottomBarWhenPushed = YES;
     [self.navigationController pushViewController:detail animated:YES];
 }

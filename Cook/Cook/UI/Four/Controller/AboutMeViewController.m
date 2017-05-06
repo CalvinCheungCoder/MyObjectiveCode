@@ -20,19 +20,17 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
-    self.view.backgroundColor = [UIColor whiteColor];
-    
     UILabel *label = [Factory createLabelWithTitle:@"关于我们" frame:CGRectMake(0, 0, 40, 40) textColor:[UIColor whiteColor] fontSize:18.f];
     self.navigationItem.titleView = label;
     
     self.webView = [[UIWebView alloc]initWithFrame:CGRectMake(0, 0, ScreenWidth, ScreenHeight-64)];
     self.webView.opaque = NO;
     self.webView.backgroundColor = [UIColor whiteColor];
-    [self.view addSubview:self.webView];
     
-    NSString *url = @"http://www.zhangdinghao.cn/?page_id=19";
+    NSString *url = @"http://zhangdinghao.cn/";
     NSURLRequest *request = [[NSURLRequest alloc]initWithURL:[NSURL URLWithString:url]];
     [self.webView loadRequest:request];
+    [self.view addSubview:self.webView];
 }
 
 

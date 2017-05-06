@@ -108,7 +108,7 @@
             // 设置 相关信息
             // 设置 联系人
             [mail setToRecipients:@[@"984382258@qq.com"]];
-            [mail setSubject:@"早餐粥谱Bug反馈"];
+            [mail setSubject:@"早餐粥谱 Bug 反馈"];
             // 邮件内容
             [mail setMessageBody:@"" isHTML:YES];
             // 获取 发送的状态 必须要设置代理
