@@ -28,6 +28,7 @@
     if (self) {
         [self initialization];
     }
+    
     return self;
 }
 
