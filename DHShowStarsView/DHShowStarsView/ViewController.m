@@ -19,6 +19,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
     
+    
     DHStarsView *stars = [[DHStarsView alloc]initWithFrame:CGRectMake(20, 100, 200, 80)];
     stars.showStar = 2.5 * 20;
     [self.view addSubview:stars];
