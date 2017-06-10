@@ -23,6 +23,7 @@
     
     self.title = @"Root";
     
+    
     UIButton *btn = [[UIButton alloc]initWithFrame:CGRectMake(50, 150, [UIScreen mainScreen].bounds.size.width - 100, 46)];
     [btn setTitle:@"下一页" forState:UIControlStateNormal];
     [btn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
